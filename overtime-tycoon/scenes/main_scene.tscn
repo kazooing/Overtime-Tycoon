@@ -1,10 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://batpj1v21d4k8"]
+[gd_scene load_steps=3 format=3 uid="uid://batpj1v21d4k8"]
 
 [ext_resource type="PackedScene" uid="uid://bq6r3vur078ww" path="res://scenes/Telephone.tscn" id="1_w2twt"]
+[ext_resource type="Script" uid="uid://d2rmkydpo8dig" path="res://scripts/call_time_left.gd" id="2_pw63i"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Telephone" parent="." instance=ExtResource("1_w2twt")]
 position = Vector2(447, -255)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -195.0
+offset_top = 82.0
+offset_right = 139.0
+offset_bottom = 109.0
+max_value = 10.0
+step = 0.5
+value = 10.0
+show_percentage = false
+script = ExtResource("2_pw63i")
+
+[connection signal="call_started" from="Telephone" to="ProgressBar" method="_on_telephone_call_started"]
