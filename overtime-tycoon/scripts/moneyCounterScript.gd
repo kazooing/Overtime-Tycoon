@@ -3,4 +3,4 @@ extends Label
 
 func addMoney (amount):
 	GM.curMoney += amount
-	text = "Money:" + GM.curMoney
+	text = "Money:" + str(GM.curMoney)
