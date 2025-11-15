@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://4w3jdc6d616y"]
+
+[ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
+[ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites/SanityBarUnder.png" id="1_jqjy7"]
+[ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites/sanityBar.png" id="2_i6sgx"]
+[ext_resource type="Script" uid="uid://blsgcxvh2pl53" path="res://scripts/sanityBar.gd" id="3_eoja1"]
+
+[node name="WorkScene" type="Node2D"]
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="moneyCounterUI" type="Label" parent="Canvas"]
+offset_left = 302.0
+offset_top = 221.0
+offset_right = 515.0
+offset_bottom = 255.0
+theme_override_font_sizes/font_size = 22
+text = "Money: "
+script = ExtResource("1_eoja1")
+
+[node name="sanityBarUI" type="TextureProgressBar" parent="Canvas"]
+offset_left = 37.0
+offset_top = 657.0
+offset_right = 1739.0
+offset_bottom = 780.0
+rotation = -1.5707964
+scale = Vector2(0.28, 0.28)
+value = 100.0
+texture_under = ExtResource("1_jqjy7")
+texture_progress = ExtResource("2_i6sgx")
+script = ExtResource("3_eoja1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

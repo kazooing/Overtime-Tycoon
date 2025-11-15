@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Overtime Tycoon"
+run/main_scene="uid://4w3jdc6d616y"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://scripts/GameManager.gd"
+GM="*res://scripts/GM.gd"
 
 [display]
 
