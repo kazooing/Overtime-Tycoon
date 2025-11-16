@@ -20,4 +20,4 @@ func spawn_add_money(xpos, ypos, added):
 
 
 func _on_work_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://scenes/day_end_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")

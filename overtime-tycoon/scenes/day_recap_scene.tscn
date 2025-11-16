@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu2n5sxech1cd"]
+[gd_scene load_steps=3 format=3 uid="uid://bu2n5sxech1cd"]
 
 [ext_resource type="Script" uid="uid://ccw74yakvva7u" path="res://scripts/data_day_recap.gd" id="1_nodxj"]
+[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="2_4y1ax"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nodxj")
@@ -43,3 +44,12 @@ offset_right = 133.0
 offset_bottom = 77.0
 theme_override_font_sizes/font_size = 25
 text = "Calls Done: "
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1104.0
+offset_top = 543.0
+offset_right = 1232.0
+offset_bottom = 671.0
+texture_normal = ExtResource("2_4y1ax")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
