@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjlqrqser2bq3"]
+
+[ext_resource type="PackedScene" uid="uid://rval02q1w73n" path="res://scenes/start_screen.tscn" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dnidjpyk50sii" path="res://scenes/pause_menu.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://4w3jdc6d616y" path="res://scenes/work_scene.tscn" id="3_iywne"]
+
+[node name="Game" type="Node"]
+
+[node name="StartScreen" parent="." instance=ExtResource("1_lnu2h")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_lbhrr")]
+
+[node name="WorkScene" parent="." instance=ExtResource("3_iywne")]
