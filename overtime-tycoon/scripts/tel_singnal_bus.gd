@@ -1,13 +1,13 @@
 extends Node2D
 
 signal call_started(timer: Timer)
-signal call_stopped(result: float)
+signal call_stopped(result: float, notification_pos: Vector2)
+signal call_notif(value: float, notification_pos: Vector2)
 signal phone_ringing(confirm: bool, object: Node2D)
 signal decrease_sanity(pain: int)
-signal play_added_money(amount_added: int)
 
-var ring_in_X_chance: int = 4
-var ring_cycle: float = 3
+var ring_in_X_chance: int = 1
+var ring_cycle: float = 10
 var call_time_range = Vector2i(5, 8)
 
 const call_reward = 5
@@ -35,7 +35,7 @@ func calling(time:Timer):
 # call finished
 func call_stop(): 
 	call_stopped.emit(5) # add money
-	play_added_money.emit(5)
+	call_notif.emit(5, $spawn_pos.global_position)
 	GM.calls_done_per_scene += 1
 
 func ringing(confirm):

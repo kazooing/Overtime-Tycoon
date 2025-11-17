@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=10 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bf4ckjuh87st7" path="res://scripts/call_timer.gd" id="5_eoja1"]
 [ext_resource type="PackedScene" uid="uid://bq6r3vur078ww" path="res://scenes/Telephone.tscn" id="5_io2gt"]
 [ext_resource type="Script" uid="uid://cysj8q05h4did" path="res://scenes/target_bar_script.gd" id="7_7nxki"]
+[ext_resource type="PackedScene" uid="uid://d2bcts6ujb2hd" path="res://scenes/Screen.tscn" id="9_2pybm"]
 
 [node name="WorkScene" type="Node2D"]
 script = ExtResource("1_clgo3")
@@ -76,18 +77,29 @@ script = ExtResource("5_eoja1")
 
 [node name="sanity_reduction" type="Timer" parent="Telephone/call_timer"]
 
+[node name="spawn_pos" type="Node2D" parent="Telephone"]
+position = Vector2(-20, 350)
+
 [node name="work_timer" type="Timer" parent="."]
 wait_time = 30.0
 autostart = true
 
+[node name="Screen" parent="." instance=ExtResource("9_2pybm")]
+position = Vector2(592.00006, 313.00003)
+scale = Vector2(0.388, 0.388)
+
 [connection signal="timeout" from="Canvas/sanityBarUI/Timer" to="Canvas/sanityBarUI" method="_on_timer_timeout"]
+[connection signal="call_notif" from="Telephone" to="." method="play_added_money"]
 [connection signal="call_started" from="Telephone" to="Telephone/call_timer" method="_on_telephone_call_started"]
 [connection signal="call_stopped" from="Telephone" to="Canvas/moneyCounterUI" method="addMoney"]
 [connection signal="decrease_sanity" from="Telephone" to="Canvas/sanityBarUI" method="decreaseSanity"]
 [connection signal="phone_ringing" from="Telephone" to="Canvas/sanityBarUI" method="new_affecting"]
-[connection signal="play_added_money" from="Telephone" to="." method="_on_telephone_play_added_money"]
 [connection signal="timeout" from="Telephone/reduce_when_ring" to="Telephone" method="_on_reduce_when_ring_timeout"]
 [connection signal="on_call" from="Telephone/call_timer" to="Canvas/sanityBarUI" method="new_affecting"]
 [connection signal="reduce_sanity" from="Telephone/call_timer" to="Canvas/sanityBarUI" method="decreaseSanity"]
 [connection signal="timeout" from="Telephone/call_timer/sanity_reduction" to="Telephone/call_timer" method="_on_sanity_reduction_timeout"]
 [connection signal="timeout" from="work_timer" to="." method="_on_work_timer_timeout"]
+[connection signal="decrease_sanity" from="Screen" to="Canvas/sanityBarUI" method="decreaseSanity"]
+[connection signal="gain_money" from="Screen" to="Canvas/moneyCounterUI" method="addMoney"]
+[connection signal="money_notification" from="Screen" to="." method="play_added_money"]
+[connection signal="new_decreaser" from="Screen" to="Canvas/sanityBarUI" method="new_affecting"]

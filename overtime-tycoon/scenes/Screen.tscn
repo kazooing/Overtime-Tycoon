@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2bcts6ujb2hd"]
+[gd_scene load_steps=13 format=3 uid="uid://d2bcts6ujb2hd"]
 
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="1_sad84"]
+[ext_resource type="Texture2D" uid="uid://d02x3a6sqxfb7" path="res://sprites/PC asset.PNG" id="1_t46dj"]
 [ext_resource type="Script" uid="uid://c1day0nvtpuyr" path="res://scenes/screen_bus.gd" id="2_8m26t"]
 [ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites/happy madeline celeste.jpg" id="2_d04j7"]
 [ext_resource type="Script" uid="uid://mjsl577fsu1s" path="res://scripts/spreadsheet_opener.gd" id="3_ckgjc"]
 [ext_resource type="Script" uid="uid://b15ugu1xyqd6s" path="res://scripts/spreadsheet.gd" id="4_ckgjc"]
+[ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites/SanityBarUnder.png" id="6_k16cd"]
+[ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites/sanityBar.png" id="7_t46dj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_phdvl"]
 animations = [{
@@ -30,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.33333334),
 "transitions": PackedFloat32Array(0.26794332, 2.1435473),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(293, 286.456)]
+"values": [Vector2(0, 0), Vector2(410.127, 140.835)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -39,10 +42,10 @@ tracks/1/path = NodePath("Spreadsheet:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0.1, 0.4),
 "transitions": PackedFloat32Array(1.9999992, 22.627401),
 "update": 0,
-"values": [Vector2(0.013, 0.01), Vector2(1.194, 0.97)]
+"values": [Vector2(0.26, 0.2), Vector2(1.2, 0.975)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -55,6 +58,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(0.1015316, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spreadsheet/Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Spreadsheet/TextureProgressBar:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_d04j7"]
@@ -95,6 +122,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("Spreadsheet/Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("Spreadsheet/TextureProgressBar:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_phdvl"]
 _data = {
@@ -103,22 +154,24 @@ _data = {
 }
 
 [node name="Screen" type="Sprite2D"]
-self_modulate = Color(0, 0, 0, 1)
-scale = Vector2(2.9256873, 2.9492817)
-texture = ExtResource("1_sad84")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_t46dj")
 script = ExtResource("2_8m26t")
 
 [node name="Spreadsheet opener" type="Sprite2D" parent="."]
-position = Vector2(-50.14516, -50.14516)
-scale = Vector2(0.21648185, 0.21648185)
+position = Vector2(-470.116, -330.817)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_sad84")
 script = ExtResource("3_ckgjc")
 
 [node name="Button" type="Button" parent="Spreadsheet opener"]
-offset_left = -65.92688
-offset_top = -64.0
-offset_right = 65.79355
-offset_bottom = 70.399994
+anchors_preset = -1
+offset_left = -63.57489
+offset_top = -63.74434
+offset_right = 22.103027
+offset_bottom = 17.330002
+scale = Vector2(1.5, 1.5)
+metadata/_edit_use_anchors_ = true
 
 [node name="Spreadsheet" type="AnimatedSprite2D" parent="Spreadsheet opener"]
 self_modulate = Color(1, 1, 1, 0)
@@ -127,18 +180,43 @@ sprite_frames = SubResource("SpriteFrames_phdvl")
 script = ExtResource("4_ckgjc")
 
 [node name="Button" type="Button" parent="Spreadsheet opener/Spreadsheet"]
-offset_left = -185.07773
-offset_top = -183.03174
-offset_right = 189.28409
-offset_bottom = 184.74231
+anchors_preset = -1
+anchor_left = 0.011413574
+anchor_right = 0.03699538
+offset_left = -195.24954
+offset_top = -187.94806
+offset_right = 47.599182
+offset_bottom = 64.33121
+scale = Vector2(1.5, 1.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Spreadsheet opener/Spreadsheet"]
+anchors_preset = -1
+anchor_left = -0.0127419615
+anchor_right = -0.0127419615
+offset_left = -184.39066
+offset_top = 192.1484
+offset_right = 66.417946
+offset_bottom = 217.98352
+scale = Vector2(1.5, 1.5)
+nine_patch_stretch = true
+texture_under = ExtResource("6_k16cd")
+texture_progress = ExtResource("7_t46dj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Penalty_timer" type="Timer" parent="Spreadsheet opener/Spreadsheet"]
+wait_time = 1.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spreadsheet opener"]
 libraries = {
 &"": SubResource("AnimationLibrary_phdvl")
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [connection signal="closing_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_closing_sheet"]
 [connection signal="opening_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_opening_sheet"]
 [connection signal="button_down" from="Spreadsheet opener/Button" to="Spreadsheet opener" method="_on_button_button_down"]
+[connection signal="decrease" from="Spreadsheet opener/Spreadsheet" to="." method="call_decrease_sanity"]
+[connection signal="finished" from="Spreadsheet opener/Spreadsheet" to="." method="call_gain_money"]
+[connection signal="on_penalty" from="Spreadsheet opener/Spreadsheet" to="." method="call_new_decreaser"]
+[connection signal="button_down" from="Spreadsheet opener/Spreadsheet/Button" to="Spreadsheet opener/Spreadsheet" method="_on_button_button_down"]
+[connection signal="timeout" from="Spreadsheet opener/Spreadsheet/Penalty_timer" to="Spreadsheet opener/Spreadsheet" method="_on_penalty_timer_timeout"]
