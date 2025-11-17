@@ -17,10 +17,10 @@ func _on_spreadsheet_opener_opening_sheet() -> void:
 
 
 func _on_button_button_down() -> void:
-	spreadsheet_completion += 10
+	spreadsheet_completion += 5
 	if spreadsheet_completion >= 100:
 		spreadsheet_completion = 0
-		finished.emit(10, global_position)
+		finished.emit(7, global_position)
 	progress.value = spreadsheet_completion
 	penalty()
 

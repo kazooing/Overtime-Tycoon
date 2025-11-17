@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=19 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -12,9 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://bq6r3vur078ww" path="res://scenes/Telephone.tscn" id="5_io2gt"]
 [ext_resource type="Texture2D" uid="uid://32fbke6ky7ip" path="res://sprites/work_scene/corkboard notes asset.png" id="5_ni28n"]
 [ext_resource type="Script" uid="uid://cysj8q05h4did" path="res://scripts/target_bar_script.gd" id="7_7nxki"]
+[ext_resource type="Texture2D" uid="uid://b1r6erwnhpmqa" path="res://sprites/work_scene/sanity bar/bottom.png" id="8_cphpt"]
 [ext_resource type="PackedScene" uid="uid://d2bcts6ujb2hd" path="res://scenes/Screen.tscn" id="9_2pybm"]
+[ext_resource type="Texture2D" uid="uid://bcej5pylfuo8" path="res://sprites/work_scene/sanity bar/top.png" id="9_rmouj"]
+[ext_resource type="Texture2D" uid="uid://b1b2q1nhc2kyl" path="res://sprites/work_scene/sanity bar/mid.png" id="10_mff8n"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="12_8xdsi"]
-[ext_resource type="PackedScene" path="res://scenes/pause_menu_in_game.tscn" id="15_y3pug"]
+[ext_resource type="PackedScene" uid="uid://b4llg3rjxideq" path="res://scenes/pause_menu_in_game.tscn" id="15_y3pug"]
 
 [node name="WorkScene" type="Node2D"]
 script = ExtResource("1_clgo3")
@@ -60,15 +63,16 @@ text = ": $0"
 script = ExtResource("1_eoja1")
 
 [node name="sanityBarUI" type="TextureProgressBar" parent="Canvas"]
-offset_left = 37.0
-offset_top = 657.0
-offset_right = 1739.0
-offset_bottom = 780.0
-rotation = -1.5707964
-scale = Vector2(0.28, 0.28)
+offset_left = 36.0
+offset_top = 178.0
+offset_right = 305.0
+offset_bottom = 1178.0
+scale = Vector2(0.4, 0.4)
 value = 100.0
-texture_under = ExtResource("1_jqjy7")
-texture_progress = ExtResource("2_i6sgx")
+fill_mode = 3
+texture_under = ExtResource("8_cphpt")
+texture_over = ExtResource("9_rmouj")
+texture_progress = ExtResource("10_mff8n")
 script = ExtResource("3_eoja1")
 
 [node name="Timer" type="Timer" parent="Canvas/sanityBarUI"]
@@ -145,6 +149,8 @@ autostart = true
 layer = 2
 
 [node name="PauseMenuInGame" parent="PauseLayer" instance=ExtResource("15_y3pug")]
+offset_left = 924.0
+offset_bottom = -289.0
 
 [connection signal="decrease_sanity" from="PcStuff/Screen" to="Canvas/sanityBarUI" method="decreaseSanity"]
 [connection signal="gain_money" from="PcStuff/Screen" to="Canvas/moneyCounterUI" method="addMoney"]

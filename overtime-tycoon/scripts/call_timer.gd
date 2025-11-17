@@ -31,4 +31,4 @@ func call_finished() -> void:
 	on_call.emit(false, self)
 
 func _on_sanity_reduction_timeout() -> void:
-	reduce_sanity.emit(5)
+	reduce_sanity.emit(3)
