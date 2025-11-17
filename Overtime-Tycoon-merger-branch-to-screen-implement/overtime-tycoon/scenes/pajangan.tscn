@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://us1b21bawma5"]
+
+[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="2_as56c"]
+
+[sub_resource type="GDScript" id="GDScript_nhmx5"]
+script/source = "extends Node2D
+
+func _on_texture_button_pressed() -> void:
+	GM.pajangan[0][\"owned\"] = true
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_nhmx5")
+
+[node name="Name" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -95.0
+offset_right = 19.0
+offset_bottom = -72.0
+text = "#001"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_as56c")
+
+[node name="buy_buitton" type="Button" parent="."]
+offset_left = -40.0
+offset_top = 74.0
+offset_right = 41.0
+offset_bottom = 105.0
+text = "BUY"
+metadata/_edit_use_anchors_ = true

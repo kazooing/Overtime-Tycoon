@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu2n5sxech1cd"]
+
+[ext_resource type="Script" uid="uid://ccw74yakvva7u" path="res://scripts/data_day_recap.gd" id="1_nodxj"]
+[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="2_4y1ax"]
+[ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites/SanityBarUnder.png" id="3_6iauo"]
+[ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites/sanityBar.png" id="4_7hibx"]
+[ext_resource type="Script" uid="uid://d2u2p5w35yfk2" path="res://scripts/weekly_target_bar_script.gd" id="5_ab611"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_nodxj")
+
+[node name="Main" type="Node2D" parent="CanvasLayer"]
+position = Vector2(300, 227)
+
+[node name="label_money_gained" type="Label" parent="CanvasLayer/Main"]
+offset_right = 188.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 25
+text = "Money Gained: "
+
+[node name="label_total_money" type="Label" parent="CanvasLayer/Main"]
+offset_top = 45.0
+offset_right = 163.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Total Money: "
+
+[node name="Task" type="Node2D" parent="CanvasLayer"]
+position = Vector2(300, 418)
+
+[node name="label_task_done" type="Label" parent="CanvasLayer/Task"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "Tasks Done:"
+
+[node name="label_calls_done" type="Label" parent="CanvasLayer/Task"]
+offset_top = 42.0
+offset_right = 133.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 25
+text = "Calls Done: "
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1104.0
+offset_top = 543.0
+offset_right = 1232.0
+offset_bottom = 671.0
+texture_normal = ExtResource("2_4y1ax")
+
+[node name="weekly_target_bar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 115.0
+offset_top = 574.0
+offset_right = 1817.0
+offset_bottom = 697.0
+scale = Vector2(0.5, 0.5)
+step = 0.1
+texture_under = ExtResource("3_6iauo")
+texture_progress = ExtResource("4_7hibx")
+script = ExtResource("5_ab611")
+
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer" method="_on_texture_button_pressed"]
