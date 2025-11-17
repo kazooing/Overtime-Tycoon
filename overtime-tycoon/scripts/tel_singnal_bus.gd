@@ -4,7 +4,7 @@ signal call_started(timer: Timer)
 signal call_stopped(result: float)
 signal phone_ringing(confirm: bool, object: Node2D)
 signal decrease_sanity(pain: int)
-signal play_added_money(amount_added: int)
+signal call_notif(value: float, notif_pos : Vector2)
 
 var ring_in_X_chance: int = 4
 var ring_cycle: float = 3
@@ -35,7 +35,7 @@ func calling(time:Timer):
 # call finished
 func call_stop(): 
 	call_stopped.emit(5) # add money
-	play_added_money.emit(5)
+	call_notif.emit(5, $spawn_pos.global_position)
 	GM.calls_done_per_scene += 1
 
 func ringing(confirm):

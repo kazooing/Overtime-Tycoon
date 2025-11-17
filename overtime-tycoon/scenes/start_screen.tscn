@@ -1,3 +1,57 @@
-[gd_scene format=3 uid="uid://rval02q1w73n"]
+[gd_scene load_steps=3 format=3 uid="uid://rval02q1w73n"]
 
-[node name="Start_Screen" type="Node2D"]
+[ext_resource type="Script" uid="uid://b77yyc6ibit6m" path="res://scripts/start_screen.gd" id="1_tx5wa"]
+[ext_resource type="Texture2D" uid="uid://c4iyjy80etms5" path="res://sprites/start_screen_sprite.png" id="2_o7i0r"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tx5wa")
+
+[node name="Background" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="white" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(1, 1, 1, 0.99607843)
+
+[node name="sprite" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_o7i0r")
+expand_mode = 1
+
+[node name="MainMenuBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 381.0
+offset_right = 892.0
+offset_bottom = 666.0
+
+[node name="NewGame" type="Button" parent="MainMenuBox"]
+process_mode = 3
+layout_mode = 2
+text = "New Game"
+
+[node name="Continue" type="Button" parent="MainMenuBox"]
+process_mode = 3
+layout_mode = 2
+text = "Continue"
+
+[node name="Quit" type="Button" parent="MainMenuBox"]
+process_mode = 3
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MainMenuBox/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainMenuBox/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MainMenuBox/Quit" to="." method="_on_quit_pressed"]
