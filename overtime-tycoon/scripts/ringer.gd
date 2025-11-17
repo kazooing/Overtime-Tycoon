@@ -2,7 +2,7 @@ extends Node2D
 
 signal is_ringing(confirm:bool)
 
-@onready var b_cancel = $Button
+@onready var b_cancel = get_node("Area2D/Button")
 @onready var sprite = get_node("Area2D/Telephone Sprite")
 @onready var timer = $ring_timer
 @onready var rng = RandomNumberGenerator.new()

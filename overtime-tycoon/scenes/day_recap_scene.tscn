@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu2n5sxech1cd"]
+[gd_scene load_steps=4 format=3 uid="uid://bu2n5sxech1cd"]
 
 [ext_resource type="Script" uid="uid://ccw74yakvva7u" path="res://scripts/data_day_recap.gd" id="1_nodxj"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="2_4y1ax"]
+
+[sub_resource type="GDScript" id="GDScript_4y1ax"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nodxj")
@@ -46,10 +60,14 @@ theme_override_font_sizes/font_size = 25
 text = "Calls Done: "
 
 [node name="TextureButton" type="TextureButton" parent="."]
+process_mode = 3
 offset_left = 1104.0
 offset_top = 543.0
 offset_right = 1232.0
 offset_bottom = 671.0
 texture_normal = ExtResource("2_4y1ax")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = SubResource("GDScript_4y1ax")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

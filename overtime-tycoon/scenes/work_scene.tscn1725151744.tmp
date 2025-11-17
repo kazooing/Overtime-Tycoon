@@ -1,15 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=10 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
 [ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites/SanityBarUnder.png" id="1_jqjy7"]
+[ext_resource type="PackedScene" uid="uid://rval02q1w73n" path="res://scenes/start_screen.tscn" id="2_2pybm"]
 [ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites/sanityBar.png" id="2_i6sgx"]
 [ext_resource type="Script" uid="uid://blsgcxvh2pl53" path="res://scripts/sanityBar.gd" id="3_eoja1"]
+[ext_resource type="PackedScene" uid="uid://dnidjpyk50sii" path="res://scenes/pause_menu.tscn" id="3_ytnmq"]
 [ext_resource type="Script" uid="uid://bf4ckjuh87st7" path="res://scripts/call_timer.gd" id="5_eoja1"]
 [ext_resource type="PackedScene" uid="uid://bq6r3vur078ww" path="res://scenes/Telephone.tscn" id="5_io2gt"]
 
 [node name="WorkScene" type="Node2D"]
 script = ExtResource("1_clgo3")
+
+[node name="StartScreen" parent="." instance=ExtResource("2_2pybm")]
+visible = false
+
+[node name="GameMenu" parent="." instance=ExtResource("3_ytnmq")]
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 
@@ -37,7 +44,6 @@ script = ExtResource("3_eoja1")
 [node name="Timer" type="Timer" parent="Canvas/sanityBarUI"]
 
 [node name="call_timer" type="TextureProgressBar" parent="Canvas"]
-visible = false
 offset_left = 150.0
 offset_top = 367.0
 offset_right = 1035.0
