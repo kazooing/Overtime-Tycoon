@@ -80,7 +80,7 @@ offset_bottom = 83.0
 text = "CANCEL"
 
 [node name="ring_timer" type="Timer" parent="Area2D/Telephone"]
-wait_time = 1.505
+wait_time = 2.0
 
 [node name="pickup_marker" type="Sprite2D" parent="Area2D"]
 self_modulate = Color(1, 1, 1, 0.17254902)

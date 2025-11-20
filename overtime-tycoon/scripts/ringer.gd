@@ -11,6 +11,8 @@ var in_X:int
 
 var active = true
 var ringing = false
+var failed_rings = 0
+var fail_limit = 4
 
 func _ready() -> void:
 	var pickup = get_parent()
@@ -27,15 +29,17 @@ func _process(_delta):
 			timer.start()
 	if ringing:
 		sprite.play("Ringing")
-		sprite.rotation = deg_to_rad(90)
 	else:
 		sprite.play("Static")
 
 func _on_timer_timeout() -> void:
 	print("timer called")
-	if rng.randi_range(0,in_X) == 0:
+	if rng.randi_range(0,in_X) == 0 or failed_rings > fail_limit:
 		ringing = true
 		is_ringing.emit(true)
+		failed_rings = 0
+	else:
+		failed_rings += 1
 	timer.stop()
 
 

@@ -10,6 +10,7 @@ signal enable_telephone()
 
 var ring_in_X_chance: int = 1
 var ring_cycle: float = 3
+var fail_limit: int = 4
 var call_time_range = Vector2i(5, 8)
 
 const call_reward = 5
@@ -22,12 +23,14 @@ func _ready() -> void:
 	var tele1 = get_node("Area2D/Telephone")
 	tele1.is_ringing.connect(ringing)
 	
+	
 	#this is my attempt to fix the spagghetto
 	#this thing changes the variables that need a lot of tweaking
 	pickup.time_range = call_time_range
 	
 	tele1.in_X = ring_in_X_chance - 1
 	tele1.get_node("ring_timer").wait_time = ring_cycle
+	tele1.fail_limit = fail_limit
 	
 	
 
