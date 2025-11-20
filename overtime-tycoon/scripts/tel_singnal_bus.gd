@@ -5,8 +5,10 @@ signal call_stopped(result: float)
 signal phone_ringing(confirm: bool, object: Node2D)
 signal decrease_sanity(pain: int)
 signal call_notif(value: float, notif_pos : Vector2)
+signal disable_telephone()
+signal enable_telephone()
 
-var ring_in_X_chance: int = 4
+var ring_in_X_chance: int = 1
 var ring_cycle: float = 3
 var call_time_range = Vector2i(5, 8)
 
@@ -47,3 +49,9 @@ func ringing(confirm):
 
 func _on_reduce_when_ring_timeout() -> void:
 	decrease_sanity.emit(2)
+
+func disable() -> void:
+	disable_telephone.emit()
+
+func enable() -> void:
+	enable_telephone.emit()

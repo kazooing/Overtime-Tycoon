@@ -1,7 +1,9 @@
 extends Node2D
 
 var money_added_animation := preload("res://scenes/money_added.tscn")
-
+var day_ended = false
+var all_tasks_ended = false
+var changing = false
 
 func _ready() -> void:
 	GM.calls_done_per_scene = 0
@@ -37,7 +39,8 @@ func _ready() -> void:
 		get_node("/root/Game/WorkScene").visible = false
 		get_node("/root/Game/WorkScene/ProgressLayer").visible = false
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false
-		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Pause").visible = false	
+		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Pause").visible = false
+	
 
 func play_added_money(amount_added: float, spawn_pos: Vector2) -> void:
 	spawn_add_money(spawn_pos, amount_added) 
@@ -52,4 +55,17 @@ func spawn_add_money(pos: Vector2 , added):
 
 
 func _on_work_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
+	await get_tree().create_timer(0.5).timeout
+	print("test")
+	if all_tasks_ended and get_tree() != null:
+		get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
+	day_ended = true
+	print("day_ended")
+
+func confirm_tasks_ended(confirm : bool) -> void:
+	all_tasks_ended = confirm
+	await get_tree().create_timer(0.5).timeout
+	print("test2")
+	if all_tasks_ended and day_ended and get_tree() != null:
+		get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
+	print("all tasks finished", confirm)

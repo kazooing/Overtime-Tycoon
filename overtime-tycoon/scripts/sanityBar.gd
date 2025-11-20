@@ -2,8 +2,11 @@ extends TextureProgressBar
 
 const recovery = 3
 
+signal is_not_draining(confirm: bool)
+
 @onready var timer = $Timer
 var affecting_list: Array[Node]
+
 
 func _ready() -> void:
 	timer.start()
@@ -26,6 +29,7 @@ func new_affecting(confirm: bool, object: Node) -> void:
 	if confirm:
 		if affecting_list.find(object) >= 0 : return
 		affecting_list.append(object)
+		is_not_draining.emit(false)
 		timer.stop()
 		#print("new_decreaser")
 	else:
@@ -36,6 +40,7 @@ func new_affecting(confirm: bool, object: Node) -> void:
 		if affecting_list.is_empty():
 			#print("back to doing normal things")
 			timer.start()
+			is_not_draining.emit(true)
 
 
 func _on_timer_timeout() -> void:

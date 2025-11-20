@@ -51,6 +51,8 @@ func _on_main_menu_pressed() -> void:
 		get_tree().paused = true	
 		GM.loop_count = 2
 		GM.emit_signal("ahhh")
+	
+	
 
 
 	if GM.main_menu_count > 0:

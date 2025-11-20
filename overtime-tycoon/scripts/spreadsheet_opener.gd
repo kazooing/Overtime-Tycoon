@@ -15,3 +15,6 @@ func _on_button_button_down() -> void:
 		is_open = false
 		anim_player.play_backwards("Open and close spreadsheet")
 		closing_sheet.emit()
+
+func disable():
+	$Button.disabled = true

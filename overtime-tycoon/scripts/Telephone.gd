@@ -46,3 +46,9 @@ func on_press():
 
 func on_release():
 	pressed = false
+
+func disable():
+	$Button.disabled = true
+
+func enable():
+	$Button.disabled = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=34 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -17,7 +17,65 @@
 [ext_resource type="Texture2D" uid="uid://bcej5pylfuo8" path="res://sprites/work_scene/sanity bar/top.png" id="9_rmouj"]
 [ext_resource type="Texture2D" uid="uid://b1b2q1nhc2kyl" path="res://sprites/work_scene/sanity bar/mid.png" id="10_mff8n"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="12_8xdsi"]
+[ext_resource type="Texture2D" uid="uid://d3nocq11xdemp" path="res://sprites/clock/9.png" id="15_go4cm"]
 [ext_resource type="PackedScene" uid="uid://b4llg3rjxideq" path="res://scenes/pause_menu_in_game.tscn" id="15_y3pug"]
+[ext_resource type="Texture2D" uid="uid://dowqb75pj6ats" path="res://sprites/clock/10.png" id="16_w2tv4"]
+[ext_resource type="Texture2D" uid="uid://dp7siga4umx6q" path="res://sprites/clock/11.png" id="17_s0bdn"]
+[ext_resource type="Texture2D" uid="uid://xaopfryphl4m" path="res://sprites/clock/12.png" id="18_omevc"]
+[ext_resource type="Texture2D" uid="uid://bk5xsmp3tdc4k" path="res://sprites/clock/1.png" id="19_es821"]
+[ext_resource type="Texture2D" uid="uid://tmfus7qco1yy" path="res://sprites/clock/2.png" id="20_tt0ds"]
+[ext_resource type="Texture2D" uid="uid://bujc5nb8gy6m5" path="res://sprites/clock/3.png" id="21_hfjvd"]
+[ext_resource type="Texture2D" uid="uid://dn0tdtvo856hw" path="res://sprites/clock/4.png" id="22_yjw18"]
+[ext_resource type="Texture2D" uid="uid://cvgvqf11uegc4" path="res://sprites/clock/5.png" id="23_3gmet"]
+[ext_resource type="Texture2D" uid="uid://ddm80yf5qtc53" path="res://sprites/clock/6.png" id="24_f30yx"]
+[ext_resource type="Texture2D" uid="uid://bga1wnuoyufkp" path="res://sprites/clock/7.png" id="25_rq3n8"]
+[ext_resource type="Texture2D" uid="uid://yri1g0l6vx8u" path="res://sprites/clock/8.png" id="26_j1ws0"]
+[ext_resource type="Script" uid="uid://d03mm1vbye1" path="res://scenes/clock.gd" id="27_s0bdn"]
+[ext_resource type="Script" uid="uid://bhxisiridlirf" path="res://scenes/work_timer.gd" id="31_omevc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1u5m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_go4cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_w2tv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_s0bdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_omevc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_es821")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tt0ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hfjvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_yjw18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_3gmet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_f30yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rq3n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_j1ws0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
 
 [node name="WorkScene" type="Node2D"]
 script = ExtResource("1_clgo3")
@@ -63,10 +121,10 @@ text = ": $0"
 script = ExtResource("1_eoja1")
 
 [node name="sanityBarUI" type="TextureProgressBar" parent="ProgressLayer"]
-offset_left = 36.0
-offset_top = 178.0
-offset_right = 305.0
-offset_bottom = 1178.0
+offset_left = 29.0
+offset_top = 255.0
+offset_right = 298.0
+offset_bottom = 1255.0
 scale = Vector2(0.4, 0.4)
 value = 100.0
 fill_mode = 3
@@ -95,6 +153,12 @@ scale = Vector2(0.08, 0.08)
 texture_under = ExtResource("1_jqjy7")
 texture_progress = ExtResource("2_i6sgx")
 script = ExtResource("7_7nxki")
+
+[node name="Clock" type="AnimatedSprite2D" parent="ProgressLayer"]
+position = Vector2(85.00001, 157.00002)
+scale = Vector2(0.15805858, 0.15805858)
+sprite_frames = SubResource("SpriteFrames_g1u5m")
+script = ExtResource("27_s0bdn")
 
 [node name="Pajangan" type="CanvasLayer" parent="."]
 
@@ -142,8 +206,10 @@ script = ExtResource("5_eoja1")
 position = Vector2(-25, 385)
 
 [node name="work_timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 128.0
+one_shot = true
 autostart = true
+script = ExtResource("31_omevc")
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -153,9 +219,11 @@ offset_right = -703.0
 offset_bottom = -600.0
 
 [connection signal="decrease_sanity" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
+[connection signal="disable" from="PcStuff/Screen" to="PcStuff/Screen/Spreadsheet opener" method="disable"]
 [connection signal="gain_money" from="PcStuff/Screen" to="ProgressLayer/moneyCounterUI" method="addMoney"]
 [connection signal="money_notification" from="PcStuff/Screen" to="." method="play_added_money"]
 [connection signal="new_decreaser" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="new_affecting"]
+[connection signal="is_not_draining" from="ProgressLayer/sanityBarUI" to="." method="confirm_tasks_ended"]
 [connection signal="timeout" from="ProgressLayer/sanityBarUI/Timer" to="ProgressLayer/sanityBarUI" method="_on_timer_timeout"]
 [connection signal="call_notif" from="Telephone" to="." method="play_added_money"]
 [connection signal="call_started" from="Telephone" to="Telephone/call_timer" method="_on_telephone_call_started"]
@@ -166,4 +234,7 @@ offset_bottom = -600.0
 [connection signal="on_call" from="Telephone/call_timer" to="ProgressLayer/sanityBarUI" method="new_affecting"]
 [connection signal="reduce_sanity" from="Telephone/call_timer" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
 [connection signal="timeout" from="Telephone/call_timer/sanity_reduction" to="Telephone/call_timer" method="_on_sanity_reduction_timeout"]
+[connection signal="division_passed" from="work_timer" to="ProgressLayer/Clock" method="advance_time"]
 [connection signal="timeout" from="work_timer" to="." method="_on_work_timer_timeout"]
+[connection signal="timeout" from="work_timer" to="PcStuff/Screen" method="call_disable"]
+[connection signal="timeout" from="work_timer" to="Telephone" method="disable"]
