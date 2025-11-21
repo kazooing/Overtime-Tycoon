@@ -16,12 +16,12 @@ func _ready() -> void:
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Pause").visible = false
 		get_tree().paused = true
 	elif (GM.loop_count == 1) and ((GM.main_menu_count%2) == 1):
-		get_node("/root/Game/StartScreen").visible = false
-		get_node("/root/Game/StartScreen/MainMenuBox").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
 		get_tree().paused = false
 	elif (GM.loop_count == 1) and ((GM.main_menu_count%2) == 0):
-		get_node("/root/Game/StartScreen").visible = false
-		get_node("/root/Game/StartScreen/MainMenuBox").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
 		get_tree().paused = false
 	elif GM.loop_count == 2:
 		get_node("MainMenuBox").visible = true
@@ -48,8 +48,8 @@ func _ready() -> void:
 		get_node("MainMenuBox/Continue").visible = true
 		get_tree().paused = true
 	else:
-		get_node("/root/Game/StartScreen").visible = false
-		get_node("/root/Game/StartScreen/MainMenuBox").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
 		get_tree().paused = false
 	GM.main_menu_count += 1
 
@@ -57,9 +57,9 @@ func _ready() -> void:
 
 	
 func pls_work() -> void:
-	get_node("/root/Game/StartScreen").visible = true
-	get_node("/root/Game/StartScreen/Background").visible = true
-	get_node("/root/Game/StartScreen/MainMenuBox").visible = true
+	get_node("/root/Game/CanvasLayer/StartScreen").visible = true
+	get_node("/root/Game/CanvasLayer/StartScreen/Background").visible = true
+	get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = true
 
 		
 func _on_new_game_pressed() -> void:
@@ -76,8 +76,8 @@ func _on_new_game_pressed() -> void:
 		get_node("/root/Game/WorkScene/Pajangan/#002").visible = false
 		GM.pajangan_2 = 0
 		GM.pajangan_exist_2 = 0
-		get_node("/root/Game/StartScreen/Background").visible = false
-		get_node("/root/Game/StartScreen/MainMenuBox").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen/Background").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
 		GM.loop_count = 3
 
@@ -90,21 +90,21 @@ func _on_new_game_pressed() -> void:
 			get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Pause").visible = true
 			get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Quit").visible = true
 			get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Background").visible = false
-			get_node("/root/Game/StartScreen").visible = false
-			get_node("/root/Game/StartScreen/MainMenuBox").visible = false
+			get_node("/root/Game/CanvasLayer/StartScreen").visible = false
+			get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
 			get_tree().paused = false
 			await get_tree().create_timer(0.5).timeout
-			get_node("/root/Game/StartScreen/MainMenuBox/NewGame").visible = true
+			get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox/NewGame").visible = true
 		elif ((GM.main_menu_count%2) == 0) and (GM.game_start_count == 0) :
-			get_node("/root/Game/StartScreen").visible = false
+			get_node("/root/Game/CanvasLayer/StartScreen").visible = false
 			get_tree().change_scene_to_file("res://scenes/game.tscn")
 			GM.emit_signal("reset", 1)
 		elif ((GM.main_menu_count%2) == 1) and (GM.game_start_count == 1):
-			get_node("/root/Game/StartScreen").visible = false
+			get_node("/root/Game/CanvasLayer/StartScreen").visible = false
 			get_tree().change_scene_to_file("res://scenes/game.tscn")
 			GM.emit_signal("reset", 1)
 		elif ((GM.main_menu_count%2) == 0) and (GM.game_start_count == 1):
-			get_node("/root/Game/StartScreen").visible = false
+			get_node("/root/Game/CanvasLayer/StartScreen").visible = false
 			get_tree().change_scene_to_file("res://scenes/game.tscn")
 			GM.emit_signal("reset", 1)
 	GM.game_start_count = 1
@@ -126,7 +126,7 @@ func _on_continue_pressed() -> void:
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Pause").visible = true	
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Quit").visible = true	
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Background").visible = false	
-		get_node("/root/Game/StartScreen").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen").visible = false
 		get_tree().paused = false
 
 	elif GM.loop_count == 2:
@@ -136,21 +136,21 @@ func _on_continue_pressed() -> void:
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Pause").visible = true	
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Quit").visible = true	
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Background").visible = false	
-		get_node("/root/Game/StartScreen").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen").visible = false
 		get_tree().paused = false
 		GM.loop_count = 1
 	
 	elif GM.loop_count == 4:
-		get_node("/root/Game/StartScreen").visible = false
-		get_node("/root/Game/StartScreen/Background").visible = false
-		get_node("/root/Game/StartScreen/MainMenuBox").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen/Background").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
 
 	elif GM.loop_count == 5:
-		get_node("/root/Game/StartScreen").visible = false
-		get_node("/root/Game/StartScreen/Background").visible = false
-		get_node("/root/Game/StartScreen/MainMenuBox").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen/Background").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://scenes/upgrade_shop_scene.tscn")
 
