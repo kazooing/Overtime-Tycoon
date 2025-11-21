@@ -1,4 +1,9 @@
 extends Control
+
+func _on_ready() -> void:
+	get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = true
+
+
 	
 func _on_pause_pressed() -> void:
 	get_node("Pause").visible = false
@@ -21,8 +26,23 @@ func _on_quit_pressed() -> void:
 	get_tree().paused = true
 	GM.game_start_count = 0
 	GM.main_menu_count += 1
+	print(GM.pajangan_0)
+	if GM.pajangan_0 == 1:
+		GM.pajangan_0 = 2
+		print("333")
+		GM.emit_signal("work_quit")
+	if GM.pajangan_1 == 1:
+		GM.pajangan_1 = 2
+		GM.emit_signal("work_quit")
+	if GM.pajangan_2 == 1:
+		GM.pajangan_2 = 2
+		GM.emit_signal("work_quit")
+
 	if GM.loop_count > 0:
 		GM.game_start_count = 1
+		GM.first_loop = 0
+	elif GM.loop_count == 0:
+		GM.first_loop = 1
 	if ((GM.main_menu_count%2) == 1) and (GM.game_start_count == 0):
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Quit").visible = false	
@@ -32,7 +52,8 @@ func _on_quit_pressed() -> void:
 		get_node("/root/Game/StartScreen/MainMenuBox").visible = true
 		get_tree().paused = true
 		GM.pause_resume_count = 0
-		
+		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false
+
 	elif ((GM.main_menu_count%2) == 0) and (GM.game_start_count == 0):
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Quit").visible = false
@@ -42,7 +63,8 @@ func _on_quit_pressed() -> void:
 		get_node("/root/Game/StartScreen/MainMenuBox").visible = true
 		get_tree().paused = true
 		GM.pause_resume_count = 0
-		
+		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false
+
 	elif ((GM.main_menu_count%2) == 1) and (GM.game_start_count == 1):
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Quit").visible = false
@@ -52,6 +74,7 @@ func _on_quit_pressed() -> void:
 		GM.loop_count = 2
 		GM.emit_signal("ahhh")
 		GM.pause_resume_count = 0
+		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false
 
 	elif ((GM.main_menu_count%2) == 0) and (GM.game_start_count == 1):
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false
@@ -62,7 +85,9 @@ func _on_quit_pressed() -> void:
 		GM.loop_count = 2
 		GM.emit_signal("ahhh")
 		GM.pause_resume_count = 0
+		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false
 
 	if GM.main_menu_count > 0:
 		GM.emit_signal("continue_option")
 		GM.pause_resume_count = 0
+		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false

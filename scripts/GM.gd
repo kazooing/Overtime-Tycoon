@@ -47,10 +47,18 @@ var game_start_count = 0
 var pause_resume_count = 0
 var main_menu_count = -1
 var loop_count = 0 
+var first_loop = 0
 var restart = 0
+var pajangan_0 = 0
+var pajangan_1 = 0
+var pajangan_2 = 0
+var pajangan_exist_0 = 0
+var pajangan_exist_1 = 0
+var pajangan_exist_2 = 0
 
 signal reset()
 signal new()
 signal continue_option()
 signal game_loop()
 signal ahhh()
+signal work_quit()

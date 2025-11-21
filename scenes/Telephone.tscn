@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bq6r3vur078ww"]
 
 [ext_resource type="Script" uid="uid://ctkowniyxj2mc" path="res://scripts/tel_singnal_bus.gd" id="1_6cvow"]
-[ext_resource type="Script" path="res://scripts/pickup.gd" id="1_54hca"]
-[ext_resource type="Script" path="res://scripts/Telephone.gd" id="1_iimr7"]
+[ext_resource type="Script" uid="uid://cfbs6hf2wxxbl" path="res://scripts/pickup.gd" id="1_54hca"]
+[ext_resource type="Script" uid="uid://cto2pgyb6c76h" path="res://scripts/Telephone.gd" id="1_iimr7"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="1_u4wsl"]
 [ext_resource type="Script" uid="uid://cuf02qxy1xgin" path="res://scripts/ringer.gd" id="2_wjgco"]
 [ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites/happy madeline celeste.jpg" id="5_ml7rr"]
@@ -80,7 +80,7 @@ offset_bottom = 83.0
 text = "CANCEL"
 
 [node name="ring_timer" type="Timer" parent="Area2D/Telephone"]
-wait_time = 1.505
+wait_time = 2.0
 
 [node name="pickup_marker" type="Sprite2D" parent="Area2D"]
 self_modulate = Color(1, 1, 1, 0.17254902)
@@ -91,6 +91,9 @@ texture = ExtResource("1_u4wsl")
 [node name="Timer" type="Timer" parent="Area2D"]
 wait_time = 10.0
 
+[connection signal="disable_telephone" from="." to="Area2D/Telephone" method="_on_button_button_down"]
+[connection signal="disable_telephone" from="." to="Area2D/Telephone/Area2D" method="disable"]
+[connection signal="enable_telephone" from="." to="Area2D/Telephone/Area2D" method="enable"]
 [connection signal="button_down" from="Area2D/Telephone/Cancel Button" to="Area2D/Telephone" method="_on_button_button_down"]
 [connection signal="timeout" from="Area2D/Telephone/ring_timer" to="Area2D/Telephone" method="_on_timer_timeout"]
 [connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

@@ -3,7 +3,8 @@ extends Control
 func _ready() -> void:
 	if GM.loop_count == 4:
 		get_node("/root/DayRecap/InfoLayer").visible = true
-		
+		get_node("/root/DayRecap/PauseLayer").visible = true
+
 func _on_pause_pressed() -> void:
 	get_node("Pause").visible = false
 	await get_tree().create_timer(0.1).timeout
@@ -21,11 +22,24 @@ func _on_pause_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_node("Quit").visible = false
 	await get_tree().create_timer(0.1).timeout
+	get_node("/root/DayRecap/PauseLayer").visible = false
 	get_tree().paused = true
 	GM.game_start_count = 0
 	GM.main_menu_count += 1
+	
+	if GM.pajangan_0 == 1:
+		GM.pajangan_0 = 2
+		print("555")
+	if GM.pajangan_1 == 1:
+		GM.pajangan_1 = 2
+	if GM.pajangan_2 == 1:
+		GM.pajangan_2 = 2
+		
 	if GM.loop_count > 0:
 		GM.game_start_count = 1
+		GM.first_loop = 0
+	elif GM.loop_count == 0:
+		GM.first_loop = 1
 	if ((GM.main_menu_count%2) == 1) and (GM.game_start_count == 0):
 		get_node("/root/DayRecap/InfoLayer").visible = false
 		get_tree().paused = true	 

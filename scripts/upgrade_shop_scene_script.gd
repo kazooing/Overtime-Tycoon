@@ -8,6 +8,7 @@ func _on_texture_button_pressed() -> void:
 	get_node("/root/UpgradeShop/PauseLayer").visible = false
 	GM.loop_count = 1
 	GM.day_count += 1
+	GM.first_loop = 0
 	print("This is day count ", + GM.day_count)
 	if (GM.day_count%7) == 0:
 		GM.week_count += 1

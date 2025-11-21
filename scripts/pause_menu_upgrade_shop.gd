@@ -5,9 +5,7 @@ func _ready() -> void:
 		get_node("/root/UpgradeShop/UILayer").visible = true
 	if GM.pause_resume_count == 2:
 		get_node("/root/UpgradeShop/PauseLayer/PauseMenuUpgradeShop").visible = true
-		print("222")
 	GM.pause_resume_count = 0
-	print(get_tree())
 	
 func _on_pause_pressed() -> void:
 	get_node("Pause").visible = false
@@ -26,11 +24,24 @@ func _on_pause_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_node("Quit").visible = false
 	await get_tree().create_timer(0.1).timeout
+	get_node("/root/UpgradeShop/PauseLayer/PauseMenuUpgradeShop").visible = true
 	get_tree().paused = true
 	GM.game_start_count = 0
 	GM.main_menu_count += 1
+	
+	if GM.pajangan_0 == 1:
+		GM.pajangan_0 = 2
+		print("666")
+	if GM.pajangan_1 == 1:
+		GM.pajangan_1 = 2
+	if GM.pajangan_2 == 1:
+		GM.pajangan_2 = 2
+		
 	if GM.loop_count > 0:
 		GM.game_start_count = 1
+		GM.first_loop = 0
+	elif GM.loop_count == 0:
+		GM.first_loop = 1
 	if ((GM.main_menu_count%2) == 1) and (GM.game_start_count == 0):
 		get_node("/root/UpgradeShop/UILayer").visible = false
 		get_tree().paused = true	 
@@ -62,3 +73,7 @@ func _on_quit_pressed() -> void:
 	if GM.main_menu_count > 0:
 		GM.emit_signal("continue_option")
 		GM.pause_resume_count = 0
+		
+		
+
+		

@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://rval02q1w73n"]
+[gd_scene load_steps=18 format=3 uid="uid://rval02q1w73n"]
 
-[ext_resource type="Script" uid="uid://b77yyc6ibit6m" path="res://scripts/start_screen.gd" id="1_tx5wa"]
-[ext_resource type="Texture2D" uid="uid://dl7si87wprmmh" path="res://sprites/start_screen/9.png" id="2_2banv"]
+[ext_resource type="Script" uid="uid://bwijatx2m08tx" path="res://scripts/start_screen.gd" id="1_tx5wa"]
+[ext_resource type="Texture2D" uid="uid://d3nocq11xdemp" path="res://sprites/clock/9.png" id="2_2banv"]
 [ext_resource type="Texture2D" uid="uid://c4iyjy80etms5" path="res://sprites/start_screen/start_screen_sprite.png" id="2_o7i0r"]
 [ext_resource type="Texture2D" uid="uid://bc2erf2wu42dl" path="res://sprites/money 11 x 17 px.PNG" id="3_lt4el"]
 [ext_resource type="Texture2D" uid="uid://q3kmyyh88l0c" path="res://sprites/work_scene/table and corkboard asset.png" id="4_phykr"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://duyiac8lvhitu" path="res://sprites/work_scene/mouse and keyboard asset.png" id="8_a4px2"]
 [ext_resource type="Texture2D" uid="uid://32fbke6ky7ip" path="res://sprites/work_scene/corkboard notes asset.png" id="9_37qom"]
 [ext_resource type="PackedScene" uid="uid://d2bcts6ujb2hd" path="res://scenes/Screen.tscn" id="10_a7uje"]
-[ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="12_2banv"]
 [ext_resource type="Texture2D" uid="uid://c7bc0pxbkqpn7" path="res://sprites/start_screen/start button/idle.png" id="12_8c457"]
 [ext_resource type="Texture2D" uid="uid://bi8jql20c688q" path="res://sprites/start_screen/start button/when click.png" id="12_q3i3u"]
 [ext_resource type="Texture2D" uid="uid://dic50dxdkcpoj" path="res://sprites/start_screen/resumepause button/idle.PNG" id="13_3opy0"]
@@ -33,30 +32,26 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="clock" type="TextureRect" parent="Background"]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 78.0
-offset_right = 192.0
-offset_bottom = 243.0
+[node name="Clock" type="Sprite2D" parent="Background"]
+position = Vector2(106, 156.99998)
+scale = Vector2(0.158, 0.158)
 texture = ExtResource("2_2banv")
-expand_mode = 1
-
-[node name="moneyIcon" type="Sprite2D" parent="Background"]
-position = Vector2(54, 41)
-scale = Vector2(0.065, 0.065)
-texture = ExtResource("3_lt4el")
 
 [node name="tableandcork" type="Sprite2D" parent="Background"]
 position = Vector2(642, 475.00003)
 scale = Vector2(0.865, 0.865)
 texture = ExtResource("4_phykr")
 
+[node name="moneyIcon" type="Sprite2D" parent="Background"]
+position = Vector2(54, 41)
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("3_lt4el")
+
 [node name="sanityBarUI" type="TextureProgressBar" parent="Background"]
 layout_mode = 0
-offset_left = 67.00001
+offset_left = 68.0
 offset_top = 262.00003
-offset_right = 336.0
+offset_right = 337.0
 offset_bottom = 1262.0
 scale = Vector2(0.31, 0.31)
 value = 100.0
@@ -65,20 +60,20 @@ texture_under = ExtResource("5_q3i3u")
 texture_over = ExtResource("6_2banv")
 texture_progress = ExtResource("7_ytx0m")
 
+[node name="Screen" parent="Background" instance=ExtResource("10_a7uje")]
+position = Vector2(473.99997, 372.00003)
+scale = Vector2(0.39733332, 0.34799993)
+script = null
+
 [node name="mousekeyboard" type="Sprite2D" parent="Background"]
-position = Vector2(468.5, 588.00006)
-scale = Vector2(0.29133335, 0.24)
+position = Vector2(468.5, 588)
+scale = Vector2(0.29133338, 0.24)
 texture = ExtResource("8_a4px2")
 
 [node name="notes" type="Sprite2D" parent="Background"]
 position = Vector2(872.99994, 318)
 scale = Vector2(0.195, 0.195)
 texture = ExtResource("9_37qom")
-
-[node name="Screen" parent="Background" instance=ExtResource("10_a7uje")]
-position = Vector2(472.99997, 371.00003)
-scale = Vector2(0.4026667, 0.346)
-script = null
 
 [node name="white" type="ColorRect" parent="Background"]
 layout_mode = 0
@@ -103,7 +98,6 @@ offset_right = 315.0
 offset_bottom = 60.0
 theme_override_font_sizes/font_size = 22
 text = ": $0"
-script = ExtResource("12_2banv")
 
 [node name="MainMenuBox" type="Control" parent="."]
 anchors_preset = 0
