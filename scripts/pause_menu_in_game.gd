@@ -26,17 +26,7 @@ func _on_quit_pressed() -> void:
 	get_tree().paused = true
 	GM.game_start_count = 0
 	GM.main_menu_count += 1
-	print(GM.pajangan_0)
-	if GM.pajangan_0 == 1:
-		GM.pajangan_0 = 2
-		print("333")
-		GM.emit_signal("work_quit")
-	if GM.pajangan_1 == 1:
-		GM.pajangan_1 = 2
-		GM.emit_signal("work_quit")
-	if GM.pajangan_2 == 1:
-		GM.pajangan_2 = 2
-		GM.emit_signal("work_quit")
+
 
 	if GM.loop_count > 0:
 		GM.game_start_count = 1
@@ -48,8 +38,8 @@ func _on_quit_pressed() -> void:
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Quit").visible = false	
 		get_node("/root/Game/WorkScene").visible = false
 		get_node("/root/Game/WorkScene/ProgressLayer").visible = false
-		get_node("/root/Game/StartScreen").visible = true
-		get_node("/root/Game/StartScreen/MainMenuBox").visible = true
+		get_node("/root/Game/CanvasLayer/StartScreen").visible = true
+		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = true
 		get_tree().paused = true
 		GM.pause_resume_count = 0
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false
@@ -59,8 +49,8 @@ func _on_quit_pressed() -> void:
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Quit").visible = false
 		get_node("/root/Game/WorkScene").visible = false
 		get_node("/root/Game/WorkScene/ProgressLayer").visible = false
-		get_node("/root/Game/StartScreen").visible = true
-		get_node("/root/Game/StartScreen/MainMenuBox").visible = true
+		get_node("/root/Game/CanvasLayer/StartScreen").visible = true
+		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = true
 		get_tree().paused = true
 		GM.pause_resume_count = 0
 		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = false

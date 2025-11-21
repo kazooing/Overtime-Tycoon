@@ -68,14 +68,8 @@ func _on_new_game_pressed() -> void:
 	if (GM.loop_count > 0) or (GM.first_loop == 1) :
 		GM.restart = 1
 		get_node("/root/Game/WorkScene/Pajangan/#000").visible = false
-		GM.pajangan_0 = 0
-		GM.pajangan_exist_0 = 0
 		get_node("/root/Game/WorkScene/Pajangan/#001").visible = false
-		GM.pajangan_1 = 0
-		GM.pajangan_exist_1 = 0
 		get_node("/root/Game/WorkScene/Pajangan/#002").visible = false
-		GM.pajangan_2 = 0
-		GM.pajangan_exist_2 = 0
 		get_node("/root/Game/CanvasLayer/StartScreen/Background").visible = false
 		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
@@ -112,12 +106,6 @@ func _on_new_game_pressed() -> void:
 func _on_continue_pressed() -> void:
 	get_node("MainMenuBox/Continue").visible = false
 	await get_tree().create_timer(0.1).timeout
-	if GM.pajangan_0 == 2:
-		GM.pajangan_0 = 1
-	if GM.pajangan_1 == 2:
-		GM.pajangan_1 = 1
-	if GM.pajangan_2 == 2:
-		GM.pajangan_2 = 1
 	GM.emit_signal("work_quit")
 	if GM.loop_count == 0:
 		get_node("/root/Game/WorkScene").visible = true

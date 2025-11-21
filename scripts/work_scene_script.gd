@@ -4,40 +4,21 @@ var money_added_animation := preload("res://scenes/money_added.tscn")
 var day_ended = false
 var all_tasks_ended = false
 var changing = false
+@onready var sanity_bar = get_node("ProgressLayer/sanityBarUI")
 
 func _ready() -> void:
 	GM.calls_done_per_scene = 0
 	GM.money_gained_per_scene = 0
-	GM.connect("work_quit", pajangan)
+	sanity_bar.mult_decrease = 1
+	sanity_bar.mult_increase = 1
 	
 	# check for items are bought
 	for item in GM.pajangan:
 		if item["owned"] == true:
 			get_node("Pajangan/"+item["id"]).visible = true
-	
-	#visibility of pajangan after returning from main menu		
-	if (GM.pajangan_0 == 2) and (GM.pajangan_exist_0 == 1):
-		get_node("Pajangan/#000").visible = false
-		print("9999")
-	elif (GM.pajangan_0 == 1) and (GM.pajangan_exist_0 == 1):
-		get_node("Pajangan/#000").visible = true
-		print("8888")
-	elif (GM.pajangan_0 == 0) and (GM.pajangan_exist_0 == 0):
-		get_node("Pajangan/#000").visible = false
-		print("7777")
-	if (GM.pajangan_1 == 2) and (GM.pajangan_exist_1 == 1):
-		get_node("Pajangan/#001").visible = false
-	elif (GM.pajangan_1 == 1) and (GM.pajangan_exist_1 == 1):
-		get_node("Pajangan/#001").visible = true
-	elif (GM.pajangan_1 == 0) and (GM.pajangan_exist_1 == 0):
-		get_node("Pajangan/#001").visible = false
-	if (GM.pajangan_2 == 2) and (GM.pajangan_exist_2 == 1):
-		get_node("Pajangan/#002").visible = false
-	elif (GM.pajangan_2 == 1) and (GM.pajangan_exist_2 == 1):
-		get_node("Pajangan/#002").visible = true
-	elif (GM.pajangan_2 == 0) and (GM.pajangan_exist_2 == 0):
-		get_node("Pajangan/#002").visible = false
-
+			sanity_bar.mult_increase+=item["recover_bonus"]
+			sanity_bar.mult_decrease-=item["decrease_bonus"]
+			
 	#main menu from pause in various scene
 	if GM.game_start_count > 0:
 		get_node("PauseLayer/PauseMenuInGame").visible = true
@@ -94,27 +75,3 @@ func confirm_tasks_ended(confirm : bool) -> void:
 	if all_tasks_ended and day_ended and get_tree() != null:
 		get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
 	print("all tasks finished", confirm)
-
-func pajangan() -> void:
-	
-	if (GM.pajangan_0 == 2) and (GM.pajangan_exist_0 == 1):
-		get_node("Pajangan/#000").visible = false
-		print("9999")
-	elif (GM.pajangan_0 == 1) and (GM.pajangan_exist_0 == 1):
-		get_node("Pajangan/#000").visible = true
-		print("8888")
-	elif (GM.pajangan_0 == 0) and (GM.pajangan_exist_0 == 0):
-		get_node("Pajangan/#000").visible = false
-		print("7777")
-	if (GM.pajangan_1 == 2) and (GM.pajangan_exist_1 == 1):
-		get_node("Pajangan/#001").visible = false
-	elif (GM.pajangan_1 == 1) and (GM.pajangan_exist_1 == 1):
-		get_node("Pajangan/#001").visible = true
-	elif (GM.pajangan_1 == 0) and (GM.pajangan_exist_1 == 0):
-		get_node("Pajangan/#001").visible = false
-	if (GM.pajangan_2 == 2) and (GM.pajangan_exist_2 == 1):
-		get_node("Pajangan/#002").visible = false
-	elif (GM.pajangan_2 == 1) and (GM.pajangan_exist_2 == 1):
-		get_node("Pajangan/#002").visible = true
-	elif (GM.pajangan_2 == 0) and (GM.pajangan_exist_2 == 0):
-		get_node("Pajangan/#002").visible = false

@@ -16,23 +16,22 @@ var pajangan = [
 		"id": "#000",
 		"price": 10,
 		"owned": false,
-		"posx": 700,
-		"posy": 150
+		"recover_bonus": 0.1,
+		"decrease_bonus": 0.1
 	},
 	{
 		"id": "#001",
 		"price": 30,
 		"owned": false,
-		"posx": 850,
-		"posy": 150
-		
+		"recover_bonus": 0.2,
+		"decrease_bonus": 0.2
 	},
 	{
 		"id": "#002",
 		"price": 50,
 		"owned": false,
-		"posx": 1000,
-		"posy": 150
+		"recover_bonus": 0.5,
+		"decrease_bonus": 0.5
 	}
 ]
 
@@ -49,12 +48,7 @@ var main_menu_count = -1
 var loop_count = 0 
 var first_loop = 0
 var restart = 0
-var pajangan_0 = 0
-var pajangan_1 = 0
-var pajangan_2 = 0
-var pajangan_exist_0 = 0
-var pajangan_exist_1 = 0
-var pajangan_exist_2 = 0
+
 
 signal reset()
 signal new()

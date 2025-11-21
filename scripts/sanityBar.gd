@@ -1,12 +1,13 @@
 extends TextureProgressBar
 
-const recovery = 3
+var recovery = 3
 
 signal is_not_draining(confirm: bool)
 
 @onready var timer = $Timer
 var affecting_list: Array[Node]
-
+var mult_decrease = 1	# sanity decreaser multiplier
+var mult_increase = 1	# sanity recovery multiplier 
 
 func _ready() -> void:
 	timer.start()
@@ -14,6 +15,7 @@ func _ready() -> void:
 		GM.curSanity = 100
 # note: sanity bar decreases downwards (100 top, 0 bottom)
 func decreaseSanity(amount: float):
+	amount *= mult_decrease
 	value -= amount
 	GM.curSanity = value
 	print(GM.curSanity)
@@ -44,5 +46,6 @@ func new_affecting(confirm: bool, object: Node) -> void:
 
 
 func _on_timer_timeout() -> void:
+	recovery *= mult_increase
 	value += recovery
 	GM.curSanity = value

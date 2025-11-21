@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=34 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://bga1wnuoyufkp" path="res://sprites/clock/7.png" id="25_rq3n8"]
 [ext_resource type="Texture2D" uid="uid://yri1g0l6vx8u" path="res://sprites/clock/8.png" id="26_j1ws0"]
 [ext_resource type="Script" uid="uid://d03mm1vbye1" path="res://scripts/clock.gd" id="27_s0bdn"]
-[ext_resource type="Script" uid="uid://cwa3bujatx3jb" path="res://scripts/tel_singnal_bus.gd" id="30_omevc"]
 [ext_resource type="Script" uid="uid://bhxisiridlirf" path="res://scripts/work_timer.gd" id="31_omevc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1u5m"]
@@ -187,7 +186,6 @@ texture = ExtResource("12_8xdsi")
 [node name="Telephone" parent="." instance=ExtResource("5_io2gt")]
 visibility_layer = 2
 position = Vector2(1065, 160)
-script = ExtResource("30_omevc")
 
 [node name="reduce_when_ring" type="Timer" parent="Telephone"]
 
