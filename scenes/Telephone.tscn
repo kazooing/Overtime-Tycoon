@@ -1,11 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://bq6r3vur078ww"]
 
-[ext_resource type="Script" uid="uid://ctkowniyxj2mc" path="res://scripts/tel_singnal_bus.gd" id="1_6cvow"]
+[ext_resource type="Script" uid="uid://cwa3bujatx3jb" path="res://scripts/tel_singnal_bus.gd" id="1_6cvow"]
 [ext_resource type="Script" uid="uid://cfbs6hf2wxxbl" path="res://scripts/pickup.gd" id="1_54hca"]
 [ext_resource type="Script" uid="uid://cto2pgyb6c76h" path="res://scripts/Telephone.gd" id="1_iimr7"]
-[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="1_u4wsl"]
+[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites/icon.svg" id="1_u4wsl"]
 [ext_resource type="Script" uid="uid://cuf02qxy1xgin" path="res://scripts/ringer.gd" id="2_wjgco"]
 [ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites/happy madeline celeste.jpg" id="5_ml7rr"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54hca"]
 size = Vector2(104, 248)

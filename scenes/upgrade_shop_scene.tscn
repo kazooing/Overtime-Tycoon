@@ -1,19 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://eq5dld084jvt"]
+[gd_scene load_steps=10 format=3 uid="uid://eq5dld084jvt"]
 
 [ext_resource type="Script" uid="uid://bpt1gf17heomq" path="res://scripts/upgrade_shop_scene_script.gd" id="1_f837f"]
-[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="2_ku53v"]
-[ext_resource type="Script" uid="uid://cmva4muf21tks" path="res://scripts/shop/000script.gd" id="3_ku53v"]
-[ext_resource type="Script" uid="uid://btptovlpulr52" path="res://scripts/shop/001script.gd" id="4_blqe0"]
-[ext_resource type="Script" uid="uid://wrll7r1ucex8" path="res://scripts/shop/002script.gd" id="5_1ry7c"]
+[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites/icon.svg" id="2_ku53v"]
+[ext_resource type="Script" uid="uid://c5lgy61jkkqvh" path="res://scripts/shop/decor_script.gd" id="5_1ry7c"]
+[ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites/happy madeline celeste.jpg" id="5_tw4x0"]
 [ext_resource type="Texture2D" uid="uid://bc2erf2wu42dl" path="res://sprites/money 11 x 17 px.PNG" id="6_1ry7c"]
+[ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="6_3exvu"]
 [ext_resource type="Script" uid="uid://djr4a7h2oh0ck" path="res://scripts/shop/money_total.gd" id="7_qag1b"]
+[ext_resource type="Script" uid="uid://bfsct3h3ueaca" path="res://scripts/shop/buy_button_script.gd" id="7_tw4x0"]
 [ext_resource type="PackedScene" uid="uid://bapsv72tnc8gy" path="res://scenes/pause_menu_upgrade_shop.tscn" id="8_3exvu"]
 
 [node name="UpgradeShop" type="Node2D"]
 
 [node name="UILayer" type="CanvasLayer" parent="."]
-offset = Vector2(1280, 0)
-transform = Transform2D(1, 0, 0, 1, 1280, 0)
 script = ExtResource("1_f837f")
 
 [node name="TextureButton" type="TextureButton" parent="UILayer"]
@@ -47,79 +46,6 @@ offset_bottom = 431.0
 theme_override_font_sizes/font_size = 30
 text = "Decorations"
 
-[node name="pajangan#000" type="Node2D" parent="UILayer"]
-position = Vector2(150, 550)
-script = ExtResource("3_ku53v")
-
-[node name="Name" type="Label" parent="UILayer/pajangan#000"]
-offset_left = -21.0
-offset_top = -95.0
-offset_right = 19.0
-offset_bottom = -72.0
-text = "#001"
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="UILayer/pajangan#000"]
-modulate = Color(0.8482855, 0, 0.2169796, 1)
-texture = ExtResource("2_ku53v")
-
-[node name="buy_button" type="Button" parent="UILayer/pajangan#000"]
-offset_left = -39.0
-offset_top = 74.0
-offset_right = 42.0
-offset_bottom = 105.0
-text = "BUY $10"
-metadata/_edit_use_anchors_ = true
-
-[node name="pajangan#001" type="Node2D" parent="UILayer"]
-position = Vector2(350, 550)
-script = ExtResource("4_blqe0")
-
-[node name="Name" type="Label" parent="UILayer/pajangan#001"]
-offset_left = -21.0
-offset_top = -95.0
-offset_right = 19.0
-offset_bottom = -72.0
-text = "#002"
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="UILayer/pajangan#001"]
-modulate = Color(0.52450556, 0.5245057, 0, 1)
-position = Vector2(0, -1)
-texture = ExtResource("2_ku53v")
-
-[node name="buy_button" type="Button" parent="UILayer/pajangan#001"]
-offset_left = -40.0
-offset_top = 74.0
-offset_right = 41.0
-offset_bottom = 105.0
-text = "BUY $30"
-metadata/_edit_use_anchors_ = true
-
-[node name="pajangan#002" type="Node2D" parent="UILayer"]
-position = Vector2(550, 550)
-script = ExtResource("5_1ry7c")
-
-[node name="Name" type="Label" parent="UILayer/pajangan#002"]
-offset_left = -21.0
-offset_top = -96.0
-offset_right = 19.0
-offset_bottom = -73.0
-text = "#003"
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="UILayer/pajangan#002"]
-modulate = Color(1.8289685e-06, 0.4992513, 0.19147518, 1)
-texture = ExtResource("2_ku53v")
-
-[node name="buy_button" type="Button" parent="UILayer/pajangan#002"]
-offset_left = -40.0
-offset_top = 74.0
-offset_right = 41.0
-offset_bottom = 105.0
-text = "BUY $50"
-metadata/_edit_use_anchors_ = true
-
 [node name="moneyIcon" type="Sprite2D" parent="UILayer"]
 position = Vector2(1061, 36)
 scale = Vector2(0.065, 0.065)
@@ -134,6 +60,170 @@ theme_override_font_sizes/font_size = 30
 text = ": "
 script = ExtResource("7_qag1b")
 
+[node name="decor" type="GridContainer" parent="UILayer"]
+offset_left = 93.0
+offset_top = 451.0
+offset_right = 1010.0
+offset_bottom = 680.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 40
+columns = 7
+
+[node name="slot000" type="Control" parent="UILayer/decor"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="000" type="TextureButton" parent="UILayer/decor/slot000"]
+modulate = Color(0.7647059, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_tw4x0")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_1ry7c")
+decor_name = "Hatsune Miku Figure"
+decor_description = "MIKU MIKU BEAAAAAAAAAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
+decor_price = 10
+
+[node name="slot001" type="Control" parent="UILayer/decor"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="001" type="TextureButton" parent="UILayer/decor/slot001"]
+modulate = Color(0.502, 0.384, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_tw4x0")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_1ry7c")
+decor_name = "potted plants"
+decor_description = "because nai likes potted plants"
+decor_price = 30
+
+[node name="slot002" type="Control" parent="UILayer/decor"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="002" type="TextureButton" parent="UILayer/decor/slot002"]
+modulate = Color(0, 0.47804397, 0.34223995, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_tw4x0")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_1ry7c")
+decor_name = "Hatsune Miku Figure"
+decor_description = "MIKU MIKU BEAAAAAAAAAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
+decor_price = 50
+
+[node name="back_dimmer" type="ColorRect" parent="UILayer"]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0)
+
+[node name="inspector_panel" type="Panel" parent="UILayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 400.0
+offset_bottom = 720.0
+grow_horizontal = 0
+
+[node name="price" type="Label" parent="UILayer/inspector_panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 355.0
+offset_right = 125.0
+offset_bottom = 396.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_3exvu")
+theme_override_font_sizes/font_size = 30
+text = "$ 500"
+horizontal_alignment = 1
+
+[node name="title" type="Label" parent="UILayer/inspector_panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 28.0
+offset_right = 176.0
+offset_bottom = 126.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_3exvu")
+theme_override_font_sizes/font_size = 50
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="description" type="RichTextLabel" parent="UILayer/inspector_panel"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 416.0
+offset_right = 370.0
+offset_bottom = 622.0
+theme_override_fonts/normal_font = ExtResource("6_3exvu")
+theme_override_font_sizes/normal_font_size = 30
+text = "Description"
+
+[node name="buy_button" type="TextureButton" parent="UILayer/inspector_panel"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51500005
+anchor_top = 0.88600004
+anchor_right = 0.51500005
+anchor_bottom = 0.88600004
+offset_left = -33.000015
+offset_top = -3.920044
+offset_right = 94.999985
+offset_bottom = 124.079956
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_ku53v")
+script = ExtResource("7_tw4x0")
+
+[node name="back_button" type="TextureButton" parent="UILayer/inspector_panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="icon" type="TextureRect" parent="UILayer/inspector_panel"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 140.0
+offset_right = 100.0
+offset_bottom = 340.0
+grow_horizontal = 2
+texture = ExtResource("2_ku53v")
+expand_mode = 2
+stretch_mode = 5
+
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 layer = 2
 
@@ -143,8 +233,10 @@ anchor_right = 0.07890625
 anchor_bottom = 0.41666666
 metadata/_edit_use_anchors_ = true
 
+[connection signal="give_to_buy_button" from="UILayer" to="UILayer/inspector_panel/buy_button" method="_on_ui_layer_give_to_buy_button"]
+[connection signal="tween_dimmer_fade_in" from="UILayer" to="UILayer" method="_on_tween_dimmer_fade_in"]
+[connection signal="tween_dimmer_fade_out" from="UILayer" to="UILayer" method="_on_tween_dimmer_fade_out"]
 [connection signal="pressed" from="UILayer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="UILayer/TextureButton" to="UILayer" method="_on_texture_button_pressed"]
-[connection signal="pressed" from="UILayer/pajangan#000/buy_button" to="UILayer/pajangan#000" method="_on_buy_button_pressed"]
-[connection signal="pressed" from="UILayer/pajangan#001/buy_button" to="UILayer/pajangan#001" method="_on_buy_button_pressed"]
-[connection signal="pressed" from="UILayer/pajangan#002/buy_button" to="UILayer/pajangan#002" method="_on_buy_button_pressed"]
+[connection signal="gui_input" from="UILayer/back_dimmer" to="UILayer" method="_on_back_dimmer_gui_input"]
+[connection signal="pressed" from="UILayer/inspector_panel/buy_button" to="UILayer/inspector_panel/buy_button" method="_on_pressed"]

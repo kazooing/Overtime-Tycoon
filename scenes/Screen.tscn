@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://d2bcts6ujb2hd"]
 
-[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="1_sad84"]
+[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites/icon.svg" id="1_sad84"]
 [ext_resource type="Texture2D" uid="uid://m1kfxj82jcx8" path="res://sprites/work_scene/PC asset.png" id="1_t46dj"]
 [ext_resource type="Script" uid="uid://cl44rjj5aq5lg" path="res://scripts/screen_bus.gd" id="2_8m26t"]
 [ext_resource type="Script" uid="uid://783jnncslmoh" path="res://scripts/spreadsheet_opener.gd" id="3_ckgjc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites/SanityBarUnder.png" id="6_k16cd"]
 [ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites/sanityBar.png" id="7_t46dj"]
 [ext_resource type="Script" uid="uid://e67074ucma8i" path="res://scripts/close_computer.gd" id="9_dx45h"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_phdvl"]
 animations = [{

@@ -2,3 +2,13 @@ res://scenes/game.tscn
 res://scripts/start_screen.gd
 res://scripts/pause_day_recap.gd
 res://scripts/pause_menu_upgrade_shop.gd
+res://scenes/upgrade_shop_scene.tscn
+res://scripts/upgrade_shop_scene_script.gd
+res://scripts/shop/decor_script.gd
+res://scenes/back_dimmer_script.gd
+res://scripts/shop/buy_button_script.gd
+res://scripts/GM.gd
+res://scripts/shop/slot.tscn
+res://scenes/slot_pack.tscn
+res://scenes/work_scene.tscn
+res://scripts/work_scene_script.gd

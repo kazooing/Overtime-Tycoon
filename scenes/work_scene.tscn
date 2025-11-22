@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://d2bcts6ujb2hd" path="res://scenes/Screen.tscn" id="9_2pybm"]
 [ext_resource type="Texture2D" uid="uid://bcej5pylfuo8" path="res://sprites/work_scene/sanity bar/top.png" id="9_rmouj"]
 [ext_resource type="Texture2D" uid="uid://b1b2q1nhc2kyl" path="res://sprites/work_scene/sanity bar/mid.png" id="10_mff8n"]
-[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="12_8xdsi"]
 [ext_resource type="Texture2D" uid="uid://d3nocq11xdemp" path="res://sprites/clock/9.png" id="15_go4cm"]
 [ext_resource type="PackedScene" uid="uid://b4llg3rjxideq" path="res://scenes/pause_menu_in_game.tscn" id="15_y3pug"]
 [ext_resource type="Texture2D" uid="uid://dowqb75pj6ats" path="res://sprites/clock/10.png" id="16_w2tv4"]
@@ -31,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bga1wnuoyufkp" path="res://sprites/clock/7.png" id="25_rq3n8"]
 [ext_resource type="Texture2D" uid="uid://yri1g0l6vx8u" path="res://sprites/clock/8.png" id="26_j1ws0"]
 [ext_resource type="Script" uid="uid://d03mm1vbye1" path="res://scripts/clock.gd" id="27_s0bdn"]
+[ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites/happy madeline celeste.jpg" id="28_s0bdn"]
 [ext_resource type="Script" uid="uid://bhxisiridlirf" path="res://scripts/work_timer.gd" id="31_omevc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1u5m"]
@@ -162,26 +162,41 @@ script = ExtResource("27_s0bdn")
 
 [node name="Pajangan" type="CanvasLayer" parent="."]
 
-[node name="#000" type="Sprite2D" parent="Pajangan"]
+[node name="000" type="TextureRect" parent="Pajangan"]
 visible = false
-modulate = Color(0.8482855, 0, 0.2169796, 1)
-position = Vector2(700, 76)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("12_8xdsi")
+modulate = Color(0.7647059, 0, 0, 1)
+custom_minimum_size = Vector2(100, 100)
+offset_left = 645.0
+offset_top = 21.0
+offset_right = 745.0
+offset_bottom = 121.0
+texture = ExtResource("28_s0bdn")
+expand_mode = 2
+stretch_mode = 5
 
-[node name="#001" type="Sprite2D" parent="Pajangan"]
+[node name="001" type="TextureRect" parent="Pajangan"]
 visible = false
-modulate = Color(0.52450556, 0.5245057, 0, 1)
-position = Vector2(825, 76)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("12_8xdsi")
+modulate = Color(0.5019608, 0.38431373, 0, 1)
+custom_minimum_size = Vector2(100, 100)
+offset_left = 769.0
+offset_top = 20.0
+offset_right = 869.0
+offset_bottom = 120.0
+texture = ExtResource("28_s0bdn")
+expand_mode = 2
+stretch_mode = 5
 
-[node name="#002" type="Sprite2D" parent="Pajangan"]
+[node name="002" type="TextureRect" parent="Pajangan"]
 visible = false
-modulate = Color(1.8289685e-06, 0.4992513, 0.19147518, 1)
-position = Vector2(950, 76)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("12_8xdsi")
+modulate = Color(0, 0.47843137, 0.34117648, 1)
+custom_minimum_size = Vector2(100, 100)
+offset_left = 894.0
+offset_top = 20.0
+offset_right = 994.0
+offset_bottom = 120.0
+texture = ExtResource("28_s0bdn")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="Telephone" parent="." instance=ExtResource("5_io2gt")]
 visibility_layer = 2

@@ -4,7 +4,7 @@ extends Node
 # how to access: GM.{variable_name}
 
 var day = 1
-var curMoney = 0		#total money right now
+var curMoney = 0	#total money right now
 var curSanity = 100
 var maxSanity = 100
 var calls_done_per_scene = 0
@@ -13,25 +13,25 @@ var weekly_target = 50
 
 var pajangan = [
 	{
-		"id": "#000",
-		"price": 10,
+		"id": "000",
 		"owned": false,
 		"recover_bonus": 0.1,
-		"decrease_bonus": 0.1
+		"decrease_bonus": 0.1,
+		"icon" : "res://sprites/happy madeline celeste.jpg"
 	},
 	{
-		"id": "#001",
-		"price": 30,
+		"id": "001",
 		"owned": false,
 		"recover_bonus": 0.2,
-		"decrease_bonus": 0.2
+		"decrease_bonus": 0.2,
+		"icon" : "res://sprites/happy madeline celeste.jpg"
 	},
 	{
-		"id": "#002",
-		"price": 50,
+		"id": "002",
 		"owned": false,
 		"recover_bonus": 0.5,
-		"decrease_bonus": 0.5
+		"decrease_bonus": 0.5,
+		"icon" : "res://sprites/happy madeline celeste.jpg"
 	}
 ]
 

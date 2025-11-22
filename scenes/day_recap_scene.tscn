@@ -1,11 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://bu2n5sxech1cd"]
 
 [ext_resource type="Script" uid="uid://ccw74yakvva7u" path="res://scripts/data_day_recap.gd" id="1_nodxj"]
-[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="2_4y1ax"]
+[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites/icon.svg" id="2_4y1ax"]
 [ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites/SanityBarUnder.png" id="3_6iauo"]
 [ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites/sanityBar.png" id="4_7hibx"]
 [ext_resource type="Script" uid="uid://d2u2p5w35yfk2" path="res://scripts/weekly_target_bar_script.gd" id="5_ab611"]
 [ext_resource type="PackedScene" uid="uid://dpyenhkjsv8om" path="res://scenes/pause_day_recap.tscn" id="6_7hibx"]
+
 
 [node name="DayRecap" type="Node2D"]
 

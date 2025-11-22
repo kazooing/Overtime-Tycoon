@@ -1,1 +1,11 @@
+Label
+TextureRect
+Control
+TextureButton
+Sprite2D
+RichTextLabel
+Button
+Panel
+ColorRect
+GridContainer
 CanvasLayer

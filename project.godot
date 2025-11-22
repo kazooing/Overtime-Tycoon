@@ -13,7 +13,7 @@ config_version=5
 config/name="Overtime Tycoon"
 run/main_scene="uid://cjlqrqser2bq3"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://sprites/icon.svg"
 
 [autoload]
 
