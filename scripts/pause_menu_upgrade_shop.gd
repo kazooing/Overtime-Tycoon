@@ -22,6 +22,7 @@ func _on_pause_pressed() -> void:
 		get_tree().paused = false
 		
 func _on_quit_pressed() -> void:
+	GM.restart = 0
 	get_node("Quit").visible = false
 	await get_tree().create_timer(0.1).timeout
 	get_node("/root/UpgradeShop/PauseLayer/PauseMenuUpgradeShop").visible = true

@@ -20,6 +20,7 @@ func _on_pause_pressed() -> void:
 		GM.pause_resume_count = 0
 	
 func _on_quit_pressed() -> void:
+	GM.restart = 0
 	get_node("Quit").visible = false
 	await get_tree().create_timer(0.1).timeout
 	get_node("/root/DayRecap/PauseLayer").visible = false

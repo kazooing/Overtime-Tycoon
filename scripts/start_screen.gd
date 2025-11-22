@@ -67,40 +67,24 @@ func _on_new_game_pressed() -> void:
 	await get_tree().create_timer(0.1).timeout
 	if (GM.loop_count > 0) or (GM.first_loop == 1) :
 		GM.restart = 1
-		get_node("/root/Game/WorkScene/Pajangan/#000").visible = false
-		get_node("/root/Game/WorkScene/Pajangan/#001").visible = false
-		get_node("/root/Game/WorkScene/Pajangan/#002").visible = false
+		for item in GM.pajangan:
+			item["owned"] = false
 		get_node("/root/Game/CanvasLayer/StartScreen/Background").visible = false
 		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
 		GM.loop_count = 3
-
-
 	elif GM.loop_count == 0:
-		if ((GM.main_menu_count%2) == 1) and (GM.game_start_count == 0):
-			get_node("/root/Game/WorkScene").visible = true
-			get_node("/root/Game/WorkScene/ProgressLayer").visible = true
-			get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = true
-			get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Pause").visible = true
-			get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Quit").visible = true
-			get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Background").visible = false
-			get_node("/root/Game/CanvasLayer/StartScreen").visible = false
-			get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
-			get_tree().paused = false
-			await get_tree().create_timer(0.5).timeout
-			get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox/NewGame").visible = true
-		elif ((GM.main_menu_count%2) == 0) and (GM.game_start_count == 0) :
-			get_node("/root/Game/CanvasLayer/StartScreen").visible = false
-			get_tree().change_scene_to_file("res://scenes/game.tscn")
-			GM.emit_signal("reset", 1)
-		elif ((GM.main_menu_count%2) == 1) and (GM.game_start_count == 1):
-			get_node("/root/Game/CanvasLayer/StartScreen").visible = false
-			get_tree().change_scene_to_file("res://scenes/game.tscn")
-			GM.emit_signal("reset", 1)
-		elif ((GM.main_menu_count%2) == 0) and (GM.game_start_count == 1):
-			get_node("/root/Game/CanvasLayer/StartScreen").visible = false
-			get_tree().change_scene_to_file("res://scenes/game.tscn")
-			GM.emit_signal("reset", 1)
+		get_node("/root/Game/WorkScene").visible = true
+		get_node("/root/Game/WorkScene/ProgressLayer").visible = true
+		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame").visible = true
+		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Pause").visible = true
+		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Quit").visible = true
+		get_node("/root/Game/WorkScene/PauseLayer/PauseMenuInGame/Background").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen").visible = false
+		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox").visible = false
+		get_tree().paused = false
+		await get_tree().create_timer(0.5).timeout
+		get_node("/root/Game/CanvasLayer/StartScreen/MainMenuBox/NewGame").visible = true
 	GM.game_start_count = 1
 	
 func _on_continue_pressed() -> void:
