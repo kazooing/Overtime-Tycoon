@@ -1,9 +1,8 @@
 extends Area2D
-signal on_call(timer: Timer)
+signal on_call()
 signal off_call()
 @onready var rng = RandomNumberGenerator.new()
 
-var time_range = Vector2i(5, 8)
 
 func _ready() -> void:
 	var button = get_node("Telephone/Area2D/Button")
@@ -19,8 +18,7 @@ func _process(_delta) -> void:
 		if areas_parent.ringing:
 			areas_parent.ringing = false;
 			areas_parent.is_ringing.emit(false)
-			$Timer.start(rng.randi_range(time_range.x, time_range.y))
-			on_call.emit($Timer)
+			on_call.emit()
 	elif not has_overlapping_areas():
 		overlapping_previous = false
 

@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites/sanityBar.png" id="7_t46dj"]
 [ext_resource type="Script" uid="uid://e67074ucma8i" path="res://scripts/close_computer.gd" id="9_dx45h"]
 
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_phdvl"]
 animations = [{
 "frames": [{
@@ -322,7 +321,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_xhy5k")
 }
 
-[connection signal="disable" from="." to="Spreadsheet opener" method="disable"]
 [connection signal="disable" from="." to="close screen" method="turn_off"]
 [connection signal="closing_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_closing_sheet"]
 [connection signal="opening_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_opening_sheet"]

@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://cuf02qxy1xgin" path="res://scripts/ringer.gd" id="2_wjgco"]
 [ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites/happy madeline celeste.jpg" id="5_ml7rr"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54hca"]
 size = Vector2(104, 248)
 
@@ -84,6 +83,7 @@ text = "CANCEL"
 wait_time = 2.0
 
 [node name="pickup_marker" type="Sprite2D" parent="Area2D"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.17254902)
 position = Vector2(1.9073486e-06, 1)
 scale = Vector2(1.921875, 0.671875)
@@ -92,9 +92,9 @@ texture = ExtResource("1_u4wsl")
 [node name="Timer" type="Timer" parent="Area2D"]
 wait_time = 10.0
 
-[connection signal="disable_telephone" from="." to="Area2D/Telephone" method="_on_button_button_down"]
 [connection signal="disable_telephone" from="." to="Area2D/Telephone/Area2D" method="disable"]
 [connection signal="enable_telephone" from="." to="Area2D/Telephone/Area2D" method="enable"]
+[connection signal="restart_timer" from="." to="Area2D" method="_on_timer_timeout"]
 [connection signal="button_down" from="Area2D/Telephone/Cancel Button" to="Area2D/Telephone" method="_on_button_button_down"]
 [connection signal="timeout" from="Area2D/Telephone/ring_timer" to="Area2D/Telephone" method="_on_timer_timeout"]
 [connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

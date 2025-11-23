@@ -1,5 +1,7 @@
 extends Node2D
 
+signal disable_all_tasks
+
 var money_added_animation := preload("res://scenes/money_added.tscn")
 var day_ended = false
 var all_tasks_ended = false
@@ -65,6 +67,7 @@ func _on_work_timer_timeout() -> void:
 	print("test")
 	if all_tasks_ended and get_tree() != null:
 		get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
+	disable_all_tasks.emit()
 	day_ended = true
 	print("day_ended")
 

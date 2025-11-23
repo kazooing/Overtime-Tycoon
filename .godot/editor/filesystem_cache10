@@ -1,99 +1,106 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1763821914
-README.md::TextFile::-1::1763737939::0::1::::<><><>0<>0<><>::
-::res://font/::1763819107
-Ot2-Regular.ttf::FontFile::4364936933532144744::1763819106::1763819107::1::::<><><>0<>0<>e049cffea4b018913fb2812628cf2812<>res://.godot/imported/Ot2-Regular.ttf-ac80a6219c37487ecaf7343db0c744fa.fontdata::
-::res://scenes/::1763872987
-day_recap_scene.tscn::PackedScene::3846779631671997383::1763821913::0::1::::<><><>0<>0<><>::uid://ccw74yakvva7u::::res://scripts/data_day_recap.gd<>uid://bqhabj0j6kghk::::res://sprites/icon.svg<>uid://ccp3bykpnc34l::::res://sprites/SanityBarUnder.png<>uid://c7xhg66yxv0q7::::res://sprites/sanityBar.png<>uid://d2u2p5w35yfk2::::res://scripts/weekly_target_bar_script.gd<>uid://dpyenhkjsv8om::::res://scenes/pause_day_recap.tscn
-ending_scene.tscn::PackedScene::4818523400126042763::1763737939::0::1::::<><><>0<>0<><>::
-game.tscn::PackedScene::5428251814189401896::1763802551::0::1::::<><><>0<>0<><>::uid://4w3jdc6d616y::::res://scenes/work_scene.tscn<>uid://rval02q1w73n::::res://scenes/start_screen.tscn
-game_over_scene.tscn::PackedScene::4558320446956786975::1763737939::0::1::::<><><>0<>0<><>::uid://yktfnw0gpl1b::::res://scripts/game_over_scene.gd<>uid://bi8jql20c688q::::res://sprites/start_screen/start button/when click.png<>uid://c7bc0pxbkqpn7::::res://sprites/start_screen/start button/idle.png<>uid://luydshw2aopu::::res://sprites/start_screen/quit menu button/when click.PNG<>uid://bnddk27itqvoy::::res://sprites/start_screen/quit menu button/idle.PNG
-money_added.tscn::PackedScene::1371108939341867096::1763737939::0::1::::<><><>0<>0<><>::uid://bpqjpn15fuo6h::::res://scripts/money_added_script.gd
-pajangan.tscn::PackedScene::1442517558281239326::1763821914::0::1::::<><><>0<>0<><>::uid://bqhabj0j6kghk::::res://sprites/icon.svg
-pause_day_recap.tscn::PackedScene::8261906238584385108::1763737939::0::1::::<><><>0<>0<><>::uid://1de1vikfuavd::::res://scripts/pause_day_recap.gd<>uid://luydshw2aopu::::res://sprites/start_screen/quit menu button/when click.PNG<>uid://bnddk27itqvoy::::res://sprites/start_screen/quit menu button/idle.PNG<>uid://dplt6wbt4pkxt::::res://sprites/start_screen/resumepause button/when paused_clicked.PNG<>uid://dic50dxdkcpoj::::res://sprites/start_screen/resumepause button/idle.PNG
-pause_menu_in_game.tscn::PackedScene::4445285403530009908::1763737939::0::1::::<><><>0<>0<><>::uid://7cipb52lk0xu::::res://scripts/pause_menu_in_game.gd<>uid://luydshw2aopu::::res://sprites/start_screen/quit menu button/when click.PNG<>uid://bnddk27itqvoy::::res://sprites/start_screen/quit menu button/idle.PNG<>uid://dplt6wbt4pkxt::::res://sprites/start_screen/resumepause button/when paused_clicked.PNG<>uid://dic50dxdkcpoj::::res://sprites/start_screen/resumepause button/idle.PNG
-pause_menu_upgrade_shop.tscn::PackedScene::2418518480883483112::1763737939::0::1::::<><><>0<>0<><>::uid://brocvanbtjts::::res://scripts/pause_menu_upgrade_shop.gd<>uid://luydshw2aopu::::res://sprites/start_screen/quit menu button/when click.PNG<>uid://bnddk27itqvoy::::res://sprites/start_screen/quit menu button/idle.PNG<>uid://dplt6wbt4pkxt::::res://sprites/start_screen/resumepause button/when paused_clicked.PNG<>uid://dic50dxdkcpoj::::res://sprites/start_screen/resumepause button/idle.PNG
-Screen.tscn::PackedScene::9056581565360009013::1763821914::0::1::::<><><>0<>0<><>::uid://bqhabj0j6kghk::::res://sprites/icon.svg<>uid://m1kfxj82jcx8::::res://sprites/work_scene/PC asset.png<>uid://cl44rjj5aq5lg::::res://scripts/screen_bus.gd<>uid://783jnncslmoh::::res://scripts/spreadsheet_opener.gd<>uid://cycq1u2a0u8wq::::res://scripts/spreadsheet.gd<>uid://djiv66sh3m7p5::::res://sprites/work_scene/screen/sp1.png<>uid://ccp3bykpnc34l::::res://sprites/SanityBarUnder.png<>uid://c7xhg66yxv0q7::::res://sprites/sanityBar.png<>uid://e67074ucma8i::::res://scripts/close_computer.gd
-start_screen.tscn::PackedScene::1236583273970846677::1763737939::0::1::::<><><>0<>0<><>::uid://bwijatx2m08tx::::res://scripts/start_screen.gd<>uid://d3nocq11xdemp::::res://sprites/clock/9.png<>uid://c4iyjy80etms5::::res://sprites/start_screen/start_screen_sprite.png<>uid://bc2erf2wu42dl::::res://sprites/money 11 x 17 px.PNG<>uid://q3kmyyh88l0c::::res://sprites/work_scene/table and corkboard asset.png<>uid://b1r6erwnhpmqa::::res://sprites/work_scene/sanity bar/bottom.png<>uid://bcej5pylfuo8::::res://sprites/work_scene/sanity bar/top.png<>uid://b1b2q1nhc2kyl::::res://sprites/work_scene/sanity bar/mid.png<>uid://duyiac8lvhitu::::res://sprites/work_scene/mouse and keyboard asset.png<>uid://32fbke6ky7ip::::res://sprites/work_scene/corkboard notes asset.png<>uid://d2bcts6ujb2hd::::res://scenes/Screen.tscn<>uid://c7bc0pxbkqpn7::::res://sprites/start_screen/start button/idle.png<>uid://bi8jql20c688q::::res://sprites/start_screen/start button/when click.png<>uid://dic50dxdkcpoj::::res://sprites/start_screen/resumepause button/idle.PNG<>uid://dplt6wbt4pkxt::::res://sprites/start_screen/resumepause button/when paused_clicked.PNG<>uid://bnddk27itqvoy::::res://sprites/start_screen/quit menu button/idle.PNG<>uid://luydshw2aopu::::res://sprites/start_screen/quit menu button/when click.PNG
-Telephone.tscn::PackedScene::3574521218077387830::1763821914::0::1::::<><><>0<>0<><>::uid://cwa3bujatx3jb::::res://scripts/tel_singnal_bus.gd<>uid://cfbs6hf2wxxbl::::res://scripts/pickup.gd<>uid://cto2pgyb6c76h::::res://scripts/Telephone.gd<>uid://bqhabj0j6kghk::::res://sprites/icon.svg<>uid://cuf02qxy1xgin::::res://scripts/ringer.gd<>uid://hk018njsx4fl::::res://sprites/happy madeline celeste.jpg
-upgrade_shop_scene.tscn::PackedScene::315612869354195033::1763828258::0::1::::<><><>0<>0<><>::uid://bpt1gf17heomq::::res://scripts/upgrade_shop_scene_script.gd<>uid://bqhabj0j6kghk::::res://sprites/icon.svg<>uid://c5lgy61jkkqvh::::res://scripts/shop/decor_script.gd<>uid://hk018njsx4fl::::res://sprites/happy madeline celeste.jpg<>uid://bc2erf2wu42dl::::res://sprites/money 11 x 17 px.PNG<>uid://b3gn4x32bw7yy::::res://font/Ot2-Regular.ttf<>uid://djr4a7h2oh0ck::::res://scripts/shop/money_total.gd<>uid://bfsct3h3ueaca::::res://scripts/shop/buy_button_script.gd<>uid://bapsv72tnc8gy::::res://scenes/pause_menu_upgrade_shop.tscn
-work_scene.tscn::PackedScene::2082609086108275238::1763872987::0::1::::<><><>0<>0<><>::uid://do2qx6nm8dnum::::res://scripts/work_scene_script.gd<>uid://chb3wjdh8jfij::::res://scripts/moneyCounterScript.gd<>uid://ccp3bykpnc34l::::res://sprites/SanityBarUnder.png<>uid://c7xhg66yxv0q7::::res://sprites/sanityBar.png<>uid://q3kmyyh88l0c::::res://sprites/work_scene/table and corkboard asset.png<>uid://bc2erf2wu42dl::::res://sprites/money 11 x 17 px.PNG<>uid://blsgcxvh2pl53::::res://scripts/sanityBar.gd<>uid://duyiac8lvhitu::::res://sprites/work_scene/mouse and keyboard asset.png<>uid://bf4ckjuh87st7::::res://scripts/call_timer.gd<>uid://bq6r3vur078ww::::res://scenes/Telephone.tscn<>uid://32fbke6ky7ip::::res://sprites/work_scene/corkboard notes asset.png<>uid://b2leam8i6aemi::::res://sprites/work_scene/sidebar.png<>uid://cysj8q05h4did::::res://scripts/target_bar_script.gd<>uid://b1r6erwnhpmqa::::res://sprites/work_scene/sanity bar/bottom.png<>uid://b3gn4x32bw7yy::::res://font/Ot2-Regular.ttf<>uid://d2bcts6ujb2hd::::res://scenes/Screen.tscn<>uid://bcej5pylfuo8::::res://sprites/work_scene/sanity bar/top.png<>uid://b1b2q1nhc2kyl::::res://sprites/work_scene/sanity bar/mid.png<>uid://d3nocq11xdemp::::res://sprites/clock/9.png<>uid://b4llg3rjxideq::::res://scenes/pause_menu_in_game.tscn<>uid://dowqb75pj6ats::::res://sprites/clock/10.png<>uid://dp7siga4umx6q::::res://sprites/clock/11.png<>uid://xaopfryphl4m::::res://sprites/clock/12.png<>uid://bk5xsmp3tdc4k::::res://sprites/clock/1.png<>uid://tmfus7qco1yy::::res://sprites/clock/2.png<>uid://bujc5nb8gy6m5::::res://sprites/clock/3.png<>uid://dn0tdtvo856hw::::res://sprites/clock/4.png<>uid://cvgvqf11uegc4::::res://sprites/clock/5.png<>uid://ddm80yf5qtc53::::res://sprites/clock/6.png<>uid://bga1wnuoyufkp::::res://sprites/clock/7.png<>uid://yri1g0l6vx8u::::res://sprites/clock/8.png<>uid://d03mm1vbye1::::res://scripts/clock.gd<>uid://hk018njsx4fl::::res://sprites/happy madeline celeste.jpg<>uid://bhxisiridlirf::::res://scripts/work_timer.gd
-::res://scripts/::1763875458
-call_timer.gd::GDScript::2797371652645244254::1763737939::0::1::::<>TextureProgressBar<><>0<>0<><>::
-clock.gd::GDScript::7761710337984026::1763737939::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
-close_computer.gd::GDScript::346740400002518442::1763737939::0::1::::<>Sprite2D<><>0<>0<><>::
-data_day_recap.gd::GDScript::4960631358086998028::1763737939::0::1::::<>CanvasLayer<><>0<>0<><>::
-game_over_scene.gd::GDScript::1706339294619218073::1763737939::0::1::::<>Node2D<><>0<>0<><>::
-GM.gd::GDScript::5968223700666563813::1763827358::0::1::::<>Node<><>0<>0<><>::
-moneyCounterScript.gd::GDScript::5267967491576928677::1763875458::0::1::::<>Label<><>0<>0<><>::
-money_added_script.gd::GDScript::3472857346511029261::1763737939::0::1::::<>Label<><>0<>0<><>::
-pause_day_recap.gd::GDScript::1831393482274225533::1763808207::0::1::::<>Control<><>0<>0<><>::
-pause_menu_in_game.gd::GDScript::2250684374885222502::1763741153::0::1::::<>Control<><>0<>0<><>::
-pause_menu_upgrade_shop.gd::GDScript::106137978526696580::1763808207::0::1::::<>Control<><>0<>0<><>::
-pickup.gd::GDScript::5126998605455831489::1763737939::0::1::::<>Area2D<><>0<>0<><>::
-ringer.gd::GDScript::6188507147201952461::1763737939::0::1::::<>Node2D<><>0<>0<><>::
-sanityBar.gd::GDScript::3196025877661620236::1763739887::0::1::::<>TextureProgressBar<><>0<>0<><>::
-screen_bus.gd::GDScript::5606577241536020212::1763737939::0::1::::<>Sprite2D<><>0<>0<><>::
-spreadsheet.gd::GDScript::6462521364943845104::1763737939::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
-spreadsheet_opener.gd::GDScript::2315884313244994827::1763737939::0::1::::<>Sprite2D<><>0<>0<><>::
-start_screen.gd::GDScript::3947637753415158089::1763807982::0::1::::<>Control<><>0<>0<><>::
-target_bar_script.gd::GDScript::6495138678773088375::1763737939::0::1::::<>TextureProgressBar<><>0<>0<><>::
-Telephone.gd::GDScript::6136997183081307589::1763737939::0::1::::<>Area2D<><>0<>0<><>::
-tel_singnal_bus.gd::GDScript::6318698853410850123::1763737939::0::1::::<>Node2D<><>0<>0<><>::
-upgrade_shop_scene_script.gd::GDScript::3480066176411207280::1763828056::0::1::::<>CanvasLayer<><>0<>0<><>::
-weekly_target_bar_script.gd::GDScript::9097316141100073891::1763737939::0::1::::<>TextureProgressBar<><>0<>0<><>::
-work_scene_script.gd::GDScript::8198658255411216208::1763827328::0::1::::<>Node2D<><>0<>0<><>::
-work_timer.gd::GDScript::2925741604551533231::1763737939::0::1::::<>Timer<><>0<>0<><>::
-::res://scripts/shop/::1763825644
-buy_button_script.gd::GDScript::2774680548292575716::1763820779::0::1::::<>TextureButton<><>0<>0<><>::
-decor_script.gd::GDScript::6901623661643611169::1763825644::0::1::::<>TextureButton<><>0<>0<><>::
-money_total.gd::GDScript::7827818551237443050::1763737939::0::1::::<>Label<><>0<>0<><>::
-::res://sprites/::1763879461
-happy madeline celeste.jpg::CompressedTexture2D::513531792254436065::1763737939::1763737964::1::::<><><>0<>0<>b5c65e7b9690c4b15c9a485eff52b134<>res://.godot/imported/happy madeline celeste.jpg-6e8ce59c8f60714e01d31f111b499b43.ctex::
-icon.svg::CompressedTexture2D::3523895123754949680::1763737939::1763821914::1::::<><><>0<>0<>c1cf718956da53b679641ba1906bbb28<>res://.godot/imported/icon.svg-964d8c66fbd3bda40c44ca195472a8e1.ctex::
-money 11 x 17 px.PNG::CompressedTexture2D::2582810102150176005::1763737939::1763737964::1::::<><><>0<>0<>713d4b5751235e65814213cfd3c91cd6<>res://.godot/imported/money 11 x 17 px.PNG-57e6f548aafb8b2161af7f855a3c551d.ctex::
-sanityBar.png::CompressedTexture2D::7066802463094239996::1763737939::1763737964::1::::<><><>0<>0<>720bff4cdf3a2f07471ae46bd387e28f<>res://.godot/imported/sanityBar.png-0960cf6ae877e0336479f36215fb66f6.ctex::
-SanityBarUnder.png::CompressedTexture2D::4945887859271992725::1763737939::1763737964::1::::<><><>0<>0<>b54274e92c913aec16acf69f684c214a<>res://.godot/imported/SanityBarUnder.png-763d5d3a1e63e3c9b8cbee1c8e77b1f9.ctex::
-start_screen_sprite.png::CompressedTexture2D::6826307447574100074::1763737939::1763737964::1::::<><><>0<>0<>c2eb3e24bdb2d9b3fa7291816c1091e0<>res://.godot/imported/start_screen_sprite.png-f7e859504ed5b1286d3b43344ef295bd.ctex::
-::res://sprites/clock/::1763737964
-1.png::CompressedTexture2D::3151669742569106420::1763737939::1763737964::1::::<><><>0<>0<>23a9f4810dc3a7442b1dc094e8a589c1<>res://.godot/imported/1.png-d9624aa88c928bf6d326b896595668e5.ctex::
-2.png::CompressedTexture2D::1358700858597527360::1763737939::1763737964::1::::<><><>0<>0<>d0934dd27de0757e590e4727add982d4<>res://.godot/imported/2.png-c0d307fb90686d898ca06922264f5640.ctex::
-3.png::CompressedTexture2D::3808952649899689394::1763737939::1763737964::1::::<><><>0<>0<>82fcf5282ab04ca37d07d67cf01da7b8<>res://.godot/imported/3.png-42a2e2864fc73d7e7889184bfa81dbb6.ctex::
-4.png::CompressedTexture2D::8124486473535451776::1763737939::1763737964::1::::<><><>0<>0<>94273eefed06f2bb8de144eb35c0a538<>res://.godot/imported/4.png-914c6347dffb6bc18628c56af7575c77.ctex::
-5.png::CompressedTexture2D::6260497283849692441::1763737939::1763737964::1::::<><><>0<>0<>634b34cc7022a92cc120ece529926d11<>res://.godot/imported/5.png-d73d37736aedcba816d76c3329eeb9cb.ctex::
-6.png::CompressedTexture2D::7396650690320653112::1763737939::1763737964::1::::<><><>0<>0<>0841f836629e65a324ed9f53d6c29640<>res://.godot/imported/6.png-6267464959524707abe6935721502538.ctex::
-7.png::CompressedTexture2D::2809172389167731543::1763737939::1763737964::1::::<><><>0<>0<>9b4738bdc4187635c3be3ff03f2de10e<>res://.godot/imported/7.png-c195b882c28525a2a111acfd6c2a59bf.ctex::
-8.png::CompressedTexture2D::1720159190017732874::1763737939::1763737964::1::::<><><>0<>0<>5d64d5b2b1bba93b7cf6ae65811ea121<>res://.godot/imported/8.png-4d83365b65f7e734e494cb41882e736e.ctex::
-9.png::CompressedTexture2D::9152241074984224127::1763737939::1763737964::1::::<><><>0<>0<>f12000717a8a9e7fc47f146e805d2651<>res://.godot/imported/9.png-bd9e84ae5da2c99da4622c423e5b1f7d.ctex::
-10.png::CompressedTexture2D::8188297158065354496::1763737939::1763737964::1::::<><><>0<>0<>d9ecb2019f78e0d4430f8679898a9615<>res://.godot/imported/10.png-6cc03ace541af9637dd72ea008438b4b.ctex::
-11.png::CompressedTexture2D::8279262302485691466::1763737939::1763737964::1::::<><><>0<>0<>430b90faeca698336e0862a133a09261<>res://.godot/imported/11.png-023968857e48636d6f8e1cfad31c50ca.ctex::
-12.png::CompressedTexture2D::1615220518471258618::1763737939::1763737964::1::::<><><>0<>0<>5ce00425c6fb907fa827e74443ba3d82<>res://.godot/imported/12.png-15e33520cc78eeb394bff82cad1b66f6.ctex::
-::res://sprites/day_recap/::1763879467
-1.PNG::CompressedTexture2D::8058410855624897416::1763879467::1763879468::1::::<><><>0<>0<>b56aea0d260f888771174ec089adb2ad<>res://.godot/imported/1.PNG-205c873e9efedf711017dc01da3ca1bb.ctex::
-2.PNG::CompressedTexture2D::7367419447572336448::1763879467::1763879468::1::::<><><>0<>0<>e98990754eaf93b7af723587f752f045<>res://.godot/imported/2.PNG-7da32b042919b52934a987dc8720522c.ctex::
-3.PNG::CompressedTexture2D::2513635949078404348::1763879467::1763879468::1::::<><><>0<>0<>213d774ae0e64086f25772cc9dabcfba<>res://.godot/imported/3.PNG-a4adc62867f5e3195750d1fdf30695e1.ctex::
-::res://sprites/start_screen/::1763737964
-9.png::CompressedTexture2D::7998508395173210631::1763737939::1763737963::1::::<><><>0<>0<>19285f3a70544c932837f3963245bcd4<>res://.godot/imported/9.png-7098eb18669680d5a912f8457956d7c3.ctex::
-start_screen_sprite.png::CompressedTexture2D::6826307447574100074::1763737939::1763737964::1::::<><><>0<>0<>9339063bec9ad734cd648d9556bc9ee3<>res://.godot/imported/start_screen_sprite.png-1c9b4cc14a321006cecad41ed9146484.ctex::
-::res://sprites/start_screen/quit menu button/::1763737964
-idle.PNG::CompressedTexture2D::3305270261120772344::1763737939::1763737964::1::::<><><>0<>0<>e2d4ed7223510e8927817de0f358efbf<>res://.godot/imported/idle.PNG-f1b93d29531e554164086f8802c50bcf.ctex::
-when click.PNG::CompressedTexture2D::814828357577272186::1763737939::1763737964::1::::<><><>0<>0<>9b07b6c40410b19235f4de86c0b22c13<>res://.godot/imported/when click.PNG-9ff8d8b977bae8578311bc6d5ed6233d.ctex::
-::res://sprites/start_screen/resumepause button/::1763737964
-idle.PNG::CompressedTexture2D::7726767903572616177::1763737939::1763737964::1::::<><><>0<>0<>81bd90d63e2e17aa1d7941f310855d82<>res://.godot/imported/idle.PNG-549e3ea9319a239fd9ee0d18abef8d3d.ctex::
-when paused_clicked.PNG::CompressedTexture2D::8236013001379197361::1763737939::1763737964::1::::<><><>0<>0<>d62aeb9951bfe18dc404345c772d5e22<>res://.godot/imported/when paused_clicked.PNG-77d946843295edb3f2df3f23b002c4fa.ctex::
-::res://sprites/start_screen/start button/::1763737964
-idle.png::CompressedTexture2D::7021115643830652694::1763737939::1763737964::1::::<><><>0<>0<>aecf29b3abc98cdd4283bcdb5369a490<>res://.godot/imported/idle.png-f5bcdd9dc58f5e0d66a4df8007755559.ctex::
-when click.png::CompressedTexture2D::3016631544925096046::1763737939::1763737964::1::::<><><>0<>0<>d6434abf64ed773e217af14e08486f54<>res://.godot/imported/when click.png-476c573c83389e9c93defc3a5fff8c44.ctex::
-::res://sprites/work_scene/::1763854795
-corkboard notes asset.png::CompressedTexture2D::2021331724817819103::1763737939::1763737964::1::::<><><>0<>0<>734110474ff737871e850c957f6fc7c8<>res://.godot/imported/corkboard notes asset.png-b4df6d54ac428cbc7205a3cbf6ff7b90.ctex::
-mouse and keyboard asset.png::CompressedTexture2D::8613069882432900962::1763737939::1763737964::1::::<><><>0<>0<>82b684e1eb23c71da237b4adb9ac3aa2<>res://.godot/imported/mouse and keyboard asset.png-cd02938937d2c77d00db43ebdd6f760d.ctex::
-note pins asset.png::CompressedTexture2D::1965344619434576370::1763737939::1763737964::1::::<><><>0<>0<>f211ba29d0b3a484540973ef0b62bb41<>res://.godot/imported/note pins asset.png-18679144ed9150b111effe541919ef2f.ctex::
-PC asset.png::CompressedTexture2D::896557267635231887::1763737939::1763737964::1::::<><><>0<>0<>c1ad01b827f27b893edb22f49f582239<>res://.godot/imported/PC asset.png-22b9966c48735833b38d84f5f1ccf904.ctex::
-sidebar.png::CompressedTexture2D::4304471166849361120::1763854795::1763854750::1::::<><><>0<>0<>8358a303c03b1c80b7e096dc356109a5<>res://.godot/imported/sidebar.png-70507803d759557e79011e02f335e4d2.ctex::
-table and corkboard asset.png::CompressedTexture2D::1181453972775882360::1763737939::1763737964::1::::<><><>0<>0<>7d1c16f58f406a40ffbba13219d212a8<>res://.godot/imported/table and corkboard asset.png-bb1a23a24747be4d9699eca5e9b48260.ctex::
-::res://sprites/work_scene/sanity bar/::1763737964
-bottom.png::CompressedTexture2D::4248315337535607640::1763737939::1763737964::1::::<><><>0<>0<>0b3d1b5331cd2736b2ba784134d2c976<>res://.godot/imported/bottom.png-ec69c8f695f61b849f3b5ea4e004d9da.ctex::
-mid.png::CompressedTexture2D::4215064313554531067::1763737939::1763737964::1::::<><><>0<>0<>2c3b08dec9e35ff1a0dfa43aeffaa32e<>res://.godot/imported/mid.png-eeec0db3ca576f65ddfeae7a5080c20e.ctex::
-top.png::CompressedTexture2D::74578139240302437::1763737939::1763737964::1::::<><><>0<>0<>01cfb656d6a92a5f1a2d37307e815073<>res://.godot/imported/top.png-d9de48ae73fc14c9b8a7ca198410da7c.ctex::
-::res://sprites/work_scene/screen/::1763737964
-sp1.png::CompressedTexture2D::7808808738699528860::1763737939::1763737964::1::::<><><>0<>0<>1993215bf30c59ec0867ea749b21a02e<>res://.godot/imported/sp1.png-08e700ccc500f309b2a71ed3e14e178f.ctex::
+::res://::1763894189
+README.md::TextFile::-1::1763400970::0::1::::<><><>0<>0<><>::
+::res://dailogue test/::1763894079
+dialogue.gd::GDScript::3257854479106075448::1763894079::0::1::::<>Node2D<><>0<>0<><>::
+dialogue_generator.tscn::PackedScene::5931380038283984152::1763893256::0::1::::<><><>0<>0<><>::uid://bmoenfye0sepk::::res://dailogue test/dialogue.gd
+tester.json::JSON::-1::1763894079::0::1::::<><><>0<>0<><>::
+textbox.tscn::PackedScene::4288170963090592513::1763889054::0::1::::<><><>0<>0<><>::uid://5vaap05gqip8::::res://dailogue test/text_box.gd<>uid://bqhabj0j6kghk::::res://sprites/icon.svg
+text_box.gd::GDScript::2149018069818308767::1763744814::0::1::::<>Node2D<><>0<>0<><>::
+::res://font/::1763888787
+Ot2-Regular.ttf::FontFile::4364936933532144744::1763888736::1763888787::1::::<><><>0<>0<>e049cffea4b018913fb2812628cf2812<>res://.godot/imported/Ot2-Regular.ttf-ac80a6219c37487ecaf7343db0c744fa.fontdata::
+::res://overtime-tycoon/::1763888716
+::res://scenes/::1763894079
+day_recap_scene.tscn::PackedScene::3846779631671997383::1763888736::0::1::::<><><>0<>0<><>::uid://ccw74yakvva7u::::res://scripts/data_day_recap.gd<>uid://bqhabj0j6kghk::::res://sprites/icon.svg<>uid://dm2s347sbj5lc::::res://sprites/day_recap/1.PNG<>uid://b3gn4x32bw7yy::::res://font/Ot2-Regular.ttf<>uid://d2u2p5w35yfk2::::res://scripts/weekly_target_bar_script.gd<>uid://bb2vhmwp1bk7m::::res://sprites/day_recap/3.PNG<>uid://dpyenhkjsv8om::::res://scenes/pause_day_recap.tscn<>uid://dc73k7ejlm32k::::res://sprites/day_recap/2.PNG
+ending_scene.tscn::PackedScene::4818523400126042763::1763888716::0::1::::<><><>0<>0<><>::
+game.tscn::PackedScene::5428251814189401896::1763888736::0::1::::<><><>0<>0<><>::uid://4w3jdc6d616y::::res://scenes/work_scene.tscn<>uid://rval02q1w73n::::res://scenes/start_screen.tscn
+game_over_scene.tscn::PackedScene::4558320446956786975::1763888716::0::1::::<><><>0<>0<><>::uid://yktfnw0gpl1b::::res://scripts/game_over_scene.gd<>uid://bi8jql20c688q::::res://sprites/start_screen/start button/when click.png<>uid://c7bc0pxbkqpn7::::res://sprites/start_screen/start button/idle.png<>uid://luydshw2aopu::::res://sprites/start_screen/quit menu button/when click.PNG<>uid://bnddk27itqvoy::::res://sprites/start_screen/quit menu button/idle.PNG
+money_added.tscn::PackedScene::1371108939341867096::1763888716::0::1::::<><><>0<>0<><>::uid://bpqjpn15fuo6h::::res://scripts/money_added_script.gd
+pajangan.tscn::PackedScene::1442517558281239326::1763888736::0::1::::<><><>0<>0<><>::uid://bqhabj0j6kghk::::res://sprites/icon.svg
+pause_day_recap.tscn::PackedScene::8261906238584385108::1763888716::0::1::::<><><>0<>0<><>::uid://1de1vikfuavd::::res://scripts/pause_day_recap.gd<>uid://luydshw2aopu::::res://sprites/start_screen/quit menu button/when click.PNG<>uid://bnddk27itqvoy::::res://sprites/start_screen/quit menu button/idle.PNG<>uid://dplt6wbt4pkxt::::res://sprites/start_screen/resumepause button/when paused_clicked.PNG<>uid://dic50dxdkcpoj::::res://sprites/start_screen/resumepause button/idle.PNG
+pause_menu_in_game.tscn::PackedScene::4445285403530009908::1763888716::0::1::::<><><>0<>0<><>::uid://7cipb52lk0xu::::res://scripts/pause_menu_in_game.gd<>uid://luydshw2aopu::::res://sprites/start_screen/quit menu button/when click.PNG<>uid://bnddk27itqvoy::::res://sprites/start_screen/quit menu button/idle.PNG<>uid://dplt6wbt4pkxt::::res://sprites/start_screen/resumepause button/when paused_clicked.PNG<>uid://dic50dxdkcpoj::::res://sprites/start_screen/resumepause button/idle.PNG
+pause_menu_upgrade_shop.tscn::PackedScene::2418518480883483112::1763888716::0::1::::<><><>0<>0<><>::uid://brocvanbtjts::::res://scripts/pause_menu_upgrade_shop.gd<>uid://luydshw2aopu::::res://sprites/start_screen/quit menu button/when click.PNG<>uid://bnddk27itqvoy::::res://sprites/start_screen/quit menu button/idle.PNG<>uid://dplt6wbt4pkxt::::res://sprites/start_screen/resumepause button/when paused_clicked.PNG<>uid://dic50dxdkcpoj::::res://sprites/start_screen/resumepause button/idle.PNG
+Screen.tscn::PackedScene::9056581565360009013::1763891035::0::1::::<><><>0<>0<><>::uid://bqhabj0j6kghk::::res://sprites/icon.svg<>uid://m1kfxj82jcx8::::res://sprites/work_scene/PC asset.png<>uid://cl44rjj5aq5lg::::res://scripts/screen_bus.gd<>uid://783jnncslmoh::::res://scripts/spreadsheet_opener.gd<>uid://cycq1u2a0u8wq::::res://scripts/spreadsheet.gd<>uid://djiv66sh3m7p5::::res://sprites/work_scene/screen/sp1.png<>uid://ccp3bykpnc34l::::res://sprites/SanityBarUnder.png<>uid://c7xhg66yxv0q7::::res://sprites/sanityBar.png<>uid://e67074ucma8i::::res://scripts/close_computer.gd
+start_screen.tscn::PackedScene::1236583273970846677::1763888716::0::1::::<><><>0<>0<><>::uid://bwijatx2m08tx::::res://scripts/start_screen.gd<>uid://d3nocq11xdemp::::res://sprites/clock/9.png<>uid://c4iyjy80etms5::::res://sprites/start_screen/start_screen_sprite.png<>uid://bc2erf2wu42dl::::res://sprites/money 11 x 17 px.PNG<>uid://q3kmyyh88l0c::::res://sprites/work_scene/table and corkboard asset.png<>uid://b1r6erwnhpmqa::::res://sprites/work_scene/sanity bar/bottom.png<>uid://bcej5pylfuo8::::res://sprites/work_scene/sanity bar/top.png<>uid://b1b2q1nhc2kyl::::res://sprites/work_scene/sanity bar/mid.png<>uid://duyiac8lvhitu::::res://sprites/work_scene/mouse and keyboard asset.png<>uid://32fbke6ky7ip::::res://sprites/work_scene/corkboard notes asset.png<>uid://d2bcts6ujb2hd::::res://scenes/Screen.tscn<>uid://c7bc0pxbkqpn7::::res://sprites/start_screen/start button/idle.png<>uid://bi8jql20c688q::::res://sprites/start_screen/start button/when click.png<>uid://dic50dxdkcpoj::::res://sprites/start_screen/resumepause button/idle.PNG<>uid://dplt6wbt4pkxt::::res://sprites/start_screen/resumepause button/when paused_clicked.PNG<>uid://bnddk27itqvoy::::res://sprites/start_screen/quit menu button/idle.PNG<>uid://luydshw2aopu::::res://sprites/start_screen/quit menu button/when click.PNG
+Telephone.tscn::PackedScene::3574521218077387830::1763893103::0::1::::<><><>0<>0<><>::uid://cwa3bujatx3jb::::res://scripts/tel_singnal_bus.gd<>uid://cfbs6hf2wxxbl::::res://scripts/pickup.gd<>uid://cto2pgyb6c76h::::res://scripts/Telephone.gd<>uid://bqhabj0j6kghk::::res://sprites/icon.svg<>uid://cuf02qxy1xgin::::res://scripts/ringer.gd<>uid://hk018njsx4fl::::res://sprites/happy madeline celeste.jpg
+upgrade_shop_scene.tscn::PackedScene::315612869354195033::1763888736::0::1::::<><><>0<>0<><>::uid://bpt1gf17heomq::::res://scripts/upgrade_shop_scene_script.gd<>uid://bqhabj0j6kghk::::res://sprites/icon.svg<>uid://c5lgy61jkkqvh::::res://scripts/shop/decor_script.gd<>uid://hk018njsx4fl::::res://sprites/happy madeline celeste.jpg<>uid://bc2erf2wu42dl::::res://sprites/money 11 x 17 px.PNG<>uid://b3gn4x32bw7yy::::res://font/Ot2-Regular.ttf<>uid://djr4a7h2oh0ck::::res://scripts/shop/money_total.gd<>uid://bfsct3h3ueaca::::res://scripts/shop/buy_button_script.gd<>uid://bapsv72tnc8gy::::res://scenes/pause_menu_upgrade_shop.tscn
+work_scene.tscn::PackedScene::2082609086108275238::1763894079::0::1::::<><><>0<>0<><>::uid://do2qx6nm8dnum::::res://scripts/work_scene_script.gd<>uid://chb3wjdh8jfij::::res://scripts/moneyCounterScript.gd<>uid://ccp3bykpnc34l::::res://sprites/SanityBarUnder.png<>uid://c7xhg66yxv0q7::::res://sprites/sanityBar.png<>uid://q3kmyyh88l0c::::res://sprites/work_scene/table and corkboard asset.png<>uid://bc2erf2wu42dl::::res://sprites/money 11 x 17 px.PNG<>uid://blsgcxvh2pl53::::res://scripts/sanityBar.gd<>uid://duyiac8lvhitu::::res://sprites/work_scene/mouse and keyboard asset.png<>uid://bf4ckjuh87st7::::res://scripts/call_timer.gd<>uid://bq6r3vur078ww::::res://scenes/Telephone.tscn<>uid://32fbke6ky7ip::::res://sprites/work_scene/corkboard notes asset.png<>uid://b2leam8i6aemi::::res://sprites/work_scene/sidebar.png<>uid://cysj8q05h4did::::res://scripts/target_bar_script.gd<>uid://b1r6erwnhpmqa::::res://sprites/work_scene/sanity bar/bottom.png<>uid://b3gn4x32bw7yy::::res://font/Ot2-Regular.ttf<>uid://d2bcts6ujb2hd::::res://scenes/Screen.tscn<>uid://bcej5pylfuo8::::res://sprites/work_scene/sanity bar/top.png<>uid://b1b2q1nhc2kyl::::res://sprites/work_scene/sanity bar/mid.png<>uid://d3nocq11xdemp::::res://sprites/clock/9.png<>uid://b4llg3rjxideq::::res://scenes/pause_menu_in_game.tscn<>uid://dowqb75pj6ats::::res://sprites/clock/10.png<>uid://dp7siga4umx6q::::res://sprites/clock/11.png<>uid://xaopfryphl4m::::res://sprites/clock/12.png<>uid://bk5xsmp3tdc4k::::res://sprites/clock/1.png<>uid://tmfus7qco1yy::::res://sprites/clock/2.png<>uid://bujc5nb8gy6m5::::res://sprites/clock/3.png<>uid://dn0tdtvo856hw::::res://sprites/clock/4.png<>uid://cvgvqf11uegc4::::res://sprites/clock/5.png<>uid://ddm80yf5qtc53::::res://sprites/clock/6.png<>uid://bga1wnuoyufkp::::res://sprites/clock/7.png<>uid://yri1g0l6vx8u::::res://sprites/clock/8.png<>uid://d03mm1vbye1::::res://scripts/clock.gd<>uid://hk018njsx4fl::::res://sprites/happy madeline celeste.jpg<>uid://bhxisiridlirf::::res://scripts/work_timer.gd<>uid://cqrg7y22i3s7q::::res://dailogue test/dialogue_generator.tscn
+::res://scripts/::1763894079
+call_timer.gd::GDScript::2797371652645244254::1763892867::0::1::::<>TextureProgressBar<><>0<>0<><>::
+clock.gd::GDScript::7761710337984026::1763888716::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
+close_computer.gd::GDScript::346740400002518442::1763891031::0::1::::<>Sprite2D<><>0<>0<><>::
+data_day_recap.gd::GDScript::4960631358086998028::1763888716::0::1::::<>CanvasLayer<><>0<>0<><>::
+game_over_scene.gd::GDScript::1706339294619218073::1763888716::0::1::::<>Node2D<><>0<>0<><>::
+GM.gd::GDScript::5968223700666563813::1763888736::0::1::::<>Node<><>0<>0<><>::
+moneyCounterScript.gd::GDScript::5267967491576928677::1763888736::0::1::::<>Label<><>0<>0<><>::
+money_added_script.gd::GDScript::3472857346511029261::1763888716::0::1::::<>Label<><>0<>0<><>::
+pause_day_recap.gd::GDScript::1831393482274225533::1763888736::0::1::::<>Control<><>0<>0<><>::
+pause_menu_in_game.gd::GDScript::2250684374885222502::1763888736::0::1::::<>Control<><>0<>0<><>::
+pause_menu_upgrade_shop.gd::GDScript::106137978526696580::1763888736::0::1::::<>Control<><>0<>0<><>::
+pickup.gd::GDScript::5126998605455831489::1763894079::0::1::::<>Area2D<><>0<>0<><>::
+ringer.gd::GDScript::6188507147201952461::1763888716::0::1::::<>Node2D<><>0<>0<><>::
+sanityBar.gd::GDScript::3196025877661620236::1763893569::0::1::::<>TextureProgressBar<><>0<>0<><>::
+screen_bus.gd::GDScript::5606577241536020212::1763891167::0::1::::<>Sprite2D<><>0<>0<><>::
+spreadsheet.gd::GDScript::6462521364943845104::1763888717::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
+spreadsheet_opener.gd::GDScript::2315884313244994827::1763888717::0::1::::<>Sprite2D<><>0<>0<><>::
+start_screen.gd::GDScript::3947637753415158089::1763888736::0::1::::<>Control<><>0<>0<><>::
+target_bar_script.gd::GDScript::6495138678773088375::1763888717::0::1::::<>TextureProgressBar<><>0<>0<><>::
+Telephone.gd::GDScript::6136997183081307589::1763890797::0::1::::<>Area2D<><>0<>0<><>::
+tel_singnal_bus.gd::GDScript::6318698853410850123::1763894079::0::1::::<>Node2D<><>0<>0<><>::
+upgrade_shop_scene_script.gd::GDScript::3480066176411207280::1763888736::0::1::::<>CanvasLayer<><>0<>0<><>::
+weekly_target_bar_script.gd::GDScript::9097316141100073891::1763888717::0::1::::<>TextureProgressBar<><>0<>0<><>::
+work_scene_script.gd::GDScript::8198658255411216208::1763891177::0::1::::<>Node2D<><>0<>0<><>::
+work_timer.gd::GDScript::2925741604551533231::1763888717::0::1::::<>Timer<><>0<>0<><>::
+::res://scripts/shop/::1763888736
+buy_button_script.gd::GDScript::2774680548292575716::1763888736::0::1::::<>TextureButton<><>0<>0<><>::
+decor_script.gd::GDScript::6901623661643611169::1763888736::0::1::::<>TextureButton<><>0<>0<><>::
+money_total.gd::GDScript::7827818551237443050::1763888717::0::1::::<>Label<><>0<>0<><>::
+::res://sprites/::1763888787
+happy madeline celeste.jpg::CompressedTexture2D::513531792254436065::1763888717::1763888787::1::::<><><>0<>0<>b5c65e7b9690c4b15c9a485eff52b134<>res://.godot/imported/happy madeline celeste.jpg-6e8ce59c8f60714e01d31f111b499b43.ctex::
+icon.svg::CompressedTexture2D::3523895123754949680::1763888736::1763888787::1::::<><><>0<>0<>c1cf718956da53b679641ba1906bbb28<>res://.godot/imported/icon.svg-964d8c66fbd3bda40c44ca195472a8e1.ctex::
+money 11 x 17 px.PNG::CompressedTexture2D::2582810102150176005::1763888717::1763888787::1::::<><><>0<>0<>713d4b5751235e65814213cfd3c91cd6<>res://.godot/imported/money 11 x 17 px.PNG-57e6f548aafb8b2161af7f855a3c551d.ctex::
+sanityBar.png::CompressedTexture2D::7066802463094239996::1763888717::1763888787::1::::<><><>0<>0<>720bff4cdf3a2f07471ae46bd387e28f<>res://.godot/imported/sanityBar.png-0960cf6ae877e0336479f36215fb66f6.ctex::
+SanityBarUnder.png::CompressedTexture2D::4945887859271992725::1763888717::1763888787::1::::<><><>0<>0<>b54274e92c913aec16acf69f684c214a<>res://.godot/imported/SanityBarUnder.png-763d5d3a1e63e3c9b8cbee1c8e77b1f9.ctex::
+start_screen_sprite.png::CompressedTexture2D::6826307447574100074::1763888717::1763888787::1::::<><><>0<>0<>c2eb3e24bdb2d9b3fa7291816c1091e0<>res://.godot/imported/start_screen_sprite.png-f7e859504ed5b1286d3b43344ef295bd.ctex::
+::res://sprites/clock/::1763888788
+1.png::CompressedTexture2D::3151669742569106420::1763888717::1763888787::1::::<><><>0<>0<>23a9f4810dc3a7442b1dc094e8a589c1<>res://.godot/imported/1.png-d9624aa88c928bf6d326b896595668e5.ctex::
+2.png::CompressedTexture2D::1358700858597527360::1763888717::1763888787::1::::<><><>0<>0<>d0934dd27de0757e590e4727add982d4<>res://.godot/imported/2.png-c0d307fb90686d898ca06922264f5640.ctex::
+3.png::CompressedTexture2D::3808952649899689394::1763888717::1763888787::1::::<><><>0<>0<>82fcf5282ab04ca37d07d67cf01da7b8<>res://.godot/imported/3.png-42a2e2864fc73d7e7889184bfa81dbb6.ctex::
+4.png::CompressedTexture2D::8124486473535451776::1763888717::1763888787::1::::<><><>0<>0<>94273eefed06f2bb8de144eb35c0a538<>res://.godot/imported/4.png-914c6347dffb6bc18628c56af7575c77.ctex::
+5.png::CompressedTexture2D::6260497283849692441::1763888717::1763888787::1::::<><><>0<>0<>634b34cc7022a92cc120ece529926d11<>res://.godot/imported/5.png-d73d37736aedcba816d76c3329eeb9cb.ctex::
+6.png::CompressedTexture2D::7396650690320653112::1763888717::1763888787::1::::<><><>0<>0<>0841f836629e65a324ed9f53d6c29640<>res://.godot/imported/6.png-6267464959524707abe6935721502538.ctex::
+7.png::CompressedTexture2D::2809172389167731543::1763888717::1763888787::1::::<><><>0<>0<>9b4738bdc4187635c3be3ff03f2de10e<>res://.godot/imported/7.png-c195b882c28525a2a111acfd6c2a59bf.ctex::
+8.png::CompressedTexture2D::1720159190017732874::1763888717::1763888787::1::::<><><>0<>0<>5d64d5b2b1bba93b7cf6ae65811ea121<>res://.godot/imported/8.png-4d83365b65f7e734e494cb41882e736e.ctex::
+9.png::CompressedTexture2D::9152241074984224127::1763888717::1763888787::1::::<><><>0<>0<>f12000717a8a9e7fc47f146e805d2651<>res://.godot/imported/9.png-bd9e84ae5da2c99da4622c423e5b1f7d.ctex::
+10.png::CompressedTexture2D::8188297158065354496::1763888717::1763888788::1::::<><><>0<>0<>d9ecb2019f78e0d4430f8679898a9615<>res://.godot/imported/10.png-6cc03ace541af9637dd72ea008438b4b.ctex::
+11.png::CompressedTexture2D::8279262302485691466::1763888717::1763888788::1::::<><><>0<>0<>430b90faeca698336e0862a133a09261<>res://.godot/imported/11.png-023968857e48636d6f8e1cfad31c50ca.ctex::
+12.png::CompressedTexture2D::1615220518471258618::1763888717::1763888788::1::::<><><>0<>0<>5ce00425c6fb907fa827e74443ba3d82<>res://.godot/imported/12.png-15e33520cc78eeb394bff82cad1b66f6.ctex::
+::res://sprites/day_recap/::1763888788
+1.PNG::CompressedTexture2D::8058410855624897416::1763888736::1763888788::1::::<><><>0<>0<>b56aea0d260f888771174ec089adb2ad<>res://.godot/imported/1.PNG-205c873e9efedf711017dc01da3ca1bb.ctex::
+2.PNG::CompressedTexture2D::7367419447572336448::1763888736::1763888788::1::::<><><>0<>0<>e98990754eaf93b7af723587f752f045<>res://.godot/imported/2.PNG-7da32b042919b52934a987dc8720522c.ctex::
+3.PNG::CompressedTexture2D::2513635949078404348::1763888736::1763888788::1::::<><><>0<>0<>213d774ae0e64086f25772cc9dabcfba<>res://.godot/imported/3.PNG-a4adc62867f5e3195750d1fdf30695e1.ctex::
+::res://sprites/start_screen/::1763888787
+9.png::CompressedTexture2D::7998508395173210631::1763888717::1763888787::1::::<><><>0<>0<>19285f3a70544c932837f3963245bcd4<>res://.godot/imported/9.png-7098eb18669680d5a912f8457956d7c3.ctex::
+start_screen_sprite.png::CompressedTexture2D::6826307447574100074::1763888717::1763888787::1::::<><><>0<>0<>9339063bec9ad734cd648d9556bc9ee3<>res://.godot/imported/start_screen_sprite.png-1c9b4cc14a321006cecad41ed9146484.ctex::
+::res://sprites/start_screen/quit menu button/::1763888788
+idle.PNG::CompressedTexture2D::3305270261120772344::1763888717::1763888788::1::::<><><>0<>0<>e2d4ed7223510e8927817de0f358efbf<>res://.godot/imported/idle.PNG-f1b93d29531e554164086f8802c50bcf.ctex::
+when click.PNG::CompressedTexture2D::814828357577272186::1763888717::1763888788::1::::<><><>0<>0<>9b07b6c40410b19235f4de86c0b22c13<>res://.godot/imported/when click.PNG-9ff8d8b977bae8578311bc6d5ed6233d.ctex::
+::res://sprites/start_screen/resumepause button/::1763888788
+idle.PNG::CompressedTexture2D::7726767903572616177::1763888717::1763888788::1::::<><><>0<>0<>81bd90d63e2e17aa1d7941f310855d82<>res://.godot/imported/idle.PNG-549e3ea9319a239fd9ee0d18abef8d3d.ctex::
+when paused_clicked.PNG::CompressedTexture2D::8236013001379197361::1763888717::1763888788::1::::<><><>0<>0<>d62aeb9951bfe18dc404345c772d5e22<>res://.godot/imported/when paused_clicked.PNG-77d946843295edb3f2df3f23b002c4fa.ctex::
+::res://sprites/start_screen/start button/::1763888788
+idle.png::CompressedTexture2D::7021115643830652694::1763888717::1763888788::1::::<><><>0<>0<>aecf29b3abc98cdd4283bcdb5369a490<>res://.godot/imported/idle.png-f5bcdd9dc58f5e0d66a4df8007755559.ctex::
+when click.png::CompressedTexture2D::3016631544925096046::1763888717::1763888787::1::::<><><>0<>0<>d6434abf64ed773e217af14e08486f54<>res://.godot/imported/when click.png-476c573c83389e9c93defc3a5fff8c44.ctex::
+::res://sprites/work_scene/::1763888787
+corkboard notes asset.png::CompressedTexture2D::2021331724817819103::1763888717::1763888787::1::::<><><>0<>0<>734110474ff737871e850c957f6fc7c8<>res://.godot/imported/corkboard notes asset.png-b4df6d54ac428cbc7205a3cbf6ff7b90.ctex::
+mouse and keyboard asset.png::CompressedTexture2D::8613069882432900962::1763888717::1763888787::1::::<><><>0<>0<>82b684e1eb23c71da237b4adb9ac3aa2<>res://.godot/imported/mouse and keyboard asset.png-cd02938937d2c77d00db43ebdd6f760d.ctex::
+note pins asset.png::CompressedTexture2D::1965344619434576370::1763888717::1763888787::1::::<><><>0<>0<>f211ba29d0b3a484540973ef0b62bb41<>res://.godot/imported/note pins asset.png-18679144ed9150b111effe541919ef2f.ctex::
+PC asset.png::CompressedTexture2D::896557267635231887::1763888717::1763888787::1::::<><><>0<>0<>c1ad01b827f27b893edb22f49f582239<>res://.godot/imported/PC asset.png-22b9966c48735833b38d84f5f1ccf904.ctex::
+sidebar.png::CompressedTexture2D::4304471166849361120::1763888736::1763888787::1::::<><><>0<>0<>8358a303c03b1c80b7e096dc356109a5<>res://.godot/imported/sidebar.png-70507803d759557e79011e02f335e4d2.ctex::
+table and corkboard asset.png::CompressedTexture2D::1181453972775882360::1763888717::1763888787::1::::<><><>0<>0<>7d1c16f58f406a40ffbba13219d212a8<>res://.godot/imported/table and corkboard asset.png-bb1a23a24747be4d9699eca5e9b48260.ctex::
+::res://sprites/work_scene/sanity bar/::1763888787
+bottom.png::CompressedTexture2D::4248315337535607640::1763888717::1763888787::1::::<><><>0<>0<>0b3d1b5331cd2736b2ba784134d2c976<>res://.godot/imported/bottom.png-ec69c8f695f61b849f3b5ea4e004d9da.ctex::
+mid.png::CompressedTexture2D::4215064313554531067::1763888717::1763888787::1::::<><><>0<>0<>2c3b08dec9e35ff1a0dfa43aeffaa32e<>res://.godot/imported/mid.png-eeec0db3ca576f65ddfeae7a5080c20e.ctex::
+top.png::CompressedTexture2D::74578139240302437::1763888717::1763888787::1::::<><><>0<>0<>01cfb656d6a92a5f1a2d37307e815073<>res://.godot/imported/top.png-d9de48ae73fc14c9b8a7ca198410da7c.ctex::
+::res://sprites/work_scene/screen/::1763888787
+sp1.png::CompressedTexture2D::7808808738699528860::1763888717::1763888787::1::::<><><>0<>0<>1993215bf30c59ec0867ea749b21a02e<>res://.godot/imported/sp1.png-08e700ccc500f309b2a71ed3e14e178f.ctex::

@@ -1,16 +1,7 @@
-res://scenes/game.tscn
-res://scripts/start_screen.gd
-res://scripts/pause_day_recap.gd
-res://scripts/pause_menu_upgrade_shop.gd
-res://scenes/upgrade_shop_scene.tscn
-res://scripts/upgrade_shop_scene_script.gd
-res://scripts/shop/decor_script.gd
-res://scenes/back_dimmer_script.gd
-res://scripts/shop/buy_button_script.gd
-res://scripts/GM.gd
-res://scripts/shop/slot.tscn
-res://scenes/slot_pack.tscn
+res://dailogue test/dialogue.gd
 res://scenes/work_scene.tscn
-res://scripts/work_scene_script.gd
-res://scripts/moneyCounterScript.gd
-res://scenes/day_recap_scene.tscn
+res://dailogue test/tester.json
+res://dailogue test/text_box.gd
+res://scripts/ringer.gd
+res://scripts/pickup.gd
+res://scripts/tel_singnal_bus.gd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=37 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -34,6 +34,7 @@
 [ext_resource type="Script" uid="uid://d03mm1vbye1" path="res://scripts/clock.gd" id="27_s0bdn"]
 [ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites/happy madeline celeste.jpg" id="28_s0bdn"]
 [ext_resource type="Script" uid="uid://bhxisiridlirf" path="res://scripts/work_timer.gd" id="31_omevc"]
+[ext_resource type="PackedScene" uid="uid://cqrg7y22i3s7q" path="res://dailogue test/dialogue_generator.tscn" id="35_tt0ds"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1u5m"]
 animations = [{
@@ -222,20 +223,6 @@ position = Vector2(1065, 160)
 
 [node name="reduce_when_ring" type="Timer" parent="Telephone"]
 
-[node name="call_timer" type="TextureProgressBar" parent="Telephone"]
-visible = false
-offset_left = -903.0
-offset_top = 506.0
-offset_right = -18.0
-offset_bottom = 534.0
-value = 100.0
-nine_patch_stretch = true
-texture_under = ExtResource("1_jqjy7")
-texture_progress = ExtResource("2_i6sgx")
-script = ExtResource("5_eoja1")
-
-[node name="sanity_reduction" type="Timer" parent="Telephone/call_timer"]
-
 [node name="spawn_pos" type="Node2D" parent="Telephone"]
 position = Vector2(-25, 385)
 
@@ -251,6 +238,29 @@ script = ExtResource("31_omevc")
 offset_right = -1132.0
 offset_bottom = -622.0
 
+[node name="Dialogue" parent="." instance=ExtResource("35_tt0ds")]
+position = Vector2(207, 572)
+scale = Vector2(1.5, 1.5)
+
+[node name="call_timer" type="TextureProgressBar" parent="Dialogue"]
+visible = false
+offset_left = -576.0
+offset_top = 60.0
+offset_right = 309.0
+offset_bottom = 88.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_jqjy7")
+texture_progress = ExtResource("2_i6sgx")
+script = ExtResource("5_eoja1")
+
+[node name="sanity_reduction" type="Timer" parent="Dialogue"]
+
+[node name="monologue_timer" type="Timer" parent="Dialogue"]
+wait_time = 10.0
+autostart = true
+
+[connection signal="disable_all_tasks" from="." to="PcStuff/Screen" method="disable_computer"]
 [connection signal="decrease_sanity" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
 [connection signal="gain_money" from="PcStuff/Screen" to="ProgressLayer/moneyCounterUI" method="addMoney"]
 [connection signal="money_notification" from="PcStuff/Screen" to="." method="play_added_money"]
@@ -258,15 +268,19 @@ offset_bottom = -622.0
 [connection signal="is_not_draining" from="ProgressLayer/sanityBarUI" to="." method="confirm_tasks_ended"]
 [connection signal="timeout" from="ProgressLayer/sanityBarUI/Timer" to="ProgressLayer/sanityBarUI" method="_on_timer_timeout"]
 [connection signal="call_notif" from="Telephone" to="." method="play_added_money"]
-[connection signal="call_started" from="Telephone" to="Telephone/call_timer" method="_on_telephone_call_started"]
+[connection signal="call_started" from="Telephone" to="Dialogue" method="_on_telephone_call_started"]
 [connection signal="call_stopped" from="Telephone" to="ProgressLayer/moneyCounterUI" method="addMoney"]
 [connection signal="decrease_sanity" from="Telephone" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
 [connection signal="phone_ringing" from="Telephone" to="ProgressLayer/sanityBarUI" method="new_affecting"]
 [connection signal="timeout" from="Telephone/reduce_when_ring" to="Telephone" method="_on_reduce_when_ring_timeout"]
-[connection signal="on_call" from="Telephone/call_timer" to="ProgressLayer/sanityBarUI" method="new_affecting"]
-[connection signal="reduce_sanity" from="Telephone/call_timer" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
-[connection signal="timeout" from="Telephone/call_timer/sanity_reduction" to="Telephone/call_timer" method="_on_sanity_reduction_timeout"]
 [connection signal="division_passed" from="work_timer" to="ProgressLayer/Clock" method="advance_time"]
 [connection signal="timeout" from="work_timer" to="." method="_on_work_timer_timeout"]
 [connection signal="timeout" from="work_timer" to="PcStuff/Screen" method="call_disable"]
 [connection signal="timeout" from="work_timer" to="Telephone" method="disable"]
+[connection signal="affect_sanityBar" from="Dialogue" to="ProgressLayer/sanityBarUI" method="new_affecting"]
+[connection signal="call_dialogue_finished" from="Dialogue" to="Telephone" method="call_stop"]
+[connection signal="reduce_sanity" from="Dialogue" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
+[connection signal="on_call" from="Dialogue/call_timer" to="ProgressLayer/sanityBarUI" method="new_affecting"]
+[connection signal="reduce_sanity" from="Dialogue/call_timer" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
+[connection signal="timeout" from="Dialogue/sanity_reduction" to="Dialogue" method="_on_sanity_reduction_timeout"]
+[connection signal="timeout" from="Dialogue/monologue_timer" to="Dialogue" method="_on_monologue_timer_timeout"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqrg7y22i3s7q"]
+
+[ext_resource type="Script" uid="uid://bmoenfye0sepk" path="res://dailogue test/dialogue.gd" id="1_tvr3b"]
+
+[node name="Dialogue generator" type="Node2D"]
+script = ExtResource("1_tvr3b")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
