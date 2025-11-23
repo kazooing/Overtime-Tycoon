@@ -22,6 +22,7 @@ func _on_pause_pressed() -> void:
 		get_tree().paused = false
 		
 func _on_quit_pressed() -> void:
+	GM.restart = 0
 	get_node("Quit").visible = false
 	await get_tree().create_timer(0.1).timeout
 	get_node("/root/UpgradeShop/PauseLayer/PauseMenuUpgradeShop").visible = true
@@ -29,14 +30,6 @@ func _on_quit_pressed() -> void:
 	GM.game_start_count = 0
 	GM.main_menu_count += 1
 	
-	if GM.pajangan_0 == 1:
-		GM.pajangan_0 = 2
-		print("666")
-	if GM.pajangan_1 == 1:
-		GM.pajangan_1 = 2
-	if GM.pajangan_2 == 1:
-		GM.pajangan_2 = 2
-		
 	if GM.loop_count > 0:
 		GM.game_start_count = 1
 		GM.first_loop = 0

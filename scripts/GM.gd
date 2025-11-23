@@ -4,7 +4,7 @@ extends Node
 # how to access: GM.{variable_name}
 
 var day = 1
-var curMoney = 0		#total money right now
+var curMoney = 0	#total money right now
 var curSanity = 100
 var maxSanity = 100
 var calls_done_per_scene = 0
@@ -13,26 +13,25 @@ var weekly_target = 50
 
 var pajangan = [
 	{
-		"id": "#000",
-		"price": 10,
+		"id": "000",
 		"owned": false,
-		"posx": 700,
-		"posy": 150
+		"recover_bonus": 0.1,
+		"decrease_bonus": 0.1,
+		"icon" : "res://sprites/happy madeline celeste.jpg"
 	},
 	{
-		"id": "#001",
-		"price": 30,
+		"id": "001",
 		"owned": false,
-		"posx": 850,
-		"posy": 150
-		
+		"recover_bonus": 0.2,
+		"decrease_bonus": 0.2,
+		"icon" : "res://sprites/happy madeline celeste.jpg"
 	},
 	{
-		"id": "#002",
-		"price": 50,
+		"id": "002",
 		"owned": false,
-		"posx": 1000,
-		"posy": 150
+		"recover_bonus": 0.5,
+		"decrease_bonus": 0.5,
+		"icon" : "res://sprites/happy madeline celeste.jpg"
 	}
 ]
 
@@ -49,12 +48,7 @@ var main_menu_count = -1
 var loop_count = 0 
 var first_loop = 0
 var restart = 0
-var pajangan_0 = 0
-var pajangan_1 = 0
-var pajangan_2 = 0
-var pajangan_exist_0 = 0
-var pajangan_exist_1 = 0
-var pajangan_exist_2 = 0
+
 
 signal reset()
 signal new()

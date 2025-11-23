@@ -5,6 +5,9 @@
 
 [node name="Game" type="Node"]
 
-[node name="StartScreen" parent="." instance=ExtResource("2_lbhrr")]
-
 [node name="WorkScene" parent="." instance=ExtResource("1_lnu2h")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="StartScreen" parent="CanvasLayer" instance=ExtResource("2_lbhrr")]

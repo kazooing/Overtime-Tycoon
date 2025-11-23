@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://d2bcts6ujb2hd"]
 
-[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://icon.svg" id="1_sad84"]
+[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites/icon.svg" id="1_sad84"]
 [ext_resource type="Texture2D" uid="uid://m1kfxj82jcx8" path="res://sprites/work_scene/PC asset.png" id="1_t46dj"]
 [ext_resource type="Script" uid="uid://cl44rjj5aq5lg" path="res://scripts/screen_bus.gd" id="2_8m26t"]
 [ext_resource type="Script" uid="uid://783jnncslmoh" path="res://scripts/spreadsheet_opener.gd" id="3_ckgjc"]
@@ -321,7 +321,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_xhy5k")
 }
 
-[connection signal="disable" from="." to="Spreadsheet opener" method="disable"]
 [connection signal="disable" from="." to="close screen" method="turn_off"]
 [connection signal="closing_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_closing_sheet"]
 [connection signal="opening_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_opening_sheet"]

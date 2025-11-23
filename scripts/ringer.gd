@@ -8,6 +8,8 @@ signal is_ringing(confirm:bool)
 @onready var rng = RandomNumberGenerator.new()
 
 var in_X:int
+var max_fails: int
+var fails:int = 0
 
 var active = true
 var ringing = false
@@ -33,9 +35,13 @@ func _process(_delta):
 
 func _on_timer_timeout() -> void:
 	print("timer called")
-	if rng.randi_range(0,in_X) == 0:
+	if rng.randi_range(0,in_X) == 0 or fails > max_fails - 1:
 		ringing = true
 		is_ringing.emit(true)
+		fails = 0
+	else:
+		fails += 1
+		print(fails, max_fails)
 	timer.stop()
 
 
@@ -44,7 +50,7 @@ func _on_button_button_down() -> void:
 		ringing = false
 		is_ringing.emit(false)
 
-func calling(_X):
+func calling():
 	timer.stop()
 	active = false
 

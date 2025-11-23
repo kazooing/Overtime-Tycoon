@@ -1,0 +1,317 @@
+{ "TESTER":
+	{
+		"TESTER1":[
+			{"speaker": 1,
+			"text" : "Yay",
+			"scroll" : 0.05,
+			"pause" : 0.5
+			},
+			{"speaker": 2,
+			"text" : "What",
+			"scroll" : 0.05,
+			"pause" : 0.5
+			},
+			{"speaker": 1,
+			"text" : "Idk bro i just hope this works",
+			"scroll" : 0.2,
+			"pause" : 1
+			},
+			{"speaker": 2,
+			"text" : "Fair Enough",
+			"scroll" : 0.2,
+			"pause" : 1
+			}
+		],
+		"TESTER2":[
+			{"speaker": 1,
+			"text" : "Alright here's more of a showing what this code can do",
+			"scroll" : 0.02,
+			"pause" : 0.2
+			},
+			{"speaker": 1,
+			"text" : "I can change scroll speed",
+			"scroll" : 0.15,
+			"pause" : 0.2
+			},
+			{"speaker": 1,
+			"text" : "I can change how long each pause is!",
+			"scroll" : 0.05,
+			"pause" : 1.5
+			},
+			{"speaker": 1,
+			"text" : ". . .",
+			"scroll" : 0.3,
+			"pause" : 1
+			},
+			{"speaker": 1,
+			"text" : "Pretty cool right???",
+			"scroll" : 0.02,
+			"pause" : 0.5
+			},
+			{"speaker": 2,
+			"text" : "i dounno, it seems kinda overkill....",
+			"scroll" : 0.08,
+			"pause" : 0.2
+			},
+			{"speaker": 1,
+			"text" : ":((",
+			"scroll" : 0.02,
+			"pause" : 1.0
+			},
+			{"speaker": 1,
+			"text" : "FINISH",
+			"scroll" : 0.02,
+			"pause" : 1.0
+			},
+		]},
+	"DIALOGUE": {
+			"1": [
+			{
+				"speaker": 1,
+				"text" : "How can I support you today?",
+				"scroll" : 0.05,
+				"pause" : 1
+			},
+			{
+				"speaker": 2,
+				"text" : "My package hasn’t arrived yet",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			}
+			],
+			"2": [
+			{
+				"speaker": 1,
+				"text" : "How can I help you today?",
+				"scroll" : 0.05,
+				"pause" : 1
+			},
+			{
+				"speaker": 2,
+				"text" : "I need a refund",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"3": [
+			{
+				"speaker": 1,
+				"text" : "How may I assist you today?",
+				"scroll" : 0.05,
+				"pause" : 1
+			},
+			{
+				"speaker": 2,
+				"text" : "I want to check my refund status",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"4": [
+			{
+				"speaker": 1,
+				"text" : "What can I do for you today",
+				"scroll" : 0.05,
+				"pause" : 1
+			},
+			{
+				"speaker": 2,
+				"text" : "I received the wrong item",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"5": [
+			{
+				"speaker": 1,
+				"text" : "How can I help you?",
+				"scroll" : 0.05,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 2,
+				"text" : "My package arrived damaged.",
+				"scroll" : 0.08,
+				"pause" : 2
+			}
+			],
+			"6": [
+			{
+				"speaker": 1,
+				"text" : "What can I help you with today?",
+				"scroll" : 0.05,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 2,
+				"text" : "I was charged twice.",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"7": [
+			{
+				"speaker": 1,
+				"text" : "What can I do for you?",
+				"scroll" : 0.05,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 2,
+				"text" : "I want to change my payment method.",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"8": [
+			{
+				"speaker": 1,
+				"text" : "How may I assist you?",
+				"scroll" : 0.05,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 2,
+				"text" : "The product I received is missing some parts.",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"9": [
+			{
+				"speaker": 1,
+				"text" : "How can I help you today?",
+				"scroll" : 0.05,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 2,
+				"text" : "I want to return this item.",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"10": [
+			{
+				"speaker": 1,
+				"text" : "What can I assist you with?",
+				"scroll" : 0.05,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 2,
+				"text" : "I need to update my delivery address.",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"11": [
+			{
+				"speaker": 1,
+				"text" : "How may I be of service today?",
+				"scroll" : 0.05,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 2,
+				"text" : "I want to cancel my subscription.",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"12": [
+			{
+				"speaker": 1,
+				"text" : "How can I help you today?",
+				"scroll" : 0.05,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 2,
+				"text" : "I think I received a defective product",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"13": [
+			{
+				"speaker": 1,
+				"text" : "What can I help you with today?",
+				"scroll" : 0.05,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 2,
+				"text" : "I want to see my shipment update.",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+	},
+	"MONOLOGUE": {
+			"1": [
+			{
+				"speaker": 1,
+				"text" : "*sigh*",
+				"scroll" : 0.02,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 1,
+				"text" : "Mom's medical bill is due soon…",
+				"scroll" : 0.08,
+				"pause" : 2
+			}
+			],
+			"2": [
+			{
+				"speaker": 1,
+				"text" : "So many unpaid bills",
+				"scroll" : 0.15,
+				"pause" : 2
+			}
+			],
+			"3": [
+			{
+				"speaker": 1,
+				"text" : ". . .",
+				"scroll" : 0.2,
+				"pause" : 2
+			},
+			{
+				"speaker": 2,
+				"text" : "Theres too many calls",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"4": [
+			{
+				"speaker": 1,
+				"text" : "*sigh*",
+				"scroll" : 0.02,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 1,
+				"text" : "I need a break",
+				"scroll" : 0.05,
+				"pause" : 2
+			}
+			],
+			"5": [
+			{
+				"speaker": 1,
+				"text" : "Ugh.. . .  .",
+				"scroll" : 0.1,
+				"pause" : 1.5
+			},
+			{
+				"speaker": 1,
+				"text" : "When can i go home.....",
+				"scroll" : 0.1,
+				"pause" : 2
+			}
+			],
+	}
+}
