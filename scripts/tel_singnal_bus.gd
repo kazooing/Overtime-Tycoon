@@ -12,7 +12,6 @@ signal enable_telephone
 var ring_in_X_chance: int = 4
 var ring_cycle: float = 3
 var max_fails: int = 4
-var dialogue_count:int = 3
 
 const call_reward = 5
 

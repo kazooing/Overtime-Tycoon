@@ -2,6 +2,7 @@ extends Node2D
 
 var label : Label
 var timer : Timer
+var parent
 
 signal is_finished
 signal tween_finished(from : Node2D)
@@ -14,19 +15,31 @@ var target_color: Color
 var final_position: Vector2
 var speed: float
 var pause: float
-var parent
+var audio: AudioStreamPlayer2D
+
+
+
 
 func _enter_tree() -> void:
 	label = get_node("MarginContainer/MarginContainer/Label")
+	
 	
 	timer = Timer.new()
 	add_child(timer)
 	timer.timeout.connect(_on_timer_timeout)
 	parent = get_parent()
-	var dictionary = parent.dialogue[parent.count]
+	var count = parent.count
+	
+	var dictionary = parent.dialogue[count]
 	label.text = dictionary["text"]
 	speed = dictionary["scroll"]
 	pause = dictionary["pause"]
+	
+	var speaker = parent.speaker_list[dictionary["speaker"] -1]
+	audio = speaker["voice"]
+	audio.pitch_scale = speaker["pitch"]
+	label.modulate = speaker["color"]
+	
 	parent.text_finished.connect(play_finished)
 	parent.dialogue_ended.connect(move_delete)
 	
@@ -41,6 +54,7 @@ func play_text(char_ps : float):
 
 func _on_timer_timeout() -> void:
 	label.set_visible_ratio(label.get_visible_ratio() + visible_delta)
+	audio.play()
 	if label.visible_characters == -1:
 		timer.stop()
 		await get_tree().create_timer(pause).timeout

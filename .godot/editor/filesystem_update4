@@ -7,3 +7,5 @@ res://scripts/pickup.gd
 res://scripts/tel_singnal_bus.gd
 res://scenes/Telephone.tscn
 res://scripts/Telephone.gd
+res://dailogue test/textbox.tscn
+res://dailogue test/dialogue_generator.tscn

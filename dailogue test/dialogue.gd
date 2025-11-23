@@ -15,6 +15,18 @@ var running = false
 
 @onready var rng = RandomNumberGenerator.new()
 @onready var sanity_timer = get_node("sanity_reduction")
+@onready var speaker_list =[
+	{
+		"voice" : get_node("undeep male"),
+		"pitch" : 1,
+		"color" : Color.DARK_BLUE
+	},
+	{
+		"voice": get_node("from telephone"),
+		"pitch" : rng.randf_range(1,1.5),
+		"color": Color.DARK_RED
+	}
+]
 
 
 enum {
@@ -27,6 +39,7 @@ func _ready() -> void:
 	dialogue_library = read_JSON_data(path).get("DIALOGUE", [])
 	monologue_library = read_JSON_data(path).get("MONOLOGUE", [])
 	dialogue = dialogue_library["1"]
+	next()
 
 
 var count = 0
@@ -45,7 +58,7 @@ func next():
 
 func on_text_finish():
 	count += 1
-	text_finished.emit(-40)
+	text_finished.emit(-400)
 
 func on_tween_finish(source):
 	source.tween_finished.disconnect(on_tween_finish)
@@ -63,7 +76,7 @@ func read_JSON_data(file_path):
 
 func finish():
 	print("okay it should STOP NOW")
-	dialogue_ended.emit(-30)
+	dialogue_ended.emit(-300)
 	running = false
 	count = 0
 	if printing == DIALOGUE:
@@ -75,7 +88,7 @@ func _on_telephone_call_started() -> void:
 	if running and printing == DIALOGUE:
 		return
 	elif running:
-		dialogue_ended.emit(-30)
+		dialogue_ended.emit(-300)
 	
 	printing = DIALOGUE
 	sanity_timer.start()

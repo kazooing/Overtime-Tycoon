@@ -1,7 +1,8 @@
 AudioStreamPlayer2D
+Node2D
+AudioListener2D
 Camera2D
 Timer
-Node2D
 Control
 ColorRect
 TextureRect
@@ -11,4 +12,3 @@ Sprite2D
 RichTextLabel
 Button
 Panel
-GridContainer
