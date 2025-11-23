@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://eq5dld084jvt"]
+[gd_scene load_steps=14 format=3 uid="uid://eq5dld084jvt"]
 
 [ext_resource type="Script" uid="uid://bpt1gf17heomq" path="res://scripts/upgrade_shop_scene_script.gd" id="1_f837f"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites/icon.svg" id="2_ku53v"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites/happy madeline celeste.jpg" id="5_tw4x0"]
 [ext_resource type="Texture2D" uid="uid://bc2erf2wu42dl" path="res://sprites/money 11 x 17 px.PNG" id="6_1ry7c"]
 [ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="6_3exvu"]
+[ext_resource type="Texture2D" uid="uid://bgcjwk06j3d33" path="res://sprites/disabled buy button.jpg" id="7_c8xxe"]
 [ext_resource type="Script" uid="uid://djr4a7h2oh0ck" path="res://scripts/shop/money_total.gd" id="7_qag1b"]
 [ext_resource type="Script" uid="uid://bfsct3h3ueaca" path="res://scripts/shop/buy_button_script.gd" id="7_tw4x0"]
 [ext_resource type="PackedScene" uid="uid://bapsv72tnc8gy" path="res://scenes/pause_menu_upgrade_shop.tscn" id="8_3exvu"]
@@ -107,6 +108,7 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("5_tw4x0")
+texture_disabled = ExtResource("7_c8xxe")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("5_1ry7c")
@@ -127,6 +129,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("5_tw4x0")
+texture_disabled = ExtResource("7_c8xxe")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("5_1ry7c")
@@ -147,6 +150,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("5_tw4x0")
+texture_disabled = ExtResource("7_c8xxe")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("5_1ry7c")
@@ -342,6 +346,9 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="UILayer/TextureButton" to="UILayer" method="_on_texture_button_pressed"]
 [connection signal="gui_input" from="UILayer/back_dimmer" to="UILayer" method="_on_back_dimmer_gui_input"]
 [connection signal="gui_input" from="UILayer/back_dimmer_task" to="UILayer" method="_on_back_dimmer_task_gui_input"]
+[connection signal="give_to_decor_button" from="UILayer/inspector_panel/buy_button" to="UILayer/decor/slot000/000" method="_on_buy_button_give_to_decor_button"]
+[connection signal="give_to_decor_button" from="UILayer/inspector_panel/buy_button" to="UILayer/decor/slot001/001" method="_on_buy_button_give_to_decor_button"]
+[connection signal="give_to_decor_button" from="UILayer/inspector_panel/buy_button" to="UILayer/decor/slot002/002" method="_on_buy_button_give_to_decor_button"]
 [connection signal="pressed" from="UILayer/inspector_panel/buy_button" to="UILayer/inspector_panel/buy_button" method="_on_pressed"]
 [connection signal="pressed" from="UILayer/inspector_panel_task/upgrade_button" to="UILayer/inspector_panel_task/upgrade_button" method="_on_pressed"]
 [connection signal="pressed" from="UILayer/inspector_panel_task/unlock_button" to="UILayer/inspector_panel_task/unlock_button" method="_on_pressed"]
