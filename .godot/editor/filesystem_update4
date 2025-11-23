@@ -5,3 +5,4 @@ res://dailogue test/text_box.gd
 res://scripts/ringer.gd
 res://scripts/pickup.gd
 res://scripts/tel_singnal_bus.gd
+res://scenes/Telephone.tscn

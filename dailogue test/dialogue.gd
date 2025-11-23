@@ -27,7 +27,6 @@ func _ready() -> void:
 	dialogue_library = read_JSON_data(path).get("DIALOGUE", [])
 	monologue_library = read_JSON_data(path).get("MONOLOGUE", [])
 	dialogue = dialogue_library["1"]
-	if dialogue.size() >0: next()
 
 
 var count = 0

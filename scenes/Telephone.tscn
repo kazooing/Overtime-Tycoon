@@ -92,6 +92,7 @@ texture = ExtResource("1_u4wsl")
 [node name="Timer" type="Timer" parent="Area2D"]
 wait_time = 10.0
 
+[connection signal="disable_telephone" from="." to="Area2D/Telephone" method="_on_button_button_down"]
 [connection signal="disable_telephone" from="." to="Area2D/Telephone/Area2D" method="disable"]
 [connection signal="enable_telephone" from="." to="Area2D/Telephone/Area2D" method="enable"]
 [connection signal="restart_timer" from="." to="Area2D" method="_on_timer_timeout"]
