@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq6r3vur078ww"]
+[gd_scene load_steps=12 format=3 uid="uid://bq6r3vur078ww"]
 
 [ext_resource type="Script" uid="uid://cwa3bujatx3jb" path="res://scripts/tel_singnal_bus.gd" id="1_6cvow"]
 [ext_resource type="Script" uid="uid://cfbs6hf2wxxbl" path="res://scripts/pickup.gd" id="1_54hca"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites/icon.svg" id="1_u4wsl"]
 [ext_resource type="Script" uid="uid://cuf02qxy1xgin" path="res://scripts/ringer.gd" id="2_wjgco"]
 [ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites/happy madeline celeste.jpg" id="5_ml7rr"]
+[ext_resource type="AudioStream" uid="uid://c4wvncdqha688" path="res://SFX/Telephone/empty.mp3" id="7_lgcbr"]
+[ext_resource type="AudioStream" uid="uid://bjn8y720ykkbv" path="res://SFX/Telephone/ringtone.mp3" id="8_uvhmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54hca"]
 size = Vector2(104, 248)
@@ -72,6 +74,13 @@ offset_right = 84.8
 offset_bottom = 44.0
 metadata/_edit_use_anchors_ = true
 
+[node name="empty_ring" type="AudioStreamPlayer2D" parent="Area2D/Telephone/Area2D"]
+stream = ExtResource("7_lgcbr")
+volume_db = -5.885
+
+[node name="ringing" type="AudioStreamPlayer2D" parent="Area2D/Telephone/Area2D"]
+stream = ExtResource("8_uvhmj")
+
 [node name="Cancel Button" type="Button" parent="Area2D/Telephone"]
 offset_left = -80.0
 offset_top = 50.0
@@ -92,10 +101,14 @@ texture = ExtResource("1_u4wsl")
 [node name="Timer" type="Timer" parent="Area2D"]
 wait_time = 10.0
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
 [connection signal="disable_telephone" from="." to="Area2D/Telephone" method="_on_button_button_down"]
 [connection signal="disable_telephone" from="." to="Area2D/Telephone/Area2D" method="disable"]
 [connection signal="enable_telephone" from="." to="Area2D/Telephone/Area2D" method="enable"]
 [connection signal="restart_timer" from="." to="Area2D" method="_on_timer_timeout"]
+[connection signal="is_ringing" from="Area2D/Telephone" to="Area2D/Telephone/Area2D" method="_on_telephone_is_ringing"]
 [connection signal="button_down" from="Area2D/Telephone/Cancel Button" to="Area2D/Telephone" method="_on_button_button_down"]
 [connection signal="timeout" from="Area2D/Telephone/ring_timer" to="Area2D/Telephone" method="_on_timer_timeout"]
 [connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

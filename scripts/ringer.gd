@@ -35,13 +35,13 @@ func _process(_delta):
 
 func _on_timer_timeout() -> void:
 	print("timer called")
-	if rng.randi_range(0,in_X) == 0 or fails > max_fails:
+	if rng.randi_range(0,in_X) == 0 or fails > max_fails - 1:
 		ringing = true
 		is_ringing.emit(true)
 		fails = 0
 	else:
 		fails += 1
-		print(fails)
+		print(fails, max_fails)
 	timer.stop()
 
 

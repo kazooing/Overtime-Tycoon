@@ -4,6 +4,10 @@ var pressed = false
 var mouse_pos: Vector2
 var correction: Vector2
 var ease_vector: Vector2
+var is_ringing: bool = false
+@onready var empty_ring = get_node("empty_ring")
+@onready var ring = get_node("ringing")
+
 
 func _ready() -> void:
 	var button = $Button
@@ -17,11 +21,15 @@ func _process(delta: float) -> void:
 		global_position.x = move_toward(global_position.x, mouse_pos.x, ease_vector.x * delta)
 		global_position.y = move_toward(global_position.y, mouse_pos.y, ease_vector.y * delta)
 		$"Telephone Sprite".rotation = deg_to_rad(10)
+		if not is_ringing:
+			play_audio(empty_ring)
 	else:
 		ease_vector = 0.3 * square_ease(global_position, start_pos, 10)
 		global_position.x = move_toward(global_position.x, start_pos.x, ease_vector.x * delta)
 		global_position.y = move_toward(global_position.y, start_pos.y, ease_vector.y * delta)
 		$"Telephone Sprite".rotation = 0
+		if empty_ring.playing:
+			empty_ring.stop()
 	
 	if has_overlapping_areas():
 		pressed = false
@@ -41,6 +49,11 @@ func square_ease(pos1: Vector2, pos2: Vector2, minim:float) -> Vector2:
 	vector = (delta/distance) * vector
 	return abs(vector)
 
+func play_audio(audio: AudioStreamPlayer2D):
+	if audio.playing:
+		return
+	audio.play()
+
 func on_press():
 	pressed = true
 
@@ -52,3 +65,12 @@ func disable():
 
 func enable():
 	$Button.disabled = false
+
+
+func _on_telephone_is_ringing(confirm: bool) -> void:
+	is_ringing = confirm
+	if confirm:
+		empty_ring.stop()
+		play_audio(ring)
+	else:
+		ring.stop()
