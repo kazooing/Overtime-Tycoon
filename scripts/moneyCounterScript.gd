@@ -6,7 +6,6 @@ func _onready() -> void:
 		GM.curMoney = 0
 
 func addMoney (amount):
-	GM.money_gained_per_scene += 1000
 	GM.curMoney += amount
 	GM.money_gained_per_scene += amount
 	fit_to_text_size()
