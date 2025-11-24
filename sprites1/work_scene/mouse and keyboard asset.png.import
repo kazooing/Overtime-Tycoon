@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duyiac8lvhitu"
-path="res://.godot/imported/mouse and keyboard asset.png-cd02938937d2c77d00db43ebdd6f760d.ctex"
+path="res://.godot/imported/mouse and keyboard asset.png-106f4a5e6ac847d66cd2723b60d80cd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/work_scene/mouse and keyboard asset.png"
-dest_files=["res://.godot/imported/mouse and keyboard asset.png-cd02938937d2c77d00db43ebdd6f760d.ctex"]
+source_file="res://sprites1/work_scene/mouse and keyboard asset.png"
+dest_files=["res://.godot/imported/mouse and keyboard asset.png-106f4a5e6ac847d66cd2723b60d80cd5.ctex"]
 
 [params]
 

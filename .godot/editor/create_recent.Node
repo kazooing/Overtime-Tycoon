@@ -1,12 +1,13 @@
-AudioStreamPlayer2D
+AnimationPlayer
 Node2D
+Timer
+Label
+AudioStreamPlayer2D
 AudioListener2D
 Camera2D
-Timer
 Control
 ColorRect
 TextureRect
-Label
 TextureButton
 Sprite2D
 RichTextLabel

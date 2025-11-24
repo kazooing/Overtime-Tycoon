@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://luydshw2aopu"
-path="res://.godot/imported/when click.PNG-9ff8d8b977bae8578311bc6d5ed6233d.ctex"
+path="res://.godot/imported/when click.PNG-c1cc13cf1f0ca3816e6eb7334f744f47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/start_screen/quit menu button/when click.PNG"
-dest_files=["res://.godot/imported/when click.PNG-9ff8d8b977bae8578311bc6d5ed6233d.ctex"]
+source_file="res://sprites1/start_screen/quit menu button/when click.PNG"
+dest_files=["res://.godot/imported/when click.PNG-c1cc13cf1f0ca3816e6eb7334f744f47.ctex"]
 
 [params]
 

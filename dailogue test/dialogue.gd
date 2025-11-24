@@ -11,7 +11,6 @@ var text_box = preload("res://dailogue test/textbox.tscn")
 var dialogue_library = []
 var monologue_library = []
 var dialogue = []
-var running = false
 
 @onready var rng = RandomNumberGenerator.new()
 @onready var sanity_timer = get_node("sanity_reduction")
@@ -30,10 +29,11 @@ var running = false
 
 
 enum {
+	EMPTY,
 	DIALOGUE,
 	MONOLOGUE
 }
-var printing : int = MONOLOGUE
+var printing : int = EMPTY
 
 func _ready() -> void:
 	dialogue_library = read_JSON_data(path).get("DIALOGUE", [])
@@ -46,7 +46,6 @@ func next():
 	if count >= dialogue.size():
 		finish()
 		return
-	running = true
 	print("where instantiate happens")
 	var new_text = text_box.instantiate()
 	
@@ -75,18 +74,18 @@ func read_JSON_data(file_path):
 func finish():
 	print("okay it should STOP NOW")
 	dialogue_ended.emit(-300)
-	running = false
 	count = 0
 	if printing == DIALOGUE:
 		affect_sanityBar.emit(false, self)
 		sanity_timer.stop()
 		call_dialogue_finished.emit()
+	printing = EMPTY
 
 var prev_dia = -1
 func _on_telephone_call_started() -> void:
-	if running and printing == DIALOGUE:
+	if printing == DIALOGUE:
 		return
-	elif running:
+	elif printing != EMPTY:
 		dialogue_ended.emit(-300)
 	
 	printing = DIALOGUE
@@ -106,7 +105,7 @@ func _on_sanity_reduction_timeout() -> void:
 
 var prev_mon:int = -1
 func _on_monologue_timer_timeout() -> void:
-	if running:
+	if printing != EMPTY:
 		return
 	
 	if rng.randi_range(0,5) == 0:

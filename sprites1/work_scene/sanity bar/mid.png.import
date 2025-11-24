@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1b2q1nhc2kyl"
-path="res://.godot/imported/mid.png-eeec0db3ca576f65ddfeae7a5080c20e.ctex"
+path="res://.godot/imported/mid.png-48519ede5fed763d41cd8f30f57624d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/work_scene/sanity bar/mid.png"
-dest_files=["res://.godot/imported/mid.png-eeec0db3ca576f65ddfeae7a5080c20e.ctex"]
+source_file="res://sprites1/work_scene/sanity bar/mid.png"
+dest_files=["res://.godot/imported/mid.png-48519ede5fed763d41cd8f30f57624d2.ctex"]
 
 [params]
 

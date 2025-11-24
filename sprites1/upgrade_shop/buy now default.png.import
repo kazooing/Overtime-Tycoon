@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cutdb5llo6ijx"
-path="res://.godot/imported/buy now default.png-9c48fda86b1cae54bf63e8858a0fd2b2.ctex"
+path="res://.godot/imported/buy now default.png-5606651847f5149b7636fb1970fc3947.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/upgrade_shop/buy now default.png"
-dest_files=["res://.godot/imported/buy now default.png-9c48fda86b1cae54bf63e8858a0fd2b2.ctex"]
+source_file="res://sprites1/upgrade_shop/buy now default.png"
+dest_files=["res://.godot/imported/buy now default.png-5606651847f5149b7636fb1970fc3947.ctex"]
 
 [params]
 

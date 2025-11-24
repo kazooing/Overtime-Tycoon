@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhtiat87jhyq6"
-path="res://.godot/imported/out of stock (use on top of the product).png-0c89323751c24f4af3184b949daa7a36.ctex"
+path="res://.godot/imported/out of stock (use on top of the product).png-08690c370665b020a0e41099087596d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/upgrade_shop/out of stock (use on top of the product).png"
-dest_files=["res://.godot/imported/out of stock (use on top of the product).png-0c89323751c24f4af3184b949daa7a36.ctex"]
+source_file="res://sprites1/upgrade_shop/out of stock (use on top of the product).png"
+dest_files=["res://.godot/imported/out of stock (use on top of the product).png-08690c370665b020a0e41099087596d6.ctex"]
 
 [params]
 

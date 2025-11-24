@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q3kmyyh88l0c"
-path="res://.godot/imported/table and corkboard asset.png-bb1a23a24747be4d9699eca5e9b48260.ctex"
+path="res://.godot/imported/table and corkboard asset.png-db155da51f2802a6f04551a7f230cd5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/work_scene/table and corkboard asset.png"
-dest_files=["res://.godot/imported/table and corkboard asset.png-bb1a23a24747be4d9699eca5e9b48260.ctex"]
+source_file="res://sprites1/work_scene/table and corkboard asset.png"
+dest_files=["res://.godot/imported/table and corkboard asset.png-db155da51f2802a6f04551a7f230cd5a.ctex"]
 
 [params]
 

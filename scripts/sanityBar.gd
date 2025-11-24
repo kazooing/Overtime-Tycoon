@@ -26,8 +26,8 @@ func _on_texture_button_pressed() -> void:
 
 
 func new_affecting(confirm: bool, object: Node) -> void:
-	#print("CHECKINGGGG  ", object)
-	#print(affecting_list)
+	print("CHECKINGGGG  ", object)
+	print(affecting_list)
 	if confirm:
 		if affecting_list.find(object) >= 0 : return
 		affecting_list.append(object)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwnonalhjn77c"
-path="res://.godot/imported/buy when click.png-59bf085d29dcc69e33e0091cce977791.ctex"
+path="res://.godot/imported/buy when click.png-c877d945cf9832f65be4f526e052d982.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/upgrade_shop/buy when click.png"
-dest_files=["res://.godot/imported/buy when click.png-59bf085d29dcc69e33e0091cce977791.ctex"]
+source_file="res://sprites1/upgrade_shop/buy when click.png"
+dest_files=["res://.godot/imported/buy when click.png-c877d945cf9832f65be4f526e052d982.ctex"]
 
 [params]
 
