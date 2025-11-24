@@ -157,5 +157,6 @@ func stop_sanity_drain():
 
 func task_failed(reward:float, penalty_from:float, penalty_to:float):
 	audio_cue.stop()
+	state = INMEET
 	await get_tree().create_timer(rng.randf_range(penalty_from,penalty_to)).timeout
 	finish_meeting(reward)

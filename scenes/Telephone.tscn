@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cwa3bujatx3jb" path="res://scripts/tel_singnal_bus.gd" id="1_6cvow"]
 [ext_resource type="Script" uid="uid://cfbs6hf2wxxbl" path="res://scripts/pickup.gd" id="1_54hca"]
 [ext_resource type="Script" uid="uid://cto2pgyb6c76h" path="res://scripts/Telephone.gd" id="1_iimr7"]
-[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites/icon.svg" id="1_u4wsl"]
+[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites2/icon.svg" id="1_u4wsl"]
 [ext_resource type="Script" uid="uid://cuf02qxy1xgin" path="res://scripts/ringer.gd" id="2_wjgco"]
-[ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites/happy madeline celeste.jpg" id="5_ml7rr"]
+[ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites2/happy madeline celeste.jpg" id="5_ml7rr"]
 [ext_resource type="AudioStream" uid="uid://c4wvncdqha688" path="res://SFX/Telephone/empty.mp3" id="7_lgcbr"]
 [ext_resource type="AudioStream" uid="uid://bjn8y720ykkbv" path="res://SFX/Telephone/ringtone.mp3" id="8_uvhmj"]
 
@@ -98,9 +98,6 @@ position = Vector2(1.9073486e-06, 1)
 scale = Vector2(1.921875, 0.671875)
 texture = ExtResource("1_u4wsl")
 
-[node name="Timer" type="Timer" parent="Area2D"]
-wait_time = 10.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 
@@ -111,4 +108,3 @@ zoom = Vector2(0.5, 0.5)
 [connection signal="is_ringing" from="Area2D/Telephone" to="Area2D/Telephone/Area2D" method="_on_telephone_is_ringing"]
 [connection signal="button_down" from="Area2D/Telephone/Cancel Button" to="Area2D/Telephone" method="_on_button_button_down"]
 [connection signal="timeout" from="Area2D/Telephone/ring_timer" to="Area2D/Telephone" method="_on_timer_timeout"]
-[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

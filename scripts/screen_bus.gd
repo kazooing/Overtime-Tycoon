@@ -7,6 +7,7 @@ signal money_notification(amount:float, pos: Vector2)
 signal disable
 signal close_programs(exception: Node)
 signal allow_meetings(confirm: bool)
+signal meeting_dialogue
 
 func _ready() -> void:
 	if(GM.tasks[1]["owned"]):
@@ -35,3 +36,6 @@ func call_no_meetings():
 
 func call_allow_meetings():
 	allow_meetings.emit(true)
+
+func call_meeting_dialogue():
+	meeting_dialogue.emit()

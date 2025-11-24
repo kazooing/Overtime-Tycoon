@@ -36,10 +36,10 @@ func calling():
 	call_started.emit()
 
 # call finished
-func call_stop():
+func call_stop(reward: int = GM.add_money_telephone):
 	restart_timer.emit() 
-	call_stopped.emit(5) # add money
-	call_notif.emit(GM.add_money_telephone, $spawn_pos.global_position)
+	call_stopped.emit(reward) # add money
+	call_notif.emit(reward, $spawn_pos.global_position)
 	GM.calls_done_per_scene += 1
 
 func ringing(confirm):

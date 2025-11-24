@@ -313,5 +313,43 @@
 				"pause" : 2
 			}
 			],
+	},
+	"MEETING": {
+		"1": [
+			{
+				"speaker": 2,
+				"text" : "ILOVEYOUSOMUCHIDONTWANNATHROWMYSELFOFFACLIFFFRFR",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			{
+				"speaker": 2,
+				"text" : "HIDUP PARTY 4",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			{
+				"speaker": 2,
+				"text" : "PLACEHOLDERPLACEHOLDERPLACEHOLDER",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			{
+				"speaker": 2,
+				"text" : "EH, KOQ DIEM DOANG",
+				"scroll" : 0.08,
+				"pause" : 0.5
+			},
+			],
+	},
+	"RESPONSE":{
+		"1": [
+			{
+				"speaker": 1,
+				"text" : "YADAYDAYDAYDAYDYAYYAYD",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			}
+		]
 	}
 }

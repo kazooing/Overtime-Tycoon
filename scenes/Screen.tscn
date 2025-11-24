@@ -748,6 +748,7 @@ libraries = {
 [connection signal="decrease" from="Meeting opener/Meeting" to="." method="call_decrease_sanity"]
 [connection signal="finished" from="Meeting opener/Meeting" to="." method="call_gain_money"]
 [connection signal="meeting_finish" from="Meeting opener/Meeting" to="Meeting opener" method="_on_meeting_meeting_finish"]
+[connection signal="meeting_start" from="Meeting opener/Meeting" to="." method="call_meeting_dialogue"]
 [connection signal="meeting_start" from="Meeting opener/Meeting" to="Meeting opener" method="_on_meeting_meeting_start"]
 [connection signal="on_penalty" from="Meeting opener/Meeting" to="." method="call_new_decreaser"]
 [connection signal="button_down" from="Meeting opener/Meeting/Button" to="Meeting opener/Meeting" method="_on_button_button_down"]

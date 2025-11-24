@@ -51,6 +51,9 @@ func _ready() -> void:
 
 
 func play_added_money(amount_added: float, spawn_pos: Vector2) -> void:
+	if amount_added <= 0:
+		return
+	
 	spawn_add_money(spawn_pos, amount_added) 
 
 

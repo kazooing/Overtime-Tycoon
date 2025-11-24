@@ -263,6 +263,7 @@ autostart = true
 [connection signal="disable_all_tasks" from="." to="PcStuff/Screen" method="disable_computer"]
 [connection signal="decrease_sanity" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
 [connection signal="gain_money" from="PcStuff/Screen" to="ProgressLayer/moneyCounterUI" method="addMoney"]
+[connection signal="meeting_dialogue" from="PcStuff/Screen" to="Dialogue" method="_on_meeting_dialogue"]
 [connection signal="money_notification" from="PcStuff/Screen" to="." method="play_added_money"]
 [connection signal="new_decreaser" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="new_affecting"]
 [connection signal="is_not_draining" from="ProgressLayer/sanityBarUI" to="." method="confirm_tasks_ended"]
