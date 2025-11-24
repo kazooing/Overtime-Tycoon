@@ -7,7 +7,8 @@ signal money_notification(amount:float, pos: Vector2)
 signal disable
 signal close_programs(exception: Node)
 signal allow_meetings(confirm: bool)
-signal meeting_dialogue
+signal meeting_finished
+signal meeting_started
 
 func _ready() -> void:
 	if(GM.tasks[1]["owned"]):
@@ -15,7 +16,7 @@ func _ready() -> void:
 		
 
 func call_decrease_sanity(amount: float):
-	print("call_decrease_sanity ", amount)
+	#print("call_decrease_sanity ", amount)
 	decrease_sanity.emit(amount)
 
 func call_new_decreaser(confirm:bool, object: Node):
@@ -34,8 +35,11 @@ func force_close(exception: Node):
 func call_no_meetings():
 	allow_meetings.emit(false)
 
-func call_allow_meetings():
+func call_allow_meetings(_X):
 	allow_meetings.emit(true)
 
-func call_meeting_dialogue():
-	meeting_dialogue.emit()
+func call_meeting_started():
+	meeting_started.emit()
+
+func call_meeting_finished():
+	meeting_finished.emit()

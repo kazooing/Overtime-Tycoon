@@ -1,6 +1,6 @@
 extends Node2D
 
-signal call_started(code: int)
+signal call_started()
 signal call_stopped(result: float)
 signal restart_timer
 signal phone_ringing(confirm: bool, object: Node2D)

@@ -727,6 +727,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_xhy5k")
 }
 
+[connection signal="allow_meetings" from="." to="Meeting opener" method="_on_screen_allow_meetings"]
 [connection signal="close_programs" from="." to="Spreadsheet opener2" method="force_close"]
 [connection signal="close_programs" from="." to="Meeting opener" method="force_close"]
 [connection signal="disable" from="." to="close screen" method="turn_off"]
@@ -747,8 +748,9 @@ libraries = {
 [connection signal="button_down" from="Meeting opener/Button" to="Meeting opener" method="_on_button_button_down"]
 [connection signal="decrease" from="Meeting opener/Meeting" to="." method="call_decrease_sanity"]
 [connection signal="finished" from="Meeting opener/Meeting" to="." method="call_gain_money"]
+[connection signal="meeting_finish" from="Meeting opener/Meeting" to="." method="call_meeting_finished"]
 [connection signal="meeting_finish" from="Meeting opener/Meeting" to="Meeting opener" method="_on_meeting_meeting_finish"]
-[connection signal="meeting_start" from="Meeting opener/Meeting" to="." method="call_meeting_dialogue"]
+[connection signal="meeting_start" from="Meeting opener/Meeting" to="." method="call_meeting_started"]
 [connection signal="meeting_start" from="Meeting opener/Meeting" to="Meeting opener" method="_on_meeting_meeting_start"]
 [connection signal="on_penalty" from="Meeting opener/Meeting" to="." method="call_new_decreaser"]
 [connection signal="button_down" from="Meeting opener/Meeting/Button" to="Meeting opener/Meeting" method="_on_button_button_down"]

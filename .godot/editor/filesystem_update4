@@ -5,3 +5,7 @@ res://scenes/Telephone.tscn
 res://scripts/pickup.gd
 res://scripts/ringer.gd
 res://scenes/work_scene.tscn
+res://scripts/screen_bus.gd
+res://scripts/meeting.gd
+res://scripts/meeting_opener.gd
+res://scenes/Screen.tscn

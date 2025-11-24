@@ -5,7 +5,7 @@ signal dialogue_ended(move_by: float)
 signal reduce_sanity(amount: float)
 signal call_dialogue_finished(reward: float)
 signal affect_sanityBar(confirm:bool, object: Node)
-signal start_meeting_cue_timer()
+signal meeting_dialogue_finished()
 signal fail_meeting_task(reward, penalty_from, penalty_to)
 
 var path = "res://dailogue test/tester.json"
@@ -102,7 +102,7 @@ func finish(fail: bool = false):
 		if fail:
 			fail_meeting_task.emit(5, 0, 1)
 		else:
-			start_meeting_cue_timer.emit()
+			meeting_dialogue_finished.emit()
 	if not fail:
 		printing = EMPTY
 

@@ -71,4 +71,20 @@ func _on_meeting_meeting_start() -> void:
 
 func _on_meeting_meeting_finish() -> void:
 	ringer_timer.start(ring_cycle)
+	if is_open:
+		is_open = false
+		anim_player.play_backwards(animation)
+		closing_meeting.emit()
 	has_meeting = false
+
+
+func _on_screen_allow_meetings(confirm: bool) -> void:
+	if not confirm:
+		print("MEETINGS DISALLOWED")
+		ringer_timer.stop()
+		notif_anim.play_backwards("Appear notif")
+		no_meeting.emit()
+		has_meeting = false
+	else:
+		print("MEETINGS ALLOWED")
+		ringer_timer.start(ring_cycle)
