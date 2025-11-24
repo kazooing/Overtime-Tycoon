@@ -1,0 +1,10 @@
+res://scenes/upgrade_shop_scene.tscn
+res://scripts/shop/buy_button_script.gd
+res://scripts/shop/decor_script.gd
+res://scripts/shop/upgrade_button_script.gd
+res://dailogue test/dialogue.gd
+res://dailogue test/textbox.tscn
+res://dailogue test/text_box.gd
+res://scripts/ringer.gd
+res://scripts/Telephone.gd
+res://scripts/tel_singnal_bus.gd

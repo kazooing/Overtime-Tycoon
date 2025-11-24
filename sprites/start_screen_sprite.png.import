@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream:sprites/start_screen_sprite.png.import
 uid="uid://c4iyjy80etms5"
 path="res://.godot/imported/start_screen_sprite.png-f7e859504ed5b1286d3b43344ef295bd.ctex"
+=======
+uid="uid://bgcjwk06j3d33"
+path="res://.godot/imported/disabled buy button.jpg-43f4885ffe9802f4de742a5d5b9f8c02.ctex"
+>>>>>>> Stashed changes:sprites2/disabled buy button.jpg.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< Updated upstream:sprites/start_screen_sprite.png.import
 source_file="res://sprites/start_screen_sprite.png"
 dest_files=["res://.godot/imported/start_screen_sprite.png-f7e859504ed5b1286d3b43344ef295bd.ctex"]
+=======
+source_file="res://sprites2/disabled buy button.jpg"
+dest_files=["res://.godot/imported/disabled buy button.jpg-43f4885ffe9802f4de742a5d5b9f8c02.ctex"]
+>>>>>>> Stashed changes:sprites2/disabled buy button.jpg.import
 
 [params]
 
