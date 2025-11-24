@@ -1,22 +1,81 @@
-[gd_scene load_steps=18 format=3 uid="uid://rval02q1w73n"]
+[gd_scene load_steps=34 format=3 uid="uid://rval02q1w73n"]
 
 [ext_resource type="Script" uid="uid://bwijatx2m08tx" path="res://scripts/start_screen.gd" id="1_tx5wa"]
 [ext_resource type="Texture2D" uid="uid://d3nocq11xdemp" path="res://sprites/clock/9.png" id="2_2banv"]
-[ext_resource type="Texture2D" uid="uid://c4iyjy80etms5" path="res://sprites/start_screen/start_screen_sprite.png" id="2_o7i0r"]
+[ext_resource type="Texture2D" uid="uid://c4iyjy80etms5" path="res://sprites/start_screen_sprite.png" id="2_o7i0r"]
 [ext_resource type="Texture2D" uid="uid://bc2erf2wu42dl" path="res://sprites/money 11 x 17 px.PNG" id="3_lt4el"]
 [ext_resource type="Texture2D" uid="uid://q3kmyyh88l0c" path="res://sprites/work_scene/table and corkboard asset.png" id="4_phykr"]
 [ext_resource type="Texture2D" uid="uid://b1r6erwnhpmqa" path="res://sprites/work_scene/sanity bar/bottom.png" id="5_q3i3u"]
 [ext_resource type="Texture2D" uid="uid://bcej5pylfuo8" path="res://sprites/work_scene/sanity bar/top.png" id="6_2banv"]
+[ext_resource type="Texture2D" uid="uid://b2leam8i6aemi" path="res://sprites/work_scene/sidebar.png" id="6_8ijck"]
 [ext_resource type="Texture2D" uid="uid://b1b2q1nhc2kyl" path="res://sprites/work_scene/sanity bar/mid.png" id="7_ytx0m"]
+[ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="8_1jj22"]
 [ext_resource type="Texture2D" uid="uid://duyiac8lvhitu" path="res://sprites/work_scene/mouse and keyboard asset.png" id="8_a4px2"]
 [ext_resource type="Texture2D" uid="uid://32fbke6ky7ip" path="res://sprites/work_scene/corkboard notes asset.png" id="9_37qom"]
 [ext_resource type="PackedScene" uid="uid://d2bcts6ujb2hd" path="res://scenes/Screen.tscn" id="10_a7uje"]
+[ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites/SanityBarUnder.png" id="12_0nsjh"]
 [ext_resource type="Texture2D" uid="uid://c7bc0pxbkqpn7" path="res://sprites/start_screen/start button/idle.png" id="12_8c457"]
 [ext_resource type="Texture2D" uid="uid://bi8jql20c688q" path="res://sprites/start_screen/start button/when click.png" id="12_q3i3u"]
 [ext_resource type="Texture2D" uid="uid://dic50dxdkcpoj" path="res://sprites/start_screen/resumepause button/idle.PNG" id="13_3opy0"]
+[ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites/sanityBar.png" id="13_ce0he"]
 [ext_resource type="Texture2D" uid="uid://dplt6wbt4pkxt" path="res://sprites/start_screen/resumepause button/when paused_clicked.PNG" id="14_2banv"]
 [ext_resource type="Texture2D" uid="uid://bnddk27itqvoy" path="res://sprites/start_screen/quit menu button/idle.PNG" id="14_53rsf"]
+[ext_resource type="Texture2D" uid="uid://dowqb75pj6ats" path="res://sprites/clock/10.png" id="15_ivrik"]
+[ext_resource type="Texture2D" uid="uid://dp7siga4umx6q" path="res://sprites/clock/11.png" id="16_xanmy"]
 [ext_resource type="Texture2D" uid="uid://luydshw2aopu" path="res://sprites/start_screen/quit menu button/when click.PNG" id="16_ytx0m"]
+[ext_resource type="Texture2D" uid="uid://xaopfryphl4m" path="res://sprites/clock/12.png" id="17_ulm5y"]
+[ext_resource type="Texture2D" uid="uid://bk5xsmp3tdc4k" path="res://sprites/clock/1.png" id="18_kdt5b"]
+[ext_resource type="Texture2D" uid="uid://tmfus7qco1yy" path="res://sprites/clock/2.png" id="19_jknwe"]
+[ext_resource type="Texture2D" uid="uid://bujc5nb8gy6m5" path="res://sprites/clock/3.png" id="20_2i2dj"]
+[ext_resource type="Texture2D" uid="uid://dn0tdtvo856hw" path="res://sprites/clock/4.png" id="21_bjj4f"]
+[ext_resource type="Texture2D" uid="uid://cvgvqf11uegc4" path="res://sprites/clock/5.png" id="22_0e3oe"]
+[ext_resource type="Texture2D" uid="uid://ddm80yf5qtc53" path="res://sprites/clock/6.png" id="23_q3skl"]
+[ext_resource type="Texture2D" uid="uid://bga1wnuoyufkp" path="res://sprites/clock/7.png" id="24_lyip4"]
+[ext_resource type="Texture2D" uid="uid://yri1g0l6vx8u" path="res://sprites/clock/8.png" id="25_kbp7x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5cfws"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2banv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ivrik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xanmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ulm5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kdt5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jknwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_2i2dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bjj4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_0e3oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_q3skl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_lyip4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_kbp7x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -32,33 +91,10 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Clock" type="Sprite2D" parent="Background"]
-position = Vector2(106, 156.99998)
-scale = Vector2(0.158, 0.158)
-texture = ExtResource("2_2banv")
-
 [node name="tableandcork" type="Sprite2D" parent="Background"]
 position = Vector2(642, 475.00003)
 scale = Vector2(0.865, 0.865)
 texture = ExtResource("4_phykr")
-
-[node name="moneyIcon" type="Sprite2D" parent="Background"]
-position = Vector2(54, 41)
-scale = Vector2(0.065, 0.065)
-texture = ExtResource("3_lt4el")
-
-[node name="sanityBarUI" type="TextureProgressBar" parent="Background"]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 262.00003
-offset_right = 337.0
-offset_bottom = 1262.0
-scale = Vector2(0.31, 0.31)
-value = 100.0
-fill_mode = 3
-texture_under = ExtResource("5_q3i3u")
-texture_over = ExtResource("6_2banv")
-texture_progress = ExtResource("7_ytx0m")
 
 [node name="Screen" parent="Background" instance=ExtResource("10_a7uje")]
 position = Vector2(473.99997, 372.00003)
@@ -75,6 +111,75 @@ position = Vector2(872.99994, 318)
 scale = Vector2(0.195, 0.195)
 texture = ExtResource("9_37qom")
 
+[node name="TextureRect" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 0.9999998
+offset_top = -20.000004
+offset_right = 251.0
+offset_bottom = 980.0
+grow_vertical = 2
+scale = Vector2(0.72, 0.72)
+size_flags_horizontal = 0
+texture = ExtResource("6_8ijck")
+
+[node name="moneyIcon" type="Sprite2D" parent="Background"]
+position = Vector2(46, 39)
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("3_lt4el")
+
+[node name="moneyCounterUI" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 18.0
+offset_right = 168.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_1jj22")
+theme_override_font_sizes/font_size = 30
+text = "$0.0"
+vertical_alignment = 1
+
+[node name="sanityBarUI" type="TextureProgressBar" parent="Background"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 262.0
+offset_right = 316.0
+offset_bottom = 1262.0
+scale = Vector2(0.31, 0.31)
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("5_q3i3u")
+texture_over = ExtResource("6_2banv")
+texture_progress = ExtResource("7_ytx0m")
+
+[node name="label_target" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 230.0
+offset_right = 1045.0
+offset_bottom = 265.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "This week's target :("
+
+[node name="target_bar" type="TextureProgressBar" parent="Background"]
+layout_mode = 0
+offset_left = 811.0
+offset_top = 259.0
+offset_right = 2513.0
+offset_bottom = 382.0
+scale = Vector2(0.08, 0.08)
+texture_under = ExtResource("12_0nsjh")
+texture_progress = ExtResource("13_ce0he")
+
+[node name="Clock" type="AnimatedSprite2D" parent="Background"]
+position = Vector2(90, 163)
+scale = Vector2(0.13302928, 0.13302928)
+sprite_frames = SubResource("SpriteFrames_5cfws")
+
 [node name="white" type="ColorRect" parent="Background"]
 layout_mode = 0
 offset_right = 1280.0
@@ -89,15 +194,6 @@ offset_right = 1034.0
 offset_bottom = 560.0
 texture = ExtResource("2_o7i0r")
 expand_mode = 1
-
-[node name="moneyCounterUI" type="Label" parent="Background"]
-layout_mode = 0
-offset_left = 102.0
-offset_top = 26.0
-offset_right = 315.0
-offset_bottom = 60.0
-theme_override_font_sizes/font_size = 22
-text = ": $0"
 
 [node name="MainMenuBox" type="Control" parent="."]
 anchors_preset = 0

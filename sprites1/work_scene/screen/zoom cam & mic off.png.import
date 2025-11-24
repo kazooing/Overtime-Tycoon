@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4iyjy80etms5"
-path="res://.godot/imported/start_screen_sprite.png-f7e859504ed5b1286d3b43344ef295bd.ctex"
+uid="uid://cr4au0veoyg6x"
+path="res://.godot/imported/zoom cam & mic off.png-488e79a71517117bebf32b287f546ce5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/start_screen_sprite.png"
-dest_files=["res://.godot/imported/start_screen_sprite.png-f7e859504ed5b1286d3b43344ef295bd.ctex"]
+source_file="res://sprites/work_scene/screen/zoom cam & mic off.png"
+dest_files=["res://.godot/imported/zoom cam & mic off.png-488e79a71517117bebf32b287f546ce5.ctex"]
 
 [params]
 
