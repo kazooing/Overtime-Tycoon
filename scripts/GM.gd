@@ -20,21 +20,21 @@ var pajangan = [
 		"id": "000",
 		"owned": false,
 		"recover_bonus": 0.1,
-		"decrease_bonus": 0.1,
+		"decrease_bonus": 0.05,
 		"icon" : "res://sprites1/upgrade_shop/decor/mugmug.PNG"
 	},
 	{
 		"id": "001",
 		"owned": false,
 		"recover_bonus": 0.15,
-		"decrease_bonus": 0.15,
+		"decrease_bonus": 0.075,
 		"icon" : "res://sprites1/upgrade_shop/decor/plant.PNG"
 	},
 	{
 		"id": "002",
 		"owned": false,
 		"recover_bonus": 0.2,
-		"decrease_bonus": 0.2,
+		"decrease_bonus": 0.1,
 		"icon" : "res://sprites1/upgrade_shop/decor/yourmom.PNG"
 	}
 ]

@@ -1,3 +1,5 @@
 res://scenes/upgrade_shop_scene.tscn
 res://scripts/shop/decor_script.gd
 res://scripts/shop/task_script.gd
+res://scenes/work_scene.tscn
+res://scripts/GM.gd

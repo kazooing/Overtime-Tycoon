@@ -381,7 +381,6 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Description"
 
 [node name="buy_button" type="TextureButton" parent="UILayer/inspector_panel"]
-modulate = Color(1, 1, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.51500005
