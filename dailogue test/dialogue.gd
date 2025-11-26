@@ -63,6 +63,7 @@ func next():
 	new_text.tween_finished.connect(on_tween_finish)
 	recent_text = new_text
 
+
 func on_text_finish(box_code):
 	if box_code != code:
 		pass

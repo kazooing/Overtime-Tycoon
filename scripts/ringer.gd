@@ -54,3 +54,7 @@ func calling():
 
 func hang_up():
 	active = true
+
+func disable() -> void:
+	timer.stop()
+	active = false
