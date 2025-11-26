@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=42 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -18,8 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://d2bcts6ujb2hd" path="res://scenes/Screen.tscn" id="9_2pybm"]
 [ext_resource type="Texture2D" uid="uid://bcej5pylfuo8" path="res://sprites1/work_scene/sanity bar/top.png" id="9_rmouj"]
 [ext_resource type="Texture2D" uid="uid://b1b2q1nhc2kyl" path="res://sprites1/work_scene/sanity bar/mid.png" id="10_mff8n"]
+[ext_resource type="FontFile" uid="uid://gxkseqf68xa5" path="res://font/Ot6-Regular.ttf" id="14_rq3n8"]
 [ext_resource type="Texture2D" uid="uid://d3nocq11xdemp" path="res://sprites2/clock/9.png" id="15_go4cm"]
+[ext_resource type="Texture2D" uid="uid://bb2vhmwp1bk7m" path="res://sprites2/day_recap/3.PNG" id="15_j1ws0"]
 [ext_resource type="PackedScene" uid="uid://b4llg3rjxideq" path="res://scenes/pause_menu_in_game.tscn" id="15_y3pug"]
+[ext_resource type="Texture2D" uid="uid://dc73k7ejlm32k" path="res://sprites2/day_recap/2.PNG" id="16_g1u5m"]
 [ext_resource type="Texture2D" uid="uid://dowqb75pj6ats" path="res://sprites2/clock/10.png" id="16_w2tv4"]
 [ext_resource type="Texture2D" uid="uid://dp7siga4umx6q" path="res://sprites2/clock/11.png" id="17_s0bdn"]
 [ext_resource type="Texture2D" uid="uid://xaopfryphl4m" path="res://sprites2/clock/12.png" id="18_omevc"]
@@ -147,6 +150,7 @@ offset_top = 262.0
 offset_right = 316.0
 offset_bottom = 1262.0
 scale = Vector2(0.31, 0.31)
+step = 0.1
 value = 100.0
 fill_mode = 3
 texture_under = ExtResource("8_cphpt")
@@ -157,22 +161,25 @@ script = ExtResource("3_eoja1")
 [node name="Timer" type="Timer" parent="ProgressLayer/sanityBarUI"]
 
 [node name="label_target" type="Label" parent="ProgressLayer"]
-offset_left = 807.0
-offset_top = 230.0
-offset_right = 1045.0
-offset_bottom = 265.0
+offset_left = 809.0
+offset_top = 229.0
+offset_right = 1047.0
+offset_bottom = 270.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "This week's target :("
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("14_rq3n8")
+theme_override_font_sizes/font_size = 20
+text = "This week's 
+target :("
 
 [node name="target_bar" type="TextureProgressBar" parent="ProgressLayer"]
-offset_left = 811.0
-offset_top = 259.0
-offset_right = 2513.0
-offset_bottom = 382.0
-scale = Vector2(0.08, 0.08)
-texture_under = ExtResource("1_jqjy7")
-texture_progress = ExtResource("2_i6sgx")
+offset_left = 764.0
+offset_top = 157.0
+offset_right = 2264.0
+offset_bottom = 1157.0
+scale = Vector2(0.20000058, 0.20000058)
+texture_over = ExtResource("15_j1ws0")
+texture_progress = ExtResource("16_g1u5m")
 script = ExtResource("7_7nxki")
 
 [node name="Clock" type="AnimatedSprite2D" parent="ProgressLayer"]
@@ -265,6 +272,7 @@ autostart = true
 [connection signal="money_notification" from="PcStuff/Screen" to="." method="play_added_money"]
 [connection signal="new_decreaser" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="new_affecting"]
 [connection signal="is_not_draining" from="ProgressLayer/sanityBarUI" to="." method="confirm_tasks_ended"]
+[connection signal="sanity_bar_zero" from="ProgressLayer/sanityBarUI" to="." method="_on_sanity_bar_ui_sanity_bar_zero"]
 [connection signal="timeout" from="ProgressLayer/sanityBarUI/Timer" to="ProgressLayer/sanityBarUI" method="_on_timer_timeout"]
 [connection signal="call_notif" from="Telephone" to="." method="play_added_money"]
 [connection signal="call_started" from="Telephone" to="Dialogue" method="_on_telephone_call_started"]

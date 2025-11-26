@@ -81,3 +81,21 @@ func confirm_tasks_ended(confirm : bool) -> void:
 	if all_tasks_ended and day_ended and get_tree() != null:
 		get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
 	print("all tasks finished", confirm)
+
+
+func _on_sanity_bar_ui_sanity_bar_zero() -> void:
+	# pass time for 1 hour, fill up the sanity bar by 50, any task that are currently running gets canceled
+	
+	#pass time for 1 hour
+	var clock_sprite = get_node("ProgressLayer/Clock")
+	var work_timer = get_node("work_timer")
+	var remaining = work_timer.time_left
+	if remaining > 16: clock_sprite.advance_time()
+	var remaining_new = max(remaining-16, 0.001)
+	work_timer.stop()
+	work_timer.start(remaining_new)
+	
+	#fill up sanity bar
+	sanity_bar.value = 50
+	
+	#cancel all tasks
