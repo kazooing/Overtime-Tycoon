@@ -12,8 +12,8 @@ signal no_meeting
 @onready var rng = RandomNumberGenerator.new()
 var is_open = false
 var has_meeting = false
-var ring_cycle = 3
-var pickup_window = 2
+var ring_cycle = 8
+var pickup_window = 4
 var animation = "Open and close meeting"
 
 func _ready() -> void:
@@ -51,7 +51,7 @@ func _on_ringer_timer_timeout() -> void:
 			animation = "Open and close meetingless"
 			return
 	
-	if rng.randi_range(1,1) != 1 and ringatt_count < 4:
+	if rng.randi_range(1,4) != 1 and ringatt_count < 4:
 		ringatt_count += 1
 		return
 	
@@ -72,9 +72,7 @@ func _on_meeting_meeting_start() -> void:
 func _on_meeting_meeting_finish() -> void:
 	ringer_timer.start(ring_cycle)
 	if is_open:
-		is_open = false
-		anim_player.play_backwards(animation)
-		closing_meeting.emit()
+		force_close(null)
 	has_meeting = false
 
 

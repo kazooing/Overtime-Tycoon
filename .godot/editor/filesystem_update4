@@ -4,3 +4,9 @@ res://dailogue test/text_box.gd
 res://scripts/ringer.gd
 res://scenes/Telephone.tscn
 res://scripts/Telephone.gd
+res://scripts/screen_bus.gd
+res://dailogue test/tester.json
+res://scenes/Screen.tscn
+res://scripts/meeting_opener.gd
+res://scripts/meeting.gd
+res://scripts/tel_singnal_bus.gd

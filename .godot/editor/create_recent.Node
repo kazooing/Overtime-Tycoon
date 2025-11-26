@@ -1,8 +1,8 @@
+AudioStreamPlayer2D
 AnimationPlayer
 Node2D
 Timer
 Label
-AudioStreamPlayer2D
 AudioListener2D
 Camera2D
 Control
@@ -12,4 +12,3 @@ TextureButton
 Sprite2D
 RichTextLabel
 Button
-Panel

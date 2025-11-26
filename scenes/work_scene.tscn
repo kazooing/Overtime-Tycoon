@@ -257,13 +257,14 @@ script = ExtResource("5_eoja1")
 [node name="sanity_reduction" type="Timer" parent="Dialogue"]
 
 [node name="monologue_timer" type="Timer" parent="Dialogue"]
-wait_time = 10.0
+wait_time = 20.0
 autostart = true
 
 [connection signal="disable_all_tasks" from="." to="PcStuff/Screen" method="disable_computer"]
 [connection signal="decrease_sanity" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
 [connection signal="gain_money" from="PcStuff/Screen" to="ProgressLayer/moneyCounterUI" method="addMoney"]
 [connection signal="meeting_finished" from="PcStuff/Screen" to="Telephone" method="enable"]
+[connection signal="meeting_finished" from="PcStuff/Screen" to="Dialogue" method="finish"]
 [connection signal="meeting_started" from="PcStuff/Screen" to="Telephone" method="disable"]
 [connection signal="meeting_started" from="PcStuff/Screen" to="Dialogue" method="_on_meeting_dialogue"]
 [connection signal="money_notification" from="PcStuff/Screen" to="." method="play_added_money"]

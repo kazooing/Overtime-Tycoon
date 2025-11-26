@@ -3,7 +3,7 @@ extends Node2D
 signal text_finished(move_by: float)
 signal dialogue_ended(move_by: float)
 signal reduce_sanity(amount: float)
-signal call_dialogue_finished(reward: float)
+signal call_dialogue_finished()
 signal affect_sanityBar(confirm:bool, object: Node)
 signal meeting_dialogue_finished()
 signal fail_meeting_task(reward, penalty_from, penalty_to)
@@ -95,10 +95,9 @@ func finish(fail: bool = false):
 	
 	count = 0
 	if was_printing == DIALOGUE:
-		var reward = 0 if fail else GM.add_money_telephone
 		affect_sanityBar.emit(false, self)
 		sanity_timer.stop()
-		call_dialogue_finished.emit(reward)
+		call_dialogue_finished.emit()
 	elif was_printing == MEETING:
 		if fail:
 			fail_meeting_task.emit(5, 0, 1)
@@ -126,6 +125,9 @@ func _on_sanity_reduction_timeout() -> void:
 
 var prev_mon:int = -1
 func _on_monologue_timer_timeout() -> void:
+	if GM.money_gained_per_scene <= 0:
+		return
+
 	if printing != EMPTY:
 		print("MONOLOGUE STOPPED")
 		return

@@ -28,6 +28,7 @@ var open = false
 @onready var label = $Label
 @onready var rng = RandomNumberGenerator.new()
 @onready var audio_cue = get_node("Audio_cue")
+@onready var bg_audio = get_node("bg_audio")
 
 func _on_meeting_opener_closing_meeting() -> void:
 	$Button.disabled = true
@@ -56,7 +57,8 @@ func _process(_delta: float) -> void:
 func start_meeting():
 	display_meeting()
 	meeting_start.emit()
-	first_timer.start(rng.randi_range(5,9))
+	first_timer.start(rng.randi_range(7,10))
+	play_audio(bg_audio)
 	start_sanity_drain()
 	print("open")
 	state = INMEET
@@ -116,6 +118,7 @@ func _on_sanity_reduction_timeout() -> void:
 
 #if meeting duration is done, money will be given
 func finish_meeting(reward: float = 20) -> void:
+	bg_audio.stop()
 	print("Meeting Finished")
 	finished.emit(reward, global_position)
 	stop_sanity_drain()

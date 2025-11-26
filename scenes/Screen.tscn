@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://d2bcts6ujb2hd"]
+[gd_scene load_steps=37 format=3 uid="uid://d2bcts6ujb2hd"]
 
 [ext_resource type="Texture2D" uid="uid://dinxwt4865fft" path="res://sprites1/work_scene/PC with bg.PNG" id="1_s1t8g"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites2/icon.svg" id="1_sad84"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bfiwvo0f1f3ch" path="res://sprites1/work_scene/screen/zoom cam off & mic on.png" id="12_xhy5k"]
 [ext_resource type="AudioStream" uid="uid://bjn8y720ykkbv" path="res://SFX/Telephone/ringtone.mp3" id="13_s1t8g"]
 [ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="14_uhx08"]
+[ext_resource type="AudioStream" uid="uid://c4wvncdqha688" path="res://SFX/Telephone/empty.mp3" id="15_ou56q"]
 [ext_resource type="Texture2D" uid="uid://buldpfc4otyfp" path="res://sprites2/text bubble.png" id="15_v11sh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_phdvl"]
@@ -616,9 +617,10 @@ texture = ExtResource("12_xhy5k")
 
 [node name="Button" type="Button" parent="Meeting opener/Meeting"]
 visible = false
-offset_left = -246.91171
-offset_top = 502.66656
-offset_right = -166.81747
+anchors_preset = -1
+offset_left = -1028.8888
+offset_top = -587.25183
+offset_right = 1015.5554
 offset_bottom = 588.96643
 metadata/_edit_use_anchors_ = true
 
@@ -642,7 +644,7 @@ one_shot = true
 
 [node name="Audio_cue" type="AudioStreamPlayer2D" parent="Meeting opener/Meeting"]
 stream = ExtResource("13_s1t8g")
-pitch_scale = 0.35
+pitch_scale = 0.54
 
 [node name="CueTimer" type="Timer" parent="Meeting opener/Meeting"]
 wait_time = 4.0
@@ -660,6 +662,11 @@ offset_right = 448.6667
 offset_bottom = 72.05748
 text = "NO MEETING"
 label_settings = SubResource("LabelSettings_v11sh")
+
+[node name="bg_audio" type="AudioStreamPlayer2D" parent="Meeting opener/Meeting"]
+stream = ExtResource("15_ou56q")
+volume_db = -2.76
+pitch_scale = 0.34
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Meeting opener"]
 root_node = NodePath("../Meeting")
