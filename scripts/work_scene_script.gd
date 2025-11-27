@@ -26,7 +26,7 @@ func _ready() -> void:
 			get_node("Pajangan/"+item["id"]).visible = true
 			sanity_bar.mult_increase+=item["recover_bonus"]
 			sanity_bar.mult_decrease-=item["decrease_bonus"]
-	if GM.pajangan[2]["owned"]: $Webcam.visible = true
+	if GM.tasks[2]["owned"]: $Webcam.visible = true
 			
 	#main menu from pause in various scene
 	if GM.game_start_count > 0:

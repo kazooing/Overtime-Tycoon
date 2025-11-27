@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://eq5dld084jvt"]
+[gd_scene load_steps=30 format=3 uid="uid://eq5dld084jvt"]
 
 [ext_resource type="Script" uid="uid://bpt1gf17heomq" path="res://scripts/upgrade_shop_scene_script.gd" id="1_f837f"]
 [ext_resource type="Texture2D" uid="uid://c84mf7j8xfsjh" path="res://sprites1/upgrade_shop/NEW shop tab new.png" id="2_bb24h"]
@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://dtfyos77py780" path="res://sprites1/upgrade_shop/webcam.png" id="15_5qur1"]
 [ext_resource type="Texture2D" uid="uid://dhterehxrqpwt" path="res://sprites1/upgrade_shop/buy now when click.png" id="15_pp4wy"]
 [ext_resource type="Texture2D" uid="uid://bwnonalhjn77c" path="res://sprites1/upgrade_shop/buy when click.png" id="18_ydsnx"]
+[ext_resource type="Texture2D" uid="uid://d1l8mxi4v681c" path="res://sprites1/upgrade_shop/decor/cactus decor no bg.PNG" id="20_5qur1"]
+[ext_resource type="Texture2D" uid="uid://bcyicbdbq736e" path="res://sprites1/upgrade_shop/decor/cat decor no bg.PNG" id="21_3rw7c"]
 
 [node name="UpgradeShop" type="Node2D"]
 
@@ -371,6 +373,72 @@ texture = ExtResource("11_fevue")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="slot003" type="Control" parent="UILayer/shop_tab/decor"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="003" type="TextureButton" parent="UILayer/shop_tab/decor/slot003"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.464844
+offset_top = 11.0
+offset_right = -6.0703125
+offset_bottom = -8.535156
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("20_5qur1")
+texture_disabled = ExtResource("13_owlww")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_1ry7c")
+decor_name = "Cactus"
+decor_description = "Did you know, that cactus has a nicname \"Camel of the Plant World\", for its incredible survival skills? Maybe that will motivate you to keep on surviving in this hell-of-a-world!"
+decor_price = 80
+
+[node name="item_status" type="TextureRect" parent="UILayer/shop_tab/decor/slot003"]
+layout_mode = 0
+offset_right = 106.0
+offset_bottom = 106.0
+mouse_filter = 2
+texture = ExtResource("11_fevue")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="slot004" type="Control" parent="UILayer/shop_tab/decor"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="004" type="TextureButton" parent="UILayer/shop_tab/decor/slot004"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.464844
+offset_top = 4.0
+offset_right = -5.0703125
+offset_bottom = -12.535156
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("21_3rw7c")
+texture_disabled = ExtResource("13_owlww")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_1ry7c")
+decor_name = "A Cat Statue"
+decor_description = "Car."
+decor_price = 150
+
+[node name="item_status" type="TextureRect" parent="UILayer/shop_tab/decor/slot004"]
+layout_mode = 0
+offset_right = 106.0
+offset_bottom = 106.0
+mouse_filter = 2
+texture = ExtResource("11_fevue")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Timer" type="Timer" parent="UILayer/shop_tab/decor"]
 wait_time = 0.15
 
@@ -588,6 +656,8 @@ metadata/_edit_use_anchors_ = true
 [connection signal="timeout" from="UILayer/shop_tab/decor/Timer" to="UILayer/shop_tab/decor/slot000/000" method="_on_timer_timeout"]
 [connection signal="timeout" from="UILayer/shop_tab/decor/Timer" to="UILayer/shop_tab/decor/slot001/001" method="_on_timer_timeout"]
 [connection signal="timeout" from="UILayer/shop_tab/decor/Timer" to="UILayer/shop_tab/decor/slot002/002" method="_on_timer_timeout"]
+[connection signal="timeout" from="UILayer/shop_tab/decor/Timer" to="UILayer/shop_tab/decor/slot003/003" method="_on_timer_timeout"]
+[connection signal="timeout" from="UILayer/shop_tab/decor/Timer" to="UILayer/shop_tab/decor/slot004/004" method="_on_timer_timeout"]
 [connection signal="gui_input" from="UILayer/back_dimmer" to="UILayer" method="_on_back_dimmer_gui_input"]
 [connection signal="gui_input" from="UILayer/back_dimmer_task" to="UILayer" method="_on_back_dimmer_task_gui_input"]
 [connection signal="give_to_decor_button" from="UILayer/inspector_panel/buy_button" to="UILayer/shop_tab/decor/slot000/000" method="_on_buy_button_give_to_decor_button"]

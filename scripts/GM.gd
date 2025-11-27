@@ -4,7 +4,7 @@ extends Node
 # how to access: GM.{variable_name}
 
 var day = 1
-var curMoney = 50 #total money right now
+var curMoney = 0 #total money right now
 var curSanity = 100
 var maxSanity = 100
 var calls_done_per_scene = 0
@@ -39,6 +39,20 @@ var pajangan = [
 		"recover_bonus": 0.8,
 		"decrease_bonus": 0.1,
 		"icon" : "res://sprites1/upgrade_shop/decor/yourmom.PNG"
+	},
+	{
+		"id": "003",
+		"owned": false,
+		"recover_bonus": 1,
+		"decrease_bonus": 0.11,
+		"icon" : "res://sprites1/upgrade_shop/decor/cactus decor no bg.PNG"
+	},
+	{
+		"id": "004",
+		"owned": false,
+		"recover_bonus": 1.5,
+		"decrease_bonus": 0.15,
+		"icon" : "res://sprites1/upgrade_shop/decor/cat decor no bg.PNG"
 	}
 ]
 
@@ -58,7 +72,7 @@ var tasks = [
 		"icon" = "res://sprites1/upgrade_shop/excell.png",
 		"upgrade_value" = [9, 12, 16, 21],
 		"upgrade_cost" = [7, 13, 19, 25],
-		"owned" = false,
+		"owned" = true,
 		"index" = -1,
 		"unlock_cost" = 15
 	},

@@ -1,6 +1,7 @@
+TextureRect
+TextEdit
 RichTextLabel
 Node2D
-TextureRect
 Label
 ColorRect
 Timer
@@ -11,4 +12,3 @@ Control
 TextureButton
 Sprite2D
 Button
-Panel
