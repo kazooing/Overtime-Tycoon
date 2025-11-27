@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=46 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -40,7 +40,9 @@
 [ext_resource type="Texture2D" uid="uid://gjm2cn002s73" path="res://sprites1/work_scene/calendar.png" id="31_j1ws0"]
 [ext_resource type="Script" uid="uid://bhxisiridlirf" path="res://scripts/work_timer.gd" id="31_omevc"]
 [ext_resource type="Texture2D" uid="uid://cr8he0pdr0yqh" path="res://sprites1/work_scene/yourmom.PNG" id="32_f30yx"]
+[ext_resource type="Texture2D" uid="uid://d1l8mxi4v681c" path="res://sprites1/upgrade_shop/decor/cactus decor no bg.PNG" id="35_tf5yx"]
 [ext_resource type="PackedScene" uid="uid://cqrg7y22i3s7q" path="res://dailogue test/dialogue_generator.tscn" id="35_tt0ds"]
+[ext_resource type="Texture2D" uid="uid://bcyicbdbq736e" path="res://sprites1/upgrade_shop/decor/cat decor no bg.PNG" id="36_0fa0m"]
 [ext_resource type="AudioStream" uid="uid://eshj14lh885o" path="res://SFX/fail sounds/Fail1.mp3" id="38_3gmet"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1u5m"]
@@ -223,6 +225,24 @@ offset_bottom = 141.0
 texture = ExtResource("32_f30yx")
 expand_mode = 2
 stretch_mode = 5
+
+[node name="003" type="TextureRect" parent="Pajangan"]
+visible = false
+offset_left = 547.0
+offset_top = 15.0
+offset_right = 658.0
+offset_bottom = 145.26248
+texture = ExtResource("35_tf5yx")
+expand_mode = 1
+
+[node name="004" type="TextureRect" parent="Pajangan"]
+visible = false
+offset_left = 402.0
+offset_top = 2.0
+offset_right = 540.0
+offset_bottom = 140.0
+texture = ExtResource("36_0fa0m")
+expand_mode = 1
 
 [node name="Telephone" parent="." instance=ExtResource("5_io2gt")]
 visibility_layer = 2
