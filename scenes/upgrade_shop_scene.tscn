@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dhterehxrqpwt" path="res://sprites1/upgrade_shop/buy now when click.png" id="15_pp4wy"]
 [ext_resource type="Texture2D" uid="uid://bwnonalhjn77c" path="res://sprites1/upgrade_shop/buy when click.png" id="18_ydsnx"]
 
+
 [node name="UpgradeShop" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]

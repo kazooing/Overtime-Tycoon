@@ -99,3 +99,4 @@ func _on_sanity_bar_ui_sanity_bar_zero() -> void:
 	sanity_bar.value = 50
 	
 	#cancel all tasks
+	

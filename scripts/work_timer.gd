@@ -4,7 +4,6 @@ signal division_passed()
 var copy_prevention = false
 
 func _process(_delta: float) -> void:
-	if int(time_left)%1==0: print("time left: " + str(time_left))
 	if int(time_left) % 16 == 0 and not copy_prevention:
 		print("timer passed segment   ", time_left)
 		division_passed.emit()
