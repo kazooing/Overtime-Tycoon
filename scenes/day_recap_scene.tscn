@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bu2n5sxech1cd"]
+[gd_scene load_steps=10 format=3 uid="uid://bu2n5sxech1cd"]
 
 [ext_resource type="Script" uid="uid://ccw74yakvva7u" path="res://scripts/data_day_recap.gd" id="1_nodxj"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites2/icon.svg" id="2_4y1ax"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bb2vhmwp1bk7m" path="res://sprites2/day_recap/3.PNG" id="5_jlo7j"]
 [ext_resource type="PackedScene" uid="uid://dpyenhkjsv8om" path="res://scenes/pause_day_recap.tscn" id="6_7hibx"]
 [ext_resource type="Texture2D" uid="uid://dc73k7ejlm32k" path="res://sprites2/day_recap/2.PNG" id="6_xbq5s"]
+[ext_resource type="AudioStream" uid="uid://ci5xpvpqs15f3" path="res://SFX/transition/SWOOSH short.mp3" id="9_s1wvh"]
 
 [node name="DayRecap" type="Node2D"]
 
@@ -127,5 +128,8 @@ layer = 2
 [node name="PauseDayRecap" parent="PauseLayer" instance=ExtResource("6_7hibx")]
 offset_right = -1110.0
 offset_bottom = -635.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_s1wvh")
 
 [connection signal="pressed" from="InfoLayer/TextureButton" to="InfoLayer" method="_on_texture_button_pressed"]

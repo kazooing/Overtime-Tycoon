@@ -34,6 +34,7 @@ func _ready() -> void:
 
 
 func _on_texture_button_pressed() -> void:
+	$"../AudioStreamPlayer".play()
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"offset:x", -1280, 1).set_trans(Tween.TRANS_SINE)
 	tween.finished.connect(_on_slide_finished)

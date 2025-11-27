@@ -28,4 +28,4 @@ func _on_pressed() -> void:
 				GM.add_money_spreadsheet = value_to_change
 			elif task_id==2: #if task meeting
 				GM.add_money_meeting = value_to_change
-			
+		$"../../../AudioStreamPlayer".play()
