@@ -28,7 +28,10 @@ func _pressed() -> void:
 	UIlayer.open_inspector_task(task_name, final_task_desc, task_id, task_status)
 	item_status_clicked.visible = true
 	timer.start()
-	
+	await get_tree().create_timer(1).timeout
+	if GM.tasks[3]["owned"] == true:
+		get_tree().change_scene_to_file("res://scenes/ending_scene_sad.tscn")
+
 
 func _on_timer_timeout() -> void:
 		item_status_clicked.visible = false

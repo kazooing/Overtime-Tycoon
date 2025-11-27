@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://cawem2ehsvb0n"]
+
+[ext_resource type="Script" uid="uid://dywyrrc1crurs" path="res://scenes/ending_scene_good.gd" id="1_p3247"]
+[ext_resource type="PackedScene" uid="uid://cqrg7y22i3s7q" path="res://dailogue test/dialogue_generator.tscn" id="1_sxh0r"]
+[ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites2/SanityBarUnder.png" id="2_d1n5o"]
+[ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites2/sanityBar.png" id="3_loqoq"]
+[ext_resource type="Script" uid="uid://bf4ckjuh87st7" path="res://scripts/call_timer.gd" id="4_mkopo"]
+[ext_resource type="Texture2D" uid="uid://bi8jql20c688q" path="res://sprites1/start_screen/start button/when click.png" id="6_4dthy"]
+[ext_resource type="Texture2D" uid="uid://c7bc0pxbkqpn7" path="res://sprites1/start_screen/start button/idle.png" id="7_tuuob"]
+[ext_resource type="Texture2D" uid="uid://luydshw2aopu" path="res://sprites1/start_screen/quit menu button/when click.PNG" id="8_g4bcc"]
+[ext_resource type="Texture2D" uid="uid://bnddk27itqvoy" path="res://sprites1/start_screen/quit menu button/idle.PNG" id="9_3u83k"]
+[ext_resource type="FontFile" uid="uid://gxkseqf68xa5" path="res://font/Ot6-Regular.ttf" id="10_4dthy"]
+
+[node name="EndingSceneGood" type="Node2D"]
+script = ExtResource("1_p3247")
+
+[node name="BG" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.103743516, 0.10374353, 0.103743516, 0.7882353)
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Dialogue" parent="." instance=ExtResource("1_sxh0r")]
+position = Vector2(325, 360)
+scale = Vector2(1.5, 1.5)
+
+[node name="call_timer" type="TextureProgressBar" parent="Dialogue"]
+visible = false
+offset_left = -576.0
+offset_top = 60.0
+offset_right = 309.0
+offset_bottom = 88.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_d1n5o")
+texture_progress = ExtResource("3_loqoq")
+script = ExtResource("4_mkopo")
+
+[node name="sanity_reduction" type="Timer" parent="Dialogue"]
+
+[node name="monologue_timer" type="Timer" parent="Dialogue"]
+wait_time = 10.0
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="NewGameClicked" type="TextureRect" parent="."]
+visible = false
+offset_left = 554.0
+offset_top = 501.0001
+offset_right = 1554.0
+offset_bottom = 818.0001
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("6_4dthy")
+
+[node name="NewGame" type="Button" parent="."]
+process_mode = 3
+visible = false
+offset_left = 553.0
+offset_top = 500.0
+offset_right = 1561.0
+offset_bottom = 825.0
+scale = Vector2(0.24, 0.24)
+icon = ExtResource("7_tuuob")
+flat = true
+
+[node name="QuitClicked" type="TextureRect" parent="."]
+visible = false
+offset_left = 11.999999
+offset_top = 666.00006
+offset_right = 1012.0
+offset_bottom = 1666.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("8_g4bcc")
+
+[node name="Quit" type="Button" parent="."]
+process_mode = 3
+visible = false
+offset_left = 12.0
+offset_top = 666.0
+offset_right = 1020.0
+offset_bottom = 1674.0
+scale = Vector2(0.05, 0.05)
+icon = ExtResource("9_3u83k")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 382.0
+offset_top = 328.0
+offset_right = 647.0
+offset_bottom = 397.0
+scale = Vector2(2.2, 2.2)
+theme_override_fonts/font = ExtResource("10_4dthy")
+theme_override_font_sizes/font_size = 50
+text = "Good ending"
+uppercase = true
+
+[connection signal="timeout" from="Timer" to="Dialogue" method="_on_ending_good_timeout"]
+[connection signal="timeout" from="Dialogue/sanity_reduction" to="Dialogue" method="_on_sanity_reduction_timeout"]
+[connection signal="timeout" from="Dialogue/monologue_timer" to="Dialogue" method="_on_monologue_timer_timeout"]

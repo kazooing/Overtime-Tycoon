@@ -14,6 +14,8 @@ var dialogue_library = []
 var monologue_library = []
 var meeting_library = []
 var response_library = []
+var good_library = []
+var sad_library = []
 var dialogue = []
 var code = 0 #keeps track of the current dialog
 
@@ -39,6 +41,8 @@ enum {
 	MONOLOGUE,
 	MEETING,
 	RESPONSE,
+	GOOD,
+	SAD
 }
 var printing : int = EMPTY
 
@@ -47,6 +51,8 @@ func _ready() -> void:
 	monologue_library = read_JSON_data(path).get("MONOLOGUE", [])
 	meeting_library = read_JSON_data(path).get("MEETING", [])
 	response_library = read_JSON_data(path).get("RESPONSE", [])
+	good_library = read_JSON_data(path).get("GOOD", [])
+	sad_library = read_JSON_data(path).get("SAD", [])
 
 
 var count = 0
@@ -95,9 +101,7 @@ func finish(fail: bool = false):
 	
 	count = 0
 	if was_printing == DIALOGUE:
-		var reward = GM.add_money_telephone
-		if fail:
-			reward = 0
+		var reward = 0 if fail else GM.add_money_telephone
 		affect_sanityBar.emit(false, self)
 		sanity_timer.stop()
 		call_dialogue_finished.emit(reward)
@@ -108,12 +112,6 @@ func finish(fail: bool = false):
 			meeting_dialogue_finished.emit()
 	if not fail:
 		printing = EMPTY
-
-func force_fail():
-	if printing != DIALOGUE:
-		return
-	
-	finish(true)
 
 var prev_dia = -1
 func _on_telephone_call_started() -> void:
@@ -165,3 +163,19 @@ func dialogue_from_dict(type: Variant, dict: Dictionary, previous: int = -1) -> 
 	print(dialogue)
 	next()
 	return num
+
+var prev_good: int = -1
+func _on_ending_good_timeout() -> void:
+	if printing == GOOD:
+		return
+	elif printing != EMPTY:
+		finish(true)
+	prev_good = await dialogue_from_dict(GOOD, good_library, prev_good)
+
+var prev_sad: int = -1
+func _on_ending_sad_timeout() -> void:
+	if printing == SAD:
+		return
+	elif printing != EMPTY:
+		finish(true)
+	prev_good = await dialogue_from_dict(SAD, sad_library, prev_sad)

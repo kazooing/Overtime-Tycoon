@@ -72,7 +72,7 @@ var tasks = [
 		"icon" = "res://sprites1/upgrade_shop/excell.png",
 		"upgrade_value" = [9, 12, 16, 21],
 		"upgrade_cost" = [7, 13, 19, 25],
-		"owned" = false,
+		"owned" = true,
 		"index" = -1,
 		"unlock_cost" = 15
 	},
@@ -99,9 +99,9 @@ var tasks = [
 ]
 
 #Day System
-var day_count = 0
-var week_count = 1
-var weekly_mult = 3
+var day_count = 4
+var week_count = 3
+var weekly_mult = 5
 var max_value = 0
 
 #Menu System

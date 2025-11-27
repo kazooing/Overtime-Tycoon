@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://djiv66sh3m7p5" path="res://sprites1/work_scene/screen/sp1.png" id="5_t46dj"]
 [ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites2/SanityBarUnder.png" id="6_k16cd"]
 [ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites2/sanityBar.png" id="7_t46dj"]
-[ext_resource type="Texture2D" uid="uid://dyxkqq5ay33ds" path="res://sprites1/work_scene/screen/sp app.PNG" id="8_86ian"]
 [ext_resource type="Script" uid="uid://ob8vixmdwkrv" path="res://scripts/meeting_opener.gd" id="9_8prci"]
 [ext_resource type="Script" uid="uid://e67074ucma8i" path="res://scripts/close_computer.gd" id="9_dx45h"]
 [ext_resource type="AudioStream" uid="uid://d152un5y1phf" path="res://SFX/click sounds/click 1.mp3" id="9_fhdfd"]
@@ -21,7 +20,6 @@
 [ext_resource type="AudioStream" uid="uid://cxmyv5824ya3u" path="res://SFX/click sounds/click 5.mp3" id="13_s5hlo"]
 [ext_resource type="AudioStream" uid="uid://drkbh61kvu51i" path="res://SFX/click sounds/click 6.mp3" id="14_ljm6u"]
 [ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="14_uhx08"]
-[ext_resource type="AudioStream" uid="uid://c4wvncdqha688" path="res://SFX/Telephone/empty.mp3" id="15_ou56q"]
 [ext_resource type="Texture2D" uid="uid://buldpfc4otyfp" path="res://sprites2/text bubble.png" id="15_v11sh"]
 [ext_resource type="AudioStream" uid="uid://dfi54fexs6e8m" path="res://SFX/grow by 1 - stem-glued-01.mp3" id="16_6lk3l"]
 [ext_resource type="Texture2D" uid="uid://gp5jiqtkfio7" path="res://sprites1/work_scene/screen/zoom app.PNG" id="18_tck2m"]
@@ -649,9 +647,9 @@ texture = ExtResource("12_xhy5k")
 
 [node name="Button" type="Button" parent="Meeting opener/Meeting"]
 visible = false
-offset_left = -1019.9999
-offset_top = -608.1505
-offset_right = 1015.5554
+offset_left = -246.91171
+offset_top = 502.66656
+offset_right = -166.81747
 offset_bottom = 588.96643
 metadata/_edit_use_anchors_ = true
 
@@ -693,15 +691,6 @@ offset_right = 448.6667
 offset_bottom = 72.05748
 text = "NO MEETING"
 label_settings = SubResource("LabelSettings_v11sh")
-
-[node name="bg_audio" type="AudioStreamPlayer2D" parent="Meeting opener/Meeting"]
-stream = ExtResource("15_ou56q")
-volume_db = -5.474
-pitch_scale = 0.27
-
-[node name="tick_down" type="AudioStreamPlayer2D" parent="Meeting opener/Meeting"]
-stream = ExtResource("16_6lk3l")
-pitch_scale = 0.85
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Meeting opener"]
 root_node = NodePath("../Meeting")
@@ -773,8 +762,6 @@ libraries = {
 [connection signal="close_programs" from="." to="Spreadsheet opener" method="force_close"]
 [connection signal="close_programs" from="." to="Meeting opener" method="force_close"]
 [connection signal="disable" from="." to="close screen" method="turn_off"]
-[connection signal="force_fail" from="." to="Spreadsheet opener/Spreadsheet" method="force_fail"]
-[connection signal="force_fail" from="." to="Meeting opener/Meeting" method="force_fail"]
 [connection signal="close_programs" from="Spreadsheet opener" to="." method="force_close"]
 [connection signal="closing_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_closing_sheet"]
 [connection signal="opening_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_opening_sheet"]
