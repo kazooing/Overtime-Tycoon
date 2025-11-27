@@ -94,7 +94,7 @@ var tasks = [
 		"upgrade_cost" = [],
 		"owned" = false,
 		"index" = -1,
-		"unlock_cost" = 1000
+		"unlock_cost" = 1
 	}
 ]
 
