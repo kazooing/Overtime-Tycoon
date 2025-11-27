@@ -318,26 +318,112 @@
 		"1": [
 			{
 				"speaker": 2,
-				"text" : "ILOVEYOUSOMUCHIDONTWANNATHROWMYSELFOFFACLIFFFRFR",
+				"text" : "Sales have been up 300% in the last few days!",
 				"scroll" : 0.05,
 				"pause" : 0.5
 			},
 			{
 				"speaker": 2,
-				"text" : "HIDUP PARTY 4",
+				"text" : "Remember that we don't pay you to do nothing!",
 				"scroll" : 0.05,
 				"pause" : 0.5
 			},
 			{
 				"speaker": 2,
-				"text" : "PLACEHOLDERPLACEHOLDERPLACEHOLDER",
+				"text" : "Keep up the good work everyone!",
 				"scroll" : 0.05,
 				"pause" : 0.5
 			},
 			{
 				"speaker": 2,
-				"text" : "EH, KOQ DIEM DOANG",
+				"text" : "Now what would you say about current sales M",
 				"scroll" : 0.08,
+				"pause" : 0.5
+			},
+			],
+		"2": [
+			{
+				"speaker": 2,
+				"text" : "You see with new A.I. technology we can remove half of our customer service employees!",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			{
+				"speaker": 2,
+				"text" : "We can force our remaining employees to also fill up spreadsheets and join useless meetings!",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			],
+		"3": [
+			{
+				"speaker": 2,
+				"text" : "I need to remind all of us right here are not just a team",
+				"scroll" : 0.05,
+				"pause" : 0.8
+			},
+			{
+				"speaker": 2,
+				"text" : "We are a family.",
+				"scroll" : 0.05,
+				"pause" : 0.8
+			},
+			{
+				"speaker": 2,
+				"text" : "Thats why we need all the details of your personal life!",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			],
+		"4": [
+			{
+				"speaker": 2,
+				"text" : "I need to remind ya'll that properly answering your calls does indeed matter",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			{
+				"speaker": 2,
+				"text" : "Dont just sit still and say nothing for 2 seconds.",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			{
+				"speaker": 2,
+				"text" : "A friendly reminder as well to not monologue sad stories to yourself",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+				{
+				"speaker": 2,
+				"text" : "You're gonna get cut off by a phone call and you might jumble all your words",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			],
+		"5": [
+			{
+				"speaker": 2,
+				"text" : "I believe all employees of this company need to learn to be tougher",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			{
+				"speaker": 2,
+				"text" : "Cmon, filling out spreadsheets isn't THAT stressful.",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+			{
+				"speaker": 2,
+				"text" : "With that being said, remember",
+				"scroll" : 0.05,
+				"pause" : 0.5
+			},
+				{
+				"speaker": 2,
+				"text" : "Your book collection is worth more than my million dollar car",
+				"scroll" : 0.05,
 				"pause" : 0.5
 			},
 			],

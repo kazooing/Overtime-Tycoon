@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cw3mu4vew6qev"
+path="res://.godot/imported/Fail2.mp3-d482a1cd60178b447c6f43167323752a.mp3str"
+
+[deps]
+
+source_file="res://SFX/fail sounds/Fail2.mp3"
+dest_files=["res://.godot/imported/Fail2.mp3-d482a1cd60178b447c6f43167323752a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

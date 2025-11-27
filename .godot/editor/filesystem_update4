@@ -1,5 +1,12 @@
-res://scenes/upgrade_shop_scene.tscn
-res://scripts/shop/decor_script.gd
-res://scripts/shop/task_script.gd
+res://dailogue test/dialogue.gd
 res://scenes/work_scene.tscn
 res://scripts/GM.gd
+res://dailogue test/tester.json
+res://scripts/meeting_opener.gd
+res://scenes/Screen.tscn
+res://scripts/meeting.gd
+res://scenes/upgrade_shop_scene.tscn
+res://scripts/work_scene_script.gd
+res://scripts/screen_bus.gd
+res://scripts/spreadsheet.gd
+res://scripts/spreadsheet_opener.gd

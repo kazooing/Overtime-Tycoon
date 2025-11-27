@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://d2bcts6ujb2hd"]
+[gd_scene load_steps=37 format=3 uid="uid://d2bcts6ujb2hd"]
 
 [ext_resource type="Texture2D" uid="uid://wq18qmkxa7oi" path="res://sprites1/work_scene/PC with bg.PNG" id="1_s1t8g"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites2/icon.svg" id="1_sad84"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bfiwvo0f1f3ch" path="res://sprites1/work_scene/screen/zoom cam off & mic on.png" id="12_xhy5k"]
 [ext_resource type="AudioStream" uid="uid://bjn8y720ykkbv" path="res://SFX/Telephone/ringtone.mp3" id="13_s1t8g"]
 [ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="14_uhx08"]
+[ext_resource type="AudioStream" uid="uid://c4wvncdqha688" path="res://SFX/Telephone/empty.mp3" id="15_ou56q"]
 [ext_resource type="Texture2D" uid="uid://buldpfc4otyfp" path="res://sprites2/text bubble.png" id="15_v11sh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_phdvl"]
@@ -616,9 +617,10 @@ texture = ExtResource("12_xhy5k")
 
 [node name="Button" type="Button" parent="Meeting opener/Meeting"]
 visible = false
-offset_left = -246.91171
-offset_top = 502.66656
-offset_right = -166.81747
+anchors_preset = -1
+offset_left = -1019.9999
+offset_top = -608.1505
+offset_right = 1015.5554
 offset_bottom = 588.96643
 metadata/_edit_use_anchors_ = true
 
@@ -660,6 +662,11 @@ offset_right = 448.6667
 offset_bottom = 72.05748
 text = "NO MEETING"
 label_settings = SubResource("LabelSettings_v11sh")
+
+[node name="bg_audio" type="AudioStreamPlayer2D" parent="Meeting opener/Meeting"]
+stream = ExtResource("15_ou56q")
+volume_db = -5.474
+pitch_scale = 0.27
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Meeting opener"]
 root_node = NodePath("../Meeting")
@@ -731,6 +738,8 @@ libraries = {
 [connection signal="close_programs" from="." to="Spreadsheet opener" method="force_close"]
 [connection signal="close_programs" from="." to="Meeting opener" method="force_close"]
 [connection signal="disable" from="." to="close screen" method="turn_off"]
+[connection signal="force_fail" from="." to="Spreadsheet opener/Spreadsheet" method="force_fail"]
+[connection signal="force_fail" from="." to="Meeting opener/Meeting" method="force_fail"]
 [connection signal="close_programs" from="Spreadsheet opener" to="." method="force_close"]
 [connection signal="closing_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_closing_sheet"]
 [connection signal="opening_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_opening_sheet"]

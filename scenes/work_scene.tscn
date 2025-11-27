@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=40 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -37,6 +37,7 @@
 [ext_resource type="Script" uid="uid://bhxisiridlirf" path="res://scripts/work_timer.gd" id="31_omevc"]
 [ext_resource type="Texture2D" uid="uid://cr8he0pdr0yqh" path="res://sprites1/work_scene/yourmom.PNG" id="32_f30yx"]
 [ext_resource type="PackedScene" uid="uid://cqrg7y22i3s7q" path="res://dailogue test/dialogue_generator.tscn" id="35_tt0ds"]
+[ext_resource type="AudioStream" uid="uid://eshj14lh885o" path="res://SFX/fail sounds/Fail1.mp3" id="38_3gmet"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1u5m"]
 animations = [{
@@ -259,10 +260,18 @@ script = ExtResource("5_eoja1")
 wait_time = 10.0
 autostart = true
 
+[node name="sanity zeroed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("38_3gmet")
+
 [connection signal="disable_all_tasks" from="." to="PcStuff/Screen" method="disable_computer"]
+[connection signal="force_fail" from="." to="PcStuff/Screen" method="call_force_fail"]
+[connection signal="force_fail" from="." to="Dialogue" method="force_fail"]
 [connection signal="decrease_sanity" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
+[connection signal="force_fail" from="PcStuff/Screen" to="PcStuff/Screen/Spreadsheet opener/Spreadsheet" method="force_fail"]
+[connection signal="force_fail" from="PcStuff/Screen" to="PcStuff/Screen/Meeting opener/Meeting" method="force_fail"]
 [connection signal="gain_money" from="PcStuff/Screen" to="ProgressLayer/moneyCounterUI" method="addMoney"]
 [connection signal="meeting_finished" from="PcStuff/Screen" to="Telephone" method="enable"]
+[connection signal="meeting_finished" from="PcStuff/Screen" to="Dialogue" method="finish"]
 [connection signal="meeting_started" from="PcStuff/Screen" to="Telephone" method="disable"]
 [connection signal="meeting_started" from="PcStuff/Screen" to="Dialogue" method="_on_meeting_dialogue"]
 [connection signal="money_notification" from="PcStuff/Screen" to="." method="play_added_money"]

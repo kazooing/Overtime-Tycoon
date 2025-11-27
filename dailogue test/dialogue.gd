@@ -95,7 +95,9 @@ func finish(fail: bool = false):
 	
 	count = 0
 	if was_printing == DIALOGUE:
-		var reward = 0 if fail else GM.add_money_telephone
+		var reward = GM.add_money_telephone
+		if fail:
+			reward = 0
 		affect_sanityBar.emit(false, self)
 		sanity_timer.stop()
 		call_dialogue_finished.emit(reward)
@@ -106,6 +108,12 @@ func finish(fail: bool = false):
 			meeting_dialogue_finished.emit()
 	if not fail:
 		printing = EMPTY
+
+func force_fail():
+	if printing != DIALOGUE:
+		return
+	
+	finish(true)
 
 var prev_dia = -1
 func _on_telephone_call_started() -> void:

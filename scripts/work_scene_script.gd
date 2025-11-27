@@ -1,6 +1,7 @@
 extends Node2D
 
 signal disable_all_tasks
+signal force_fail
 
 var money_added_animation := preload("res://scenes/money_added.tscn")
 var day_ended = false
@@ -63,6 +64,13 @@ func spawn_add_money(pos: Vector2 , added):
 	
 	add_child(moneyAdded)
 
+func spawn_remove_money(pos: Vector2 , added):
+	var moneyAdded = money_added_animation.instantiate()
+	moneyAdded.position = pos
+	moneyAdded.text = "- $ " + str(added)
+	moneyAdded.modulate = Color.DARK_RED
+	
+	add_child(moneyAdded)
 
 func _on_work_timer_timeout() -> void:
 	get_node("PauseLayer").visible = false
@@ -82,9 +90,11 @@ func confirm_tasks_ended(confirm : bool) -> void:
 		get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
 	print("all tasks finished", confirm)
 
-
+var money_loss = 5
 func _on_sanity_bar_ui_sanity_bar_zero() -> void:
 	# pass time for 1 hour, fill up the sanity bar by 50, any task that are currently running gets canceled
+	var audio = get_node("sanity zeroed")
+	play_audio(audio)
 	
 	#pass time for 1 hour
 	var clock_sprite = get_node("ProgressLayer/Clock")
@@ -95,7 +105,14 @@ func _on_sanity_bar_ui_sanity_bar_zero() -> void:
 	work_timer.stop()
 	work_timer.start(remaining_new)
 	
+	
 	#fill up sanity bar
 	sanity_bar.value = 50
 	
 	#cancel all tasks
+	force_fail.emit()
+
+func play_audio(audio: AudioStreamPlayer2D):
+	if audio.playing:
+		return
+	audio.play()
