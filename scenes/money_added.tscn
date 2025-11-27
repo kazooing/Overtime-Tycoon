@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bpqjpn15fuo6h" path="res://scripts/money_added_script.gd" id="1_f0ikc"]
 [ext_resource type="FontFile" uid="uid://gxkseqf68xa5" path="res://font/Ot6-Regular.ttf" id="1_lojsg"]
 
+
 [node name="Label" type="Label"]
 offset_top = 341.0
 offset_right = 81.0

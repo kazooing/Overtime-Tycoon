@@ -35,3 +35,7 @@ func penalty()-> void:
 
 func _on_penalty_timer_timeout() -> void:
 	on_penalty.emit(false, self)
+
+func force_fail():
+	spreadsheet_completion = 0
+	get_parent().force_close(null)

@@ -1,23 +1,24 @@
 extends Node2D
 
 signal disable_all_tasks
+signal force_fail
 
 var money_added_animation := preload("res://scenes/money_added.tscn")
 var day_ended = false
 var all_tasks_ended = false
 var changing = false
 @onready var sanity_bar = get_node("ProgressLayer/sanityBarUI")
-@onready var calendar = $"ProgressLayer/calendar/day_counter"
+@onready var date_in_calendar = $calendar/date
 
 func _ready() -> void:
+	GM.sanity_hits_zero_counter = 0
 	GM.calls_done_per_scene = 0
 	GM.spreadsheets_done_per_scene = 0
 	GM.meetings_done_per_scene = 0
 	GM.money_gained_per_scene = 0
-	GM.sanity_hits_zero_counter = 0
 	sanity_bar.mult_decrease = 1
 	sanity_bar.mult_increase = 1
-	calendar.text = str(GM.day_count+1)
+	date_in_calendar.text = str(GM.day_count+1)
 	
 	
 	# check for items are bought
@@ -26,7 +27,7 @@ func _ready() -> void:
 			get_node("Pajangan/"+item["id"]).visible = true
 			sanity_bar.mult_increase+=item["recover_bonus"]
 			sanity_bar.mult_decrease-=item["decrease_bonus"]
-	if GM.tasks[2]["owned"]: $Webcam.visible = true
+	if GM.tasks[2]["owned"]: $webcam.visible = true
 			
 	#main menu from pause in various scene
 	if GM.game_start_count > 0:
@@ -67,6 +68,13 @@ func spawn_add_money(pos: Vector2 , added):
 	
 	add_child(moneyAdded)
 
+func spawn_remove_money(pos: Vector2 , added):
+	var moneyAdded = money_added_animation.instantiate()
+	moneyAdded.position = pos
+	moneyAdded.text = "- $ " + str(added)
+	moneyAdded.modulate = Color.DARK_RED
+	
+	add_child(moneyAdded)
 
 func _on_work_timer_timeout() -> void:
 	get_node("PauseLayer").visible = false
@@ -86,13 +94,12 @@ func confirm_tasks_ended(confirm : bool) -> void:
 		get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
 	print("all tasks finished", confirm)
 
-signal reset_phonecall
-signal reset_spreadsheet
-signal reset_meeting
-
+var money_loss = 5
 func _on_sanity_bar_ui_sanity_bar_zero() -> void:
-	GM.sanity_hits_zero_counter +=1
 	# pass time for 1 hour, fill up the sanity bar by 50, any task that are currently running gets canceled
+	var audio = get_node("sanity zeroed")
+	play_audio(audio)
+	GM.sanity_hits_zero_counter += 1
 	
 	#pass time for 1 hour
 	var clock_sprite = get_node("ProgressLayer/Clock")
@@ -103,11 +110,14 @@ func _on_sanity_bar_ui_sanity_bar_zero() -> void:
 	work_timer.stop()
 	work_timer.start(remaining_new)
 	
+	
 	#fill up sanity bar
 	sanity_bar.value = 50
 	
 	#cancel all tasks
-	reset_phonecall.emit()
-	reset_spreadsheet.emit()
-	reset_meeting.emit()
-	
+	force_fail.emit()
+
+func play_audio(audio: AudioStreamPlayer2D):
+	if audio.playing:
+		return
+	audio.play()

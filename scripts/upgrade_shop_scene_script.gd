@@ -71,7 +71,6 @@ signal give_to_upgrade_button_task(price: int, id: int)
 func open_inspector_task(title:String, desc:String, id:int, status:int):
 	var current_price = 0
 	#change_buy_button_based_on_unlock_upgrade.emit(id)
-
 	if status==-1:	#if haven't unlocked
 		upgrade_button.disabled = true
 		upgrade_button.visible = false
@@ -132,14 +131,12 @@ func _on_texture_button_pressed() -> void:
 		GM.week_count += 1
 		print("This is week count ", + GM.week_count)
 		GM.curMoney -= GM.max_value
-		if GM.tasks[3]["owned"] == false and GM.week_count >= 4:
-			get_tree().change_scene_to_file("res://scenes/ending_scene_good.tscn")
+		if GM.curMoney < 0:
+			get_tree().change_scene_to_file("res://scenes/game_over_scene.tscn")
 		else:
-			if GM.curMoney < 0:
-				get_tree().change_scene_to_file("res://scenes/game_over_scene.tscn")
-			else:
-				get_tree().change_scene_to_file("res://scenes/game.tscn")
-
+			get_tree().change_scene_to_file("res://scenes/game.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 	
 
@@ -149,13 +146,10 @@ func _on_unlock_button_change_to_upgrade(id: int, status: int) -> void:
 	upgrade_button.visible = true
 	unlock_button.disabled = true
 	unlock_button.visible = false
-	if status > 0:
-		var current_price = GM.tasks[id]["upgrade_cost"][status]
-		give_to_upgrade_button_task.emit(current_price, id)
-		note_price.text = "Price to\nupgrade:"
-		task_price.text = "$" + str(current_price)
-	else:
-		print("Bad ending")
+	var current_price = GM.tasks[id]["upgrade_cost"][status]
+	give_to_upgrade_button_task.emit(current_price, id)
+	note_price.text = "Price to\nupgrade:"
+	task_price.text = "$" + str(current_price)
 
 
 func _on_upgrade_button_is_max_upgrade(id: int) -> void:
