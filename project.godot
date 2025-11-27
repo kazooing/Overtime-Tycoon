@@ -17,7 +17,7 @@ config/icon="res://sprites/icon.svg"
 
 [autoload]
 
-GM="*res://scenes/GM.gd"
+GM="*res://scripts/GM.gd"
 
 [display]
 
