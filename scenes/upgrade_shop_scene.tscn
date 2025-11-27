@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://eq5dld084jvt"]
+[gd_scene load_steps=26 format=3 uid="uid://eq5dld084jvt"]
 
 [ext_resource type="Script" uid="uid://bpt1gf17heomq" path="res://scripts/upgrade_shop_scene_script.gd" id="1_f837f"]
 [ext_resource type="Texture2D" uid="uid://c84mf7j8xfsjh" path="res://sprites1/upgrade_shop/NEW shop tab new.png" id="2_bb24h"]
@@ -10,17 +10,18 @@
 [ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="6_3exvu"]
 [ext_resource type="Script" uid="uid://djr4a7h2oh0ck" path="res://scripts/shop/money_total.gd" id="7_qag1b"]
 [ext_resource type="Script" uid="uid://bfsct3h3ueaca" path="res://scripts/shop/buy_button_script.gd" id="7_tw4x0"]
-[ext_resource type="Texture2D" uid="uid://rnictr8b0wml" path="res://sprites1/work_scene/Phone neutral.png" id="7_y6xq7"]
+[ext_resource type="Texture2D" uid="uid://cbwcorj117shp" path="res://sprites1/upgrade_shop/phone.png" id="7_xs0fv"]
 [ext_resource type="PackedScene" uid="uid://bapsv72tnc8gy" path="res://scenes/pause_menu_upgrade_shop.tscn" id="8_3exvu"]
 [ext_resource type="Texture2D" uid="uid://e4tyahc6rghm" path="res://sprites1/upgrade_shop/upgrade default.png" id="8_fevue"]
 [ext_resource type="Texture2D" uid="uid://b0utiviwvays7" path="res://sprites1/upgrade_shop/decor/mugmug.PNG" id="8_owlww"]
 [ext_resource type="Texture2D" uid="uid://08guxaya14bf" path="res://sprites1/upgrade_shop/upgrade when click.png" id="9_owlww"]
 [ext_resource type="Script" uid="uid://b2yw8phkao5qh" path="res://scripts/shop/upgrade_button_script.gd" id="10_luokl"]
+[ext_resource type="Texture2D" uid="uid://bopagg4fl213r" path="res://sprites1/upgrade_shop/excell.png" id="11_58w4c"]
 [ext_resource type="Script" uid="uid://eygcctny7kgb" path="res://scripts/shop/unlock_button_script.gd" id="11_c8xxe"]
 [ext_resource type="Texture2D" uid="uid://1r35ss1h1kr" path="res://sprites1/upgrade_shop/buy default.png" id="11_fevue"]
-[ext_resource type="Texture2D" uid="uid://djiv66sh3m7p5" path="res://sprites1/work_scene/screen/sp1.png" id="11_pp4wy"]
 [ext_resource type="Texture2D" uid="uid://vpns23p02yc5" path="res://sprites1/upgrade_shop/decor/plant.PNG" id="12_ydsnx"]
 [ext_resource type="Texture2D" uid="uid://cvxjiwy1fwrjx" path="res://sprites1/upgrade_shop/decor/yourmom.PNG" id="13_owlww"]
+[ext_resource type="Texture2D" uid="uid://ci8vrxmm0xxtj" path="res://sprites1/work_scene/webcam put on top of monitor.png" id="14_xs0fv"]
 [ext_resource type="Texture2D" uid="uid://cutdb5llo6ijx" path="res://sprites1/upgrade_shop/buy now default.png" id="14_y6xq7"]
 [ext_resource type="Texture2D" uid="uid://dhterehxrqpwt" path="res://sprites1/upgrade_shop/buy now when click.png" id="15_pp4wy"]
 [ext_resource type="Texture2D" uid="uid://bwnonalhjn77c" path="res://sprites1/upgrade_shop/buy when click.png" id="18_ydsnx"]
@@ -94,18 +95,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = -4.0
-offset_right = 3.0
-offset_bottom = -4.0
+offset_left = 23.0
+offset_top = 11.0
+offset_right = -22.0
+offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("7_y6xq7")
+texture_normal = ExtResource("7_xs0fv")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("5_60wi4")
 task_name = "Phone Calls"
 task_description = "Hey! are you having a bad day? well how about now, when a total stranger  tells you that you are a worthless human being and you can't do anything right?"
+task_to_use = "how to use: Grab the phone and drag it to the top!"
 
 [node name="item_status" type="TextureRect" parent="UILayer/shop_tab/tasks/slot0"]
 layout_mode = 0
@@ -138,18 +140,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 1.0
-offset_right = -10.0
-offset_bottom = -21.0
+offset_left = 22.0
+offset_top = 10.0
+offset_right = -19.0
+offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("11_pp4wy")
+texture_normal = ExtResource("11_58w4c")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("5_60wi4")
 task_name = "Spread Sheet"
 task_description = "Spread sheet? more like spreading depression :DDD"
+task_to_use = "how to use: CLICK IT TILL YOU MAKE IT"
 
 [node name="item_status" type="TextureRect" parent="UILayer/shop_tab/tasks/slot1"]
 layout_mode = 0
@@ -178,21 +181,23 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 
 [node name="2" type="TextureButton" parent="UILayer/shop_tab/tasks/slot2"]
-modulate = Color(0.7647059, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 1.0
+offset_left = 27.0
+offset_top = 15.0
+offset_right = -25.0
+offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_ku53v")
+texture_normal = ExtResource("14_xs0fv")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("5_60wi4")
 task_name = "Meeting"
 task_description = "At least when you're in an online meeting, you don't have to smell your boss's stinky breath!"
+task_to_use = "how to use: When the audio cue comes in, HOLD the mic button until you finish the meeting"
 
 [node name="item_status" type="TextureRect" parent="UILayer/shop_tab/tasks/slot2"]
 layout_mode = 0
@@ -334,7 +339,6 @@ offset_bottom = 800.0
 color = Color(0, 0, 0, 0)
 
 [node name="inspector_panel" type="Panel" parent="UILayer"]
-visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -426,7 +430,7 @@ offset_bottom = 720.0
 grow_horizontal = 0
 
 [node name="icon" type="TextureRect" parent="UILayer/inspector_panel_task"]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(175, 175)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -434,7 +438,7 @@ anchor_right = 0.5
 offset_left = -182.0
 offset_top = 140.0
 offset_right = 185.0
-offset_bottom = 340.0
+offset_bottom = 315.0
 grow_horizontal = 2
 texture = ExtResource("2_ku53v")
 expand_mode = 2
@@ -455,7 +459,7 @@ vertical_alignment = 1
 [node name="description" type="RichTextLabel" parent="UILayer/inspector_panel_task"]
 layout_mode = 0
 offset_left = 26.0
-offset_top = 375.0
+offset_top = 344.0
 offset_right = 375.0
 offset_bottom = 562.0
 theme_override_fonts/normal_font = ExtResource("6_3exvu")

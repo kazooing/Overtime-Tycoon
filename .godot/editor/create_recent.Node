@@ -1,5 +1,5 @@
-Label
 TextureRect
+Label
 ColorRect
 Timer
 AudioStreamPlayer2D

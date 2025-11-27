@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=44 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -41,6 +41,7 @@
 [ext_resource type="Script" uid="uid://bhxisiridlirf" path="res://scripts/work_timer.gd" id="31_omevc"]
 [ext_resource type="Texture2D" uid="uid://cr8he0pdr0yqh" path="res://sprites1/work_scene/yourmom.PNG" id="32_f30yx"]
 [ext_resource type="PackedScene" uid="uid://cqrg7y22i3s7q" path="res://dailogue test/dialogue_generator.tscn" id="35_tt0ds"]
+[ext_resource type="Texture2D" uid="uid://ci8vrxmm0xxtj" path="res://sprites1/work_scene/webcam put on top of monitor.png" id="36_g1u5m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1u5m"]
 animations = [{
@@ -206,7 +207,6 @@ offset_bottom = 104.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_rq3n8")
 theme_override_font_sizes/font_size = 50
-text = "200"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -254,6 +254,15 @@ position = Vector2(1065, 160)
 
 [node name="spawn_pos" type="Node2D" parent="Telephone"]
 position = Vector2(-25, 385)
+
+[node name="Webcam" type="TextureRect" parent="."]
+visible = false
+offset_left = 233.63
+offset_top = 104.0
+offset_right = 327.6001
+offset_bottom = 197.97
+texture = ExtResource("36_g1u5m")
+expand_mode = 1
 
 [node name="work_timer" type="Timer" parent="."]
 wait_time = 128.0
