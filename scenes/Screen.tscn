@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://d2bcts6ujb2hd"]
+[gd_scene load_steps=39 format=3 uid="uid://d2bcts6ujb2hd"]
 
 [ext_resource type="Texture2D" uid="uid://wq18qmkxa7oi" path="res://sprites1/work_scene/PC with bg.PNG" id="1_s1t8g"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites2/icon.svg" id="1_sad84"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://djiv66sh3m7p5" path="res://sprites1/work_scene/screen/sp1.png" id="5_t46dj"]
 [ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites2/SanityBarUnder.png" id="6_k16cd"]
 [ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites2/sanityBar.png" id="7_t46dj"]
+[ext_resource type="Texture2D" uid="uid://dyxkqq5ay33ds" path="res://sprites1/work_scene/screen/sp app.PNG" id="8_86ian"]
 [ext_resource type="Script" uid="uid://ob8vixmdwkrv" path="res://scripts/meeting_opener.gd" id="9_8prci"]
 [ext_resource type="Script" uid="uid://e67074ucma8i" path="res://scripts/close_computer.gd" id="9_dx45h"]
 [ext_resource type="Texture2D" uid="uid://cr4au0veoyg6x" path="res://sprites1/work_scene/screen/zoom cam & mic off.png" id="10_8prci"]
@@ -17,6 +18,7 @@
 [ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="14_uhx08"]
 [ext_resource type="AudioStream" uid="uid://c4wvncdqha688" path="res://SFX/Telephone/empty.mp3" id="15_ou56q"]
 [ext_resource type="Texture2D" uid="uid://buldpfc4otyfp" path="res://sprites2/text bubble.png" id="15_v11sh"]
+[ext_resource type="Texture2D" uid="uid://gp5jiqtkfio7" path="res://sprites1/work_scene/screen/zoom app.PNG" id="18_tck2m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_phdvl"]
 animations = [{
@@ -543,7 +545,6 @@ script = ExtResource("2_8m26t")
 [node name="Spreadsheet opener" type="Sprite2D" parent="."]
 position = Vector2(-574, -402)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_sad84")
 script = ExtResource("3_ckgjc")
 
 [node name="Button" type="Button" parent="Spreadsheet opener"]
@@ -591,6 +592,15 @@ libraries = {
 &"": SubResource("AnimationLibrary_phdvl")
 }
 
+[node name="TextureRect" type="TextureRect" parent="Spreadsheet opener"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("8_86ian")
+expand_mode = 1
+
 [node name="Meeting opener" type="Sprite2D" parent="."]
 position = Vector2(-574, -194)
 scale = Vector2(1.5, 1.5)
@@ -617,7 +627,6 @@ texture = ExtResource("12_xhy5k")
 
 [node name="Button" type="Button" parent="Meeting opener/Meeting"]
 visible = false
-anchors_preset = -1
 offset_left = -1019.9999
 offset_top = -608.1505
 offset_right = 1015.5554
@@ -721,6 +730,15 @@ axis_stretch_horizontal = 1
 libraries = {
 &"": SubResource("AnimationLibrary_86ian")
 }
+
+[node name="TextureRect" type="TextureRect" parent="Meeting opener"]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("18_tck2m")
+expand_mode = 1
 
 [node name="close screen" type="Sprite2D" parent="."]
 modulate = Color(0.058286123, 0.064755, 0.06152056, 1)
