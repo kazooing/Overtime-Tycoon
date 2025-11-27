@@ -99,7 +99,7 @@ var tasks = [
 ]
 
 #Day System
-var day_count = 4
+var day_count = 0
 var week_count = 3
 var weekly_mult = 5
 var max_value = 0

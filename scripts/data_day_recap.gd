@@ -10,6 +10,8 @@ func _ready() -> void:
 	
 	total_money.text += str(GM.curMoney)
 	money_gained.text += str(GM.money_gained_per_scene)
+	$Main/label_weekly_target.text += str(GM.weekly_target)
+	$amount_days_left.text = str(5-((GM.day_count+1)%5))
 	
 	if GM.tasks[0]["owned"]: tasks_done.text += "Calls done: " + str(GM.calls_done_per_scene) + "\n"
 	if GM.tasks[1]["owned"]: tasks_done.text += "Spreadsheets done: " + str(GM.spreadsheets_done_per_scene) + "\n"
