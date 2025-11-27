@@ -50,6 +50,7 @@ autostart = true
 position = Vector2(640, 360)
 
 [node name="NewGameClicked" type="TextureRect" parent="."]
+process_mode = 3
 visible = false
 offset_left = 554.0
 offset_top = 501.0001
@@ -70,6 +71,7 @@ icon = ExtResource("7_qei2t")
 flat = true
 
 [node name="QuitClicked" type="TextureRect" parent="."]
+process_mode = 3
 visible = false
 offset_left = 11.999999
 offset_top = 666.00006
@@ -91,10 +93,10 @@ flat = true
 
 [node name="Label" type="Label" parent="."]
 visible = false
-offset_left = 382.0
-offset_top = 328.0
-offset_right = 647.0
-offset_bottom = 397.0
+offset_left = 400.99997
+offset_top = 327.99997
+offset_right = 666.0
+offset_bottom = 396.99997
 scale = Vector2(2.2, 2.2)
 theme_override_fonts/font = ExtResource("10_lj1ho")
 theme_override_font_sizes/font_size = 50
@@ -104,3 +106,5 @@ uppercase = true
 [connection signal="timeout" from="Timer" to="Dialogue" method="_on_ending_sad_timeout"]
 [connection signal="timeout" from="Dialogue/sanity_reduction" to="Dialogue" method="_on_sanity_reduction_timeout"]
 [connection signal="timeout" from="Dialogue/monologue_timer" to="Dialogue" method="_on_monologue_timer_timeout"]
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

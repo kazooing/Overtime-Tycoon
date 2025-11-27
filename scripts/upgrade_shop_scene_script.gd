@@ -156,6 +156,7 @@ func _on_unlock_button_change_to_upgrade(id: int, status: int) -> void:
 		task_price.text = "$" + str(current_price)
 	else:
 		print("Bad ending")
+		get_tree().change_scene_to_file("res://scenes/ending_scene_sad.tscn")
 
 
 func _on_upgrade_button_is_max_upgrade(id: int) -> void:

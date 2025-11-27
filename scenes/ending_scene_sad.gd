@@ -7,6 +7,7 @@ func _ready() -> void:
 	get_node("NewGame").visible = true
 	get_node("NewGameClicked").visible = true
 	get_node("Label").visible = true
+	get_tree().paused = true
 
 
 func _on_quit_pressed() -> void:
@@ -21,5 +22,5 @@ func _on_new_game_pressed() -> void:
 	GM.loop_count = 0
 	GM.main_menu_count = -1
 	GM.restart = 1
-	GM.day_count = 1
+	GM.day_count = 0
 	GM.week_count = 1

@@ -19,4 +19,4 @@ func _on_pressed() -> void:
 		item_status.texture = load("res://sprites1/upgrade_shop/upgrade default.png")
 		var item_status_clicked = get_node("/root/UpgradeShop/UILayer/shop_tab/tasks/slot" + str(task_id) + "/item_status_clicked")
 		item_status_clicked.texture = load("res://sprites1/upgrade_shop/upgrade when click.png")
-		
+		$"../../../AudioStreamPlayer".play()

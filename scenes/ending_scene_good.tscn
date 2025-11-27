@@ -104,3 +104,5 @@ uppercase = true
 [connection signal="timeout" from="Timer" to="Dialogue" method="_on_ending_good_timeout"]
 [connection signal="timeout" from="Dialogue/sanity_reduction" to="Dialogue" method="_on_sanity_reduction_timeout"]
 [connection signal="timeout" from="Dialogue/monologue_timer" to="Dialogue" method="_on_monologue_timer_timeout"]
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

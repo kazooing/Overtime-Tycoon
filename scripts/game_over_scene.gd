@@ -18,5 +18,5 @@ func _on_new_game_pressed() -> void:
 	GM.loop_count = 0
 	GM.main_menu_count = -1
 	GM.restart = 1
-	GM.day_count = 1
+	GM.day_count = 0
 	GM.week_count = 1

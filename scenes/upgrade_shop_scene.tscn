@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://eq5dld084jvt"]
+[gd_scene load_steps=32 format=3 uid="uid://eq5dld084jvt"]
 
 [ext_resource type="Script" uid="uid://bpt1gf17heomq" path="res://scripts/upgrade_shop_scene_script.gd" id="1_f837f"]
 [ext_resource type="Texture2D" uid="uid://c84mf7j8xfsjh" path="res://sprites1/upgrade_shop/NEW shop tab new.png" id="2_bb24h"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bwnonalhjn77c" path="res://sprites1/upgrade_shop/buy when click.png" id="18_ydsnx"]
 [ext_resource type="Texture2D" uid="uid://d1l8mxi4v681c" path="res://sprites1/upgrade_shop/decor/cactus decor no bg.PNG" id="20_5qur1"]
 [ext_resource type="Texture2D" uid="uid://bcyicbdbq736e" path="res://sprites1/upgrade_shop/decor/cat decor no bg.PNG" id="21_3rw7c"]
+[ext_resource type="AudioStream" uid="uid://bruhucbpx1gp1" path="res://SFX/kaching/KACHING.mp3" id="31_weul5"]
 
 [node name="UpgradeShop" type="Node2D"]
 
@@ -640,6 +641,9 @@ anchors_preset = -1
 anchor_right = 0.07890625
 anchor_bottom = 0.41666666
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_weul5")
 
 [connection signal="give_to_buy_button" from="UILayer" to="UILayer/inspector_panel/buy_button" method="_on_ui_layer_give_to_buy_button"]
 [connection signal="give_to_unlock_button_task" from="UILayer" to="UILayer/inspector_panel_task/unlock_button" method="_on_ui_layer_give_to_unlock_button_task"]

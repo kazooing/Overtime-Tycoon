@@ -1,13 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://bq6r3vur078ww"]
+[gd_scene load_steps=14 format=3 uid="uid://bq6r3vur078ww"]
 
 [ext_resource type="Script" uid="uid://cwa3bujatx3jb" path="res://scripts/tel_singnal_bus.gd" id="1_6cvow"]
 [ext_resource type="Script" uid="uid://cfbs6hf2wxxbl" path="res://scripts/pickup.gd" id="1_54hca"]
 [ext_resource type="Script" uid="uid://cto2pgyb6c76h" path="res://scripts/Telephone.gd" id="1_iimr7"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites2/icon.svg" id="1_u4wsl"]
 [ext_resource type="Script" uid="uid://cuf02qxy1xgin" path="res://scripts/ringer.gd" id="2_wjgco"]
-[ext_resource type="Texture2D" uid="uid://hk018njsx4fl" path="res://sprites2/happy madeline celeste.jpg" id="5_ml7rr"]
+[ext_resource type="Texture2D" uid="uid://36mbobpi4b7" path="res://sprites1/work_scene/Phone ringing.png" id="6_xmlbc"]
 [ext_resource type="AudioStream" uid="uid://c4wvncdqha688" path="res://SFX/Telephone/empty.mp3" id="7_lgcbr"]
+[ext_resource type="Texture2D" uid="uid://rnictr8b0wml" path="res://sprites1/work_scene/Phone neutral.png" id="7_xmlbc"]
 [ext_resource type="AudioStream" uid="uid://bjn8y720ykkbv" path="res://SFX/Telephone/ringtone.mp3" id="8_uvhmj"]
+[ext_resource type="Texture2D" uid="uid://dj31at2avtf22" path="res://sprites1/work_scene/Phone hold.png" id="10_xcxmd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54hca"]
 size = Vector2(104, 248)
@@ -16,10 +18,10 @@ size = Vector2(104, 248)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_u4wsl")
+"texture": ExtResource("7_xmlbc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ml7rr")
+"texture": ExtResource("6_xmlbc")
 }],
 "loop": true,
 "name": &"Ringing",
@@ -27,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_u4wsl")
+"texture": ExtResource("7_xmlbc")
 }],
 "loop": true,
 "name": &"Static",
@@ -38,9 +40,11 @@ animations = [{
 size = Vector2(162, 88)
 
 [node name="Telephone" type="Node2D"]
+position = Vector2(-1, 42)
 script = ExtResource("1_6cvow")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(4, 20)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_54hca")
@@ -53,25 +57,33 @@ shape = SubResource("RectangleShape2D_54hca")
 position = Vector2(0, 400)
 script = ExtResource("2_wjgco")
 
+[node name="Telephone Sprite" type="AnimatedSprite2D" parent="Area2D/Telephone"]
+position = Vector2(2.5000153, -7.75)
+scale = Vector2(0.14599998, 0.12041668)
+sprite_frames = SubResource("SpriteFrames_54hca")
+animation = &"Ringing"
+frame_progress = 0.8659261
+
 [node name="Area2D" type="Area2D" parent="Area2D/Telephone"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_iimr7")
 
-[node name="Telephone Sprite" type="AnimatedSprite2D" parent="Area2D/Telephone/Area2D"]
-position = Vector2(4.4999924, 2)
-scale = Vector2(1.2421875, 0.70312494)
-sprite_frames = SubResource("SpriteFrames_54hca")
-animation = &"Ringing"
+[node name="Telephone Hand" type="Sprite2D" parent="Area2D/Telephone/Area2D"]
+position = Vector2(33.000004, 2.0000005)
+scale = Vector2(0.148, 0.14833334)
+texture = ExtResource("10_xcxmd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/Telephone/Area2D"]
+visible = false
 shape = SubResource("RectangleShape2D_wjgco")
 
 [node name="Button" type="Button" parent="Area2D/Telephone/Area2D"]
-offset_left = -81.0
-offset_top = -43.0
-offset_right = 84.8
-offset_bottom = 44.0
+visible = false
+offset_left = 5.0
+offset_top = -60.0
+offset_right = 65.0
+offset_bottom = 50.0
 metadata/_edit_use_anchors_ = true
 
 [node name="empty_ring" type="AudioStreamPlayer2D" parent="Area2D/Telephone/Area2D"]
@@ -82,27 +94,35 @@ volume_db = -5.885
 stream = ExtResource("8_uvhmj")
 
 [node name="Cancel Button" type="Button" parent="Area2D/Telephone"]
-offset_left = -80.0
-offset_top = 50.0
-offset_right = 83.0
-offset_bottom = 83.0
+offset_left = -82.0
+offset_top = 57.0
+offset_right = 81.0
+offset_bottom = 90.0
 text = "CANCEL"
+metadata/_edit_use_anchors_ = true
 
 [node name="ring_timer" type="Timer" parent="Area2D/Telephone"]
 wait_time = 2.0
 
 [node name="pickup_marker" type="Sprite2D" parent="Area2D"]
 visible = false
+modulate = Color(0, 0, 0, 1)
 self_modulate = Color(1, 1, 1, 0.17254902)
-position = Vector2(1.9073486e-06, 1)
+position = Vector2(60, 16)
 scale = Vector2(1.921875, 0.671875)
 texture = ExtResource("1_u4wsl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 
-[connection signal="disable_telephone" from="." to="Area2D/Telephone" method="disable"]
+[node name="PhoneHold" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-176, 439.00003)
+scale = Vector2(0.18933335, 0.20166668)
+texture = ExtResource("10_xcxmd")
+
 [connection signal="disable_telephone" from="." to="Area2D/Telephone" method="_on_button_button_down"]
+[connection signal="disable_telephone" from="." to="Area2D/Telephone" method="disable"]
 [connection signal="disable_telephone" from="." to="Area2D/Telephone/Area2D" method="disable"]
 [connection signal="enable_telephone" from="." to="Area2D/Telephone" method="hang_up"]
 [connection signal="enable_telephone" from="." to="Area2D/Telephone/Area2D" method="enable"]
