@@ -4,7 +4,7 @@ signal is_ringing(confirm:bool)
 
 @onready var b_cancel = get_node("Cancel Button")
 @onready var sprite = get_node("Area2D/Telephone Sprite")
-@onready var timer = $ring_timer
+@onready var timer = get_node("ring_timer")
 @onready var rng = RandomNumberGenerator.new()
 
 var in_X:int
@@ -19,8 +19,6 @@ func _ready() -> void:
 	pickup.on_call.connect(calling)
 	pickup.off_call.connect(hang_up)
 	
-	print("chances", in_X)
-	print("timer", timer.wait_time)
 
 func _process(_delta):
 	if active:
@@ -56,3 +54,7 @@ func calling():
 
 func hang_up():
 	active = true
+
+func disable() -> void:
+	timer.stop()
+	active = false

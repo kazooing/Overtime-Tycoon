@@ -4,9 +4,11 @@ var label : Label
 var timer : Timer
 var parent
 
-signal is_finished
+signal is_finished(code)
 signal tween_finished(from : Node2D)
+signal deleted
 
+var code: int = 0
 var text: String = "my balls are itchy \ntest"
 
 # this is for tweening
@@ -28,6 +30,7 @@ func _enter_tree() -> void:
 	add_child(timer)
 	timer.timeout.connect(_on_timer_timeout)
 	parent = get_parent()
+	code = parent.code
 	var count = parent.count
 	
 	var dictionary = parent.dialogue[count]
@@ -48,7 +51,6 @@ func _enter_tree() -> void:
 var visible_delta: float
 func play_text(char_ps : float):
 	visible_delta = 1.0/label.text.length()
-	print(visible_delta)
 	timer.start(char_ps)
 
 
@@ -58,15 +60,13 @@ func _on_timer_timeout() -> void:
 	if label.visible_characters == -1:
 		timer.stop()
 		await get_tree().create_timer(pause).timeout
-		is_finished.emit()
-		print("timer stopped")
+		is_finished.emit(code)
 
 var step = 0
 func play_finished(by: float):
 	if step >= 2:
 		move_delete(by)
 	else:
-		print(label.text, position)
 		move_up(by)
 	step+=1
 
@@ -100,4 +100,5 @@ func moveup_ended():
 	tween_finished.emit(self)
 
 func movedel_ended():
+	deleted.emit()
 	queue_free()
