@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://b2dhsw624qes4"]
 
 [ext_resource type="Script" uid="uid://5vaap05gqip8" path="res://dailogue test/text_box.gd" id="1_oi3j2"]
-[ext_resource type="Texture2D" uid="uid://buldpfc4otyfp" path="res://sprites/text bubble.png" id="2_m02s6"]
+[ext_resource type="Texture2D" uid="uid://buldpfc4otyfp" path="res://sprites2/text bubble.png" id="2_m02s6"]
 [ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="3_8eedf"]
 [ext_resource type="AudioStream" uid="uid://bxh0g8w4flxv8" path="res://dailogue test/voice/deep/high long.wav" id="3_m02s6"]
 [ext_resource type="AudioStream" uid="uid://biy35il63ph48" path="res://dailogue test/voice/deep/high short.wav" id="4_8eedf"]

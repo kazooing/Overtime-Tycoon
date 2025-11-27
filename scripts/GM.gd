@@ -4,10 +4,12 @@ extends Node
 # how to access: GM.{variable_name}
 
 var day = 1
-var curMoney = 0 #total money right now
+var curMoney = 50 #total money right now
 var curSanity = 100
 var maxSanity = 100
 var calls_done_per_scene = 0
+var spreadsheets_done_per_scene = 0
+var meetings_done_per_scene = 0
 var money_gained_per_scene = 0
 var weekly_target = 50
 
@@ -19,21 +21,21 @@ var pajangan = [
 	{
 		"id": "000",
 		"owned": false,
-		"recover_bonus": 0.1,
+		"recover_bonus": 0.3,
 		"decrease_bonus": 0.05,
 		"icon" : "res://sprites1/upgrade_shop/decor/mugmug.PNG"
 	},
 	{
 		"id": "001",
 		"owned": false,
-		"recover_bonus": 0.15,
+		"recover_bonus": 0.5,
 		"decrease_bonus": 0.075,
 		"icon" : "res://sprites1/upgrade_shop/decor/plant.PNG"
 	},
 	{
 		"id": "002",
 		"owned": false,
-		"recover_bonus": 0.2,
+		"recover_bonus": 0.8,
 		"decrease_bonus": 0.1,
 		"icon" : "res://sprites1/upgrade_shop/decor/yourmom.PNG"
 	}

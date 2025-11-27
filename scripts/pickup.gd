@@ -30,5 +30,4 @@ func on_release() -> void:
 
 func _on_timer_timeout() -> void:
 	off_call.emit()
-	$Timer.stop()
 	print("off call")
