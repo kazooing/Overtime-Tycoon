@@ -1,7 +1,6 @@
 extends Node2D
 
 signal disable_all_tasks
-signal fail_all_tasks
 
 var money_added_animation := preload("res://scenes/money_added.tscn")
 var day_ended = false
@@ -87,9 +86,11 @@ func confirm_tasks_ended(confirm : bool) -> void:
 		get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
 	print("all tasks finished", confirm)
 
+signal reset_phonecall
+signal reset_spreadsheet
+signal reset_meeting
+
 func _on_sanity_bar_ui_sanity_bar_zero() -> void:
-	var audio = get_node("sanity_zeroed")
-	play_audio(audio)
 	GM.sanity_hits_zero_counter +=1
 	# pass time for 1 hour, fill up the sanity bar by 50, any task that are currently running gets canceled
 	
@@ -106,9 +107,7 @@ func _on_sanity_bar_ui_sanity_bar_zero() -> void:
 	sanity_bar.value = 50
 	
 	#cancel all tasks
-	fail_all_tasks.emit()
-
-func play_audio(audio: AudioStreamPlayer2D):
-	if audio.playing:
-		return
-	audio.play()
+	reset_phonecall.emit()
+	reset_spreadsheet.emit()
+	reset_meeting.emit()
+	

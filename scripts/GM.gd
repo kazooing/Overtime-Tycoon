@@ -82,7 +82,7 @@ var tasks = [
 		"icon" = "res://sprites1/work_scene/webcam put on top of monitor.png",
 		"upgrade_value" = [25, 30, 35, 40],
 		"upgrade_cost" = [18, 22, 26, 30],
-		"owned" = true,
+		"owned" = false,
 		"index" = -1,
 		"unlock_cost" = 25
 	},

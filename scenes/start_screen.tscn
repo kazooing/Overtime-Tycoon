@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://ddm80yf5qtc53" path="res://sprites2/clock/6.png" id="23_q3skl"]
 [ext_resource type="Texture2D" uid="uid://bga1wnuoyufkp" path="res://sprites2/clock/7.png" id="24_lyip4"]
 [ext_resource type="Texture2D" uid="uid://yri1g0l6vx8u" path="res://sprites2/clock/8.png" id="25_kbp7x"]
-[ext_resource type="Texture2D" uid="uid://wdulpie6awd4" path="res://sprites1/start_screen/NEW_LOGOO.png" id="26_8ijck"]
+[ext_resource type="Texture2D" uid="uid://npqthhmlyf2u" path="res://sprites1/start_screen/NEW LOGOO.png" id="26_8ijck"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5cfws"]
 animations = [{

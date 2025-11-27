@@ -15,11 +15,9 @@ enum{
 	HASMEET,
 	INMEET,
 	AWAITHOLD,
-	HOLDING,
 }
 var state = NOMEET
 var open = false
-var hold_timer_remain: float
 
 @onready var progress = $TextureProgressBar
 @onready var meeting_held = $MeetingHeld
@@ -30,7 +28,6 @@ var hold_timer_remain: float
 @onready var label = $Label
 @onready var rng = RandomNumberGenerator.new()
 @onready var audio_cue = get_node("Audio_cue")
-@onready var bg_audio = get_node("bg_audio")
 
 func _on_meeting_opener_closing_meeting() -> void:
 	$Button.disabled = true
@@ -53,7 +50,7 @@ func _on_meeting_opener_opening_meeting() -> void:
 		print(first_timer.time_left)
 
 func _process(_delta: float) -> void:
-	if state == HOLDING:
+	if state == AWAITHOLD:
 		progress.value = held_timer.time_left
 
 func start_meeting():
@@ -61,10 +58,8 @@ func start_meeting():
 	meeting_start.emit()
 	first_timer.start(rng.randi_range(5,9))
 	start_sanity_drain()
-	play_audio(bg_audio)
 	print("open")
 	state = INMEET
-	hold_timer_remain = 5
 
 func _on_meeting_duration_timeout() -> void:
 	cue_timer.start()
@@ -79,23 +74,14 @@ func _on_button_button_down() -> void:
 	if state == AWAITHOLD:
 		#$Button.visible = false
 		#meeting_held.visible = true
-		audio_cue.volume_db = -5
-		state = HOLDING
 		count = 3
-		held_timer.start(hold_timer_remain)
+		held_timer.start()
 		progress.visible = true
 		cue_timer.stop()
 
 func _on_button_button_up() -> void:
-	hold_timer_remain = held_timer.time_left
-	if state == HOLDING:
-		state = AWAITHOLD
-	await get_tree().create_timer(0.1).timeout
 	frame = 0
-	if state != AWAITHOLD:
-		return
-	
-	if held_timer.time_left > 0.3:
+	if held_timer.time_left > 0.3 and state == AWAITHOLD:
 		#meeting_held.visible = false
 		progress.visible = false
 		decrease.emit(20)
@@ -120,8 +106,6 @@ func _on_held_timer_timeout() -> void:
 
 #if button isn't pressed in 2 seconds, sanity is reduced		
 func _on_cue_timer_timeout() -> void:
-	if state != AWAITHOLD:
-		return
 	decrease.emit(15)
 	state = INMEET
 	task_failed(5, 5, 7)
@@ -132,10 +116,6 @@ func _on_sanity_reduction_timeout() -> void:
 
 #if meeting duration is done, money will be given
 func finish_meeting(reward: float = 20) -> void:
-	if state == HASMEET or state == NOMEET:
-		return
-	
-	bg_audio.stop()
 	print("Meeting Finished")
 	finished.emit(reward, global_position)
 	stop_sanity_drain()
@@ -175,24 +155,8 @@ func stop_sanity_drain():
 	sanity_timer.stop()
 	on_penalty.emit(false, self)
 
-func task_failed(reward:float, penalty_from:float, penalty_to:float, sound: bool = true):
-	stop_all_timers()
-	if sound:
-		$fail.play()
+func task_failed(reward:float, penalty_from:float, penalty_to:float):
 	audio_cue.stop()
 	state = INMEET
 	await get_tree().create_timer(rng.randf_range(penalty_from,penalty_to)).timeout
 	finish_meeting(reward)
-
-func force_fail():
-	if state == NOMEET:
-		return
-	if state == HASMEET:
-		get_parent().no_meeting.emit()
-		return
-	task_failed(2, 0, 0, false)
-
-func stop_all_timers():
-	cue_timer.stop()
-	first_timer.stop()
-	held_timer.stop()

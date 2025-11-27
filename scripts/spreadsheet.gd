@@ -17,7 +17,6 @@ func _on_spreadsheet_opener_opening_sheet() -> void:
 
 
 func _on_button_button_down() -> void:
-	$click.play()
 	spreadsheet_completion += 5
 	if spreadsheet_completion >= 100:
 		spreadsheet_completion = 0
@@ -34,8 +33,3 @@ func penalty()-> void:
 
 func _on_penalty_timer_timeout() -> void:
 	on_penalty.emit(false, self)
-
-
-func force_fail() -> void:
-	spreadsheet_completion = 0
-	get_parent().force_close(null)

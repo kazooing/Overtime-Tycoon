@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=46 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -35,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://bga1wnuoyufkp" path="res://sprites2/clock/7.png" id="25_rq3n8"]
 [ext_resource type="Texture2D" uid="uid://yri1g0l6vx8u" path="res://sprites2/clock/8.png" id="26_j1ws0"]
 [ext_resource type="Script" uid="uid://d03mm1vbye1" path="res://scripts/clock.gd" id="27_s0bdn"]
-[ext_resource type="AudioStream" uid="uid://dwfvfbw43chw7" path="res://SFX/clock sounds/clock click 1.mp3" id="30_f30yx"]
 [ext_resource type="Texture2D" uid="uid://o4f8i0pkde6x" path="res://sprites1/work_scene/mugmug.PNG" id="30_yjw18"]
 [ext_resource type="Texture2D" uid="uid://bgch5myqibo0f" path="res://sprites1/work_scene/plant.PNG" id="31_3gmet"]
 [ext_resource type="Texture2D" uid="uid://gjm2cn002s73" path="res://sprites1/work_scene/calendar.png" id="31_j1ws0"]
@@ -45,7 +44,6 @@
 [ext_resource type="PackedScene" uid="uid://cqrg7y22i3s7q" path="res://dailogue test/dialogue_generator.tscn" id="35_tt0ds"]
 [ext_resource type="Texture2D" uid="uid://bcyicbdbq736e" path="res://sprites1/upgrade_shop/decor/cat decor no bg.PNG" id="36_0fa0m"]
 [ext_resource type="Texture2D" uid="uid://ci8vrxmm0xxtj" path="res://sprites1/work_scene/webcam put on top of monitor.png" id="36_g1u5m"]
-[ext_resource type="AudioStream" uid="uid://eshj14lh885o" path="res://SFX/fail sounds/Fail1.mp3" id="38_3gmet"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1u5m"]
 animations = [{
@@ -90,12 +88,6 @@ animations = [{
 "name": &"default",
 "speed": 0.0
 }]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i1m6g"]
-random_pitch = 1.05
-random_volume_offset_db = 1.0
-streams_count = 1
-stream_0/stream = ExtResource("30_f30yx")
 
 [node name="WorkScene" type="Node2D"]
 script = ExtResource("1_clgo3")
@@ -199,10 +191,6 @@ position = Vector2(90, 163)
 scale = Vector2(0.13302928, 0.13302928)
 sprite_frames = SubResource("SpriteFrames_g1u5m")
 script = ExtResource("27_s0bdn")
-
-[node name="clock_tick" type="AudioStreamPlayer2D" parent="ProgressLayer/Clock"]
-stream = SubResource("AudioStreamRandomizer_i1m6g")
-volume_db = 3.655
 
 [node name="calendar" type="TextureRect" parent="ProgressLayer"]
 offset_left = 1104.0
@@ -330,20 +318,11 @@ script = ExtResource("5_eoja1")
 wait_time = 10.0
 autostart = true
 
-[node name="sanity_zeroed" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("38_3gmet")
-
 [connection signal="disable_all_tasks" from="." to="PcStuff/Screen" method="disable_computer"]
-[connection signal="disable_all_tasks" from="." to="Telephone" method="disable"]
-[connection signal="fail_all_tasks" from="." to="PcStuff/Screen" method="call_force_fail"]
-[connection signal="fail_all_tasks" from="." to="Telephone" method="_on_work_scene_fail_all_tasks"]
-[connection signal="fail_all_tasks" from="." to="Dialogue" method="force_fail"]
+[connection signal="reset_spreadsheet" from="." to="PcStuff/Screen" method="_on_work_scene_reset_spreadsheet"]
 [connection signal="decrease_sanity" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
-[connection signal="force_fail" from="PcStuff/Screen" to="PcStuff/Screen/Spreadsheet opener/Spreadsheet" method="force_fail"]
-[connection signal="force_fail" from="PcStuff/Screen" to="PcStuff/Screen/Meeting opener/Meeting" method="force_fail"]
 [connection signal="gain_money" from="PcStuff/Screen" to="ProgressLayer/moneyCounterUI" method="addMoney"]
 [connection signal="meeting_finished" from="PcStuff/Screen" to="Telephone" method="enable"]
-[connection signal="meeting_finished" from="PcStuff/Screen" to="Dialogue" method="finish"]
 [connection signal="meeting_started" from="PcStuff/Screen" to="Telephone" method="disable"]
 [connection signal="meeting_started" from="PcStuff/Screen" to="Dialogue" method="_on_meeting_dialogue"]
 [connection signal="money_notification" from="PcStuff/Screen" to="." method="play_added_money"]
