@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bu2n5sxech1cd"]
+[gd_scene load_steps=10 format=3 uid="uid://bu2n5sxech1cd"]
 
 [ext_resource type="Script" uid="uid://ccw74yakvva7u" path="res://scripts/data_day_recap.gd" id="1_nodxj"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites2/icon.svg" id="2_4y1ax"]
 [ext_resource type="Texture2D" uid="uid://dm2s347sbj5lc" path="res://sprites2/day_recap/1.PNG" id="2_m6epr"]
+[ext_resource type="Texture2D" uid="uid://2rhkfpc5t677" path="res://sprites2/day_recap/bg.png" id="2_s1wvh"]
 [ext_resource type="FontFile" uid="uid://gxkseqf68xa5" path="res://font/Ot6-Regular.ttf" id="3_jlo7j"]
 [ext_resource type="Script" uid="uid://d2u2p5w35yfk2" path="res://scripts/weekly_target_bar_script.gd" id="5_ab611"]
 [ext_resource type="Texture2D" uid="uid://bb2vhmwp1bk7m" path="res://sprites2/day_recap/3.PNG" id="5_jlo7j"]
@@ -18,7 +19,24 @@ offset_bottom = 720.0
 [node name="InfoLayer" type="CanvasLayer" parent="."]
 script = ExtResource("1_nodxj")
 
+[node name="TextureRect2" type="TextureRect" parent="InfoLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -531.0
+offset_top = -308.0
+offset_right = 751.4999
+offset_bottom = 546.99994
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_s1wvh")
+expand_mode = 1
+
 [node name="TextureRect" type="TextureRect" parent="InfoLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -34,7 +52,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_m6epr")
 
 [node name="Main" type="Node2D" parent="InfoLayer"]
-position = Vector2(-600, 14)
+position = Vector2(-577, 26)
 
 [node name="label_money_gained" type="Label" parent="InfoLayer/Main"]
 offset_left = 933.0
@@ -62,23 +80,23 @@ text = "Total Money:
 $"
 
 [node name="Task" type="Node2D" parent="InfoLayer"]
-position = Vector2(767, 231)
+position = Vector2(762, 231)
 
 [node name="tasks_done" type="RichTextLabel" parent="InfoLayer/Task"]
-offset_left = -28.0
-offset_top = -27.0
-offset_right = 264.0
-offset_bottom = 131.0
+offset_left = -64.0
+offset_top = 10.0
+offset_right = 244.0
+offset_bottom = 168.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_jlo7j")
-theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
 
 [node name="weekly_target_bar" type="TextureProgressBar" parent="InfoLayer"]
-offset_left = 64.0
-offset_top = 67.0
-offset_right = 1766.0
-offset_bottom = 1067.0
+offset_left = 59.0
+offset_top = 73.0
+offset_right = 1761.0
+offset_bottom = 1073.0
 scale = Vector2(0.74, 0.74)
 step = 0.1
 texture_over = ExtResource("5_jlo7j")
@@ -87,13 +105,34 @@ script = ExtResource("5_ab611")
 
 [node name="TextureButton" type="TextureButton" parent="InfoLayer"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 954.00006
-offset_top = 503.0
-offset_right = 1082.0
-offset_bottom = 631.0
+offset_left = 893.00006
+offset_top = 524.0
+offset_right = 1021.00006
+offset_bottom = 652.0
 rotation = -0.13439035
 scale = Vector2(1.3199975, 1.3199975)
 texture_normal = ExtResource("2_4y1ax")
+
+[node name="days_left" type="Label" parent="InfoLayer"]
+offset_left = 193.0
+offset_top = 246.0
+offset_right = 404.0
+offset_bottom = 293.0
+theme_override_colors/font_color = Color(0.8581058, 0, 0.22673258, 1)
+theme_override_fonts/font = ExtResource("3_jlo7j")
+theme_override_font_sizes/font_size = 30
+text = "days left"
+
+[node name="num_days_left" type="Label" parent="InfoLayer"]
+offset_left = 192.0
+offset_top = 175.0
+offset_right = 304.0
+offset_bottom = 250.0
+theme_override_colors/font_color = Color(0.85882354, 0, 0.22745098, 1)
+theme_override_fonts/font = ExtResource("3_jlo7j")
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 layer = 2
