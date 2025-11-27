@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://d2bcts6ujb2hd"]
+[gd_scene load_steps=45 format=3 uid="uid://d2bcts6ujb2hd"]
 
 [ext_resource type="Texture2D" uid="uid://wq18qmkxa7oi" path="res://sprites1/work_scene/PC with bg.PNG" id="1_s1t8g"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites2/icon.svg" id="1_sad84"]
@@ -10,13 +10,20 @@
 [ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites2/sanityBar.png" id="7_t46dj"]
 [ext_resource type="Script" uid="uid://ob8vixmdwkrv" path="res://scripts/meeting_opener.gd" id="9_8prci"]
 [ext_resource type="Script" uid="uid://e67074ucma8i" path="res://scripts/close_computer.gd" id="9_dx45h"]
+[ext_resource type="AudioStream" uid="uid://d152un5y1phf" path="res://SFX/click sounds/click 1.mp3" id="9_fhdfd"]
 [ext_resource type="Texture2D" uid="uid://cr4au0veoyg6x" path="res://sprites1/work_scene/screen/zoom cam & mic off.png" id="10_8prci"]
+[ext_resource type="AudioStream" uid="uid://dw8t4at84kmw1" path="res://SFX/click sounds/click 2.mp3" id="10_u2y6m"]
 [ext_resource type="Script" uid="uid://cgioim5nd2863" path="res://scripts/meeting.gd" id="10_xhy5k"]
+[ext_resource type="AudioStream" uid="uid://civhxxeq86m77" path="res://SFX/click sounds/click 3.mp3" id="11_2pynn"]
+[ext_resource type="AudioStream" uid="uid://d2ysx3ur35wl" path="res://SFX/click sounds/click 4.mp3" id="12_csnda"]
 [ext_resource type="Texture2D" uid="uid://bfiwvo0f1f3ch" path="res://sprites1/work_scene/screen/zoom cam off & mic on.png" id="12_xhy5k"]
-[ext_resource type="AudioStream" uid="uid://bjn8y720ykkbv" path="res://SFX/Telephone/ringtone.mp3" id="13_s1t8g"]
+[ext_resource type="AudioStream" uid="uid://bhwdsxlshux7g" path="res://SFX/warning.mp3" id="13_ou56q"]
+[ext_resource type="AudioStream" uid="uid://cxmyv5824ya3u" path="res://SFX/click sounds/click 5.mp3" id="13_s5hlo"]
+[ext_resource type="AudioStream" uid="uid://drkbh61kvu51i" path="res://SFX/click sounds/click 6.mp3" id="14_ljm6u"]
 [ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="14_uhx08"]
 [ext_resource type="AudioStream" uid="uid://c4wvncdqha688" path="res://SFX/Telephone/empty.mp3" id="15_ou56q"]
 [ext_resource type="Texture2D" uid="uid://buldpfc4otyfp" path="res://sprites2/text bubble.png" id="15_v11sh"]
+[ext_resource type="AudioStream" uid="uid://dfi54fexs6e8m" path="res://SFX/grow by 1 - stem-glued-01.mp3" id="16_6lk3l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_phdvl"]
 animations = [{
@@ -28,6 +35,19 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yjrjs"]
+streams_count = 6
+stream_0/stream = ExtResource("9_fhdfd")
+stream_1/stream = ExtResource("10_u2y6m")
+stream_2/stream = ExtResource("11_2pynn")
+stream_2/weight = 1.2
+stream_3/stream = ExtResource("12_csnda")
+stream_3/weight = 1.2
+stream_4/stream = ExtResource("13_s5hlo")
+stream_4/weight = 1.2
+stream_5/stream = ExtResource("14_ljm6u")
+stream_5/weight = 1.2
 
 [sub_resource type="Animation" id="Animation_sad84"]
 resource_name = "Open and close spreadsheet"
@@ -586,6 +606,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Penalty_timer" type="Timer" parent="Spreadsheet opener/Spreadsheet"]
 wait_time = 1.5
 
+[node name="click" type="AudioStreamPlayer2D" parent="Spreadsheet opener/Spreadsheet"]
+stream = SubResource("AudioStreamRandomizer_yjrjs")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spreadsheet opener"]
 libraries = {
 &"": SubResource("AnimationLibrary_phdvl")
@@ -617,7 +640,6 @@ texture = ExtResource("12_xhy5k")
 
 [node name="Button" type="Button" parent="Meeting opener/Meeting"]
 visible = false
-anchors_preset = -1
 offset_left = -1019.9999
 offset_top = -608.1505
 offset_right = 1015.5554
@@ -643,8 +665,8 @@ one_shot = true
 [node name="SanityReduction" type="Timer" parent="Meeting opener/Meeting"]
 
 [node name="Audio_cue" type="AudioStreamPlayer2D" parent="Meeting opener/Meeting"]
-stream = ExtResource("13_s1t8g")
-pitch_scale = 0.35
+stream = ExtResource("13_ou56q")
+pitch_scale = 0.85
 
 [node name="CueTimer" type="Timer" parent="Meeting opener/Meeting"]
 wait_time = 4.0
@@ -667,6 +689,10 @@ label_settings = SubResource("LabelSettings_v11sh")
 stream = ExtResource("15_ou56q")
 volume_db = -5.474
 pitch_scale = 0.27
+
+[node name="tick_down" type="AudioStreamPlayer2D" parent="Meeting opener/Meeting"]
+stream = ExtResource("16_6lk3l")
+pitch_scale = 0.85
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Meeting opener"]
 root_node = NodePath("../Meeting")

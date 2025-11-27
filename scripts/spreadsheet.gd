@@ -7,6 +7,7 @@ signal on_penalty(confirm:bool, object: Node)
 var spreadsheet_completion:float = 0
 @onready var progress = $TextureProgressBar
 @onready var timer = $Penalty_timer
+@onready var click_sfx = $click
 
 func _on_spreadsheet_opener_closing_sheet() -> void:
 	$Button.disabled = true
@@ -23,6 +24,7 @@ func _on_button_button_down() -> void:
 		finished.emit(GM.add_money_spreadsheet, global_position)
 		GM.spreadsheets_done_per_scene += 1
 	progress.value = spreadsheet_completion
+	click_sfx.play()
 	penalty()
 
 func penalty()-> void:

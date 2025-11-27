@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfi54fexs6e8m"
+path="res://.godot/imported/grow by 1 - stem-glued-01.mp3-7d2f5e96bd7085e19dfa0fe99c2dd4a5.mp3str"
+
+[deps]
+
+source_file="res://SFX/grow by 1 - stem-glued-01.mp3"
+dest_files=["res://.godot/imported/grow by 1 - stem-glued-01.mp3-7d2f5e96bd7085e19dfa0fe99c2dd4a5.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

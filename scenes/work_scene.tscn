@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=41 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bga1wnuoyufkp" path="res://sprites2/clock/7.png" id="25_rq3n8"]
 [ext_resource type="Texture2D" uid="uid://yri1g0l6vx8u" path="res://sprites2/clock/8.png" id="26_j1ws0"]
 [ext_resource type="Script" uid="uid://d03mm1vbye1" path="res://scripts/clock.gd" id="27_s0bdn"]
+[ext_resource type="AudioStream" uid="uid://bw5iqhco3pd7n" path="res://SFX/clock sounds/clock click 1.mp3" id="30_f30yx"]
 [ext_resource type="Texture2D" uid="uid://o4f8i0pkde6x" path="res://sprites1/work_scene/mugmug.PNG" id="30_yjw18"]
 [ext_resource type="Texture2D" uid="uid://bgch5myqibo0f" path="res://sprites1/work_scene/plant.PNG" id="31_3gmet"]
 [ext_resource type="Script" uid="uid://bhxisiridlirf" path="res://scripts/work_timer.gd" id="31_omevc"]
@@ -181,6 +182,10 @@ position = Vector2(90, 163)
 scale = Vector2(0.13302928, 0.13302928)
 sprite_frames = SubResource("SpriteFrames_g1u5m")
 script = ExtResource("27_s0bdn")
+
+[node name="clock_tick" type="AudioStreamPlayer2D" parent="ProgressLayer/Clock"]
+stream = ExtResource("30_f30yx")
+volume_db = 3.741
 
 [node name="Pajangan" type="CanvasLayer" parent="."]
 

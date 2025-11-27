@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wrebvnwiiq84"
+path="res://.godot/imported/grow by 1.mp3-f86c063e0894e8e8bdd0aaded2f1fbf6.mp3str"
+
+[deps]
+
+source_file="res://SFX/grow by 1.mp3"
+dest_files=["res://.godot/imported/grow by 1.mp3-f86c063e0894e8e8bdd0aaded2f1fbf6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=119.93
+beat_count=2
+bar_beats=4

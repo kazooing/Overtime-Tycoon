@@ -12,8 +12,9 @@ signal no_meeting
 @onready var rng = RandomNumberGenerator.new()
 var is_open = false
 var has_meeting = false
-var ring_cycle = 10
+var ring_cycle = 2
 var pickup_window = 4
+var in_X = 2
 var animation = "Open and close meetingless"
 
 func _ready() -> void:
@@ -51,7 +52,7 @@ func _on_ringer_timer_timeout() -> void:
 			animation = "Open and close meetingless"
 			return
 	
-	if rng.randi_range(1,5) != 1 and ringatt_count < 4:
+	if rng.randi_range(1,in_X) != 1 and ringatt_count < 4:
 		ringatt_count += 1
 		return
 	
@@ -83,9 +84,10 @@ func _on_screen_allow_meetings(confirm: bool) -> void:
 	if not confirm:
 		print("MEETINGS DISALLOWED")
 		ringer_timer.stop()
-		notif_anim.play_backwards("Appear notif")
-		no_meeting.emit()
-		has_meeting = false
+		if has_meeting:
+			anim_player.play_backwards("Appear notif")
+			no_meeting.emit()
+			has_meeting = false
 	else:
 		print("MEETINGS ALLOWED")
 		ringer_timer.start(ring_cycle)

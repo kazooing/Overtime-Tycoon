@@ -57,7 +57,7 @@ var tasks = [
 		"icon" = "res://sprites/icon.svg",
 		"upgrade_value" = [9, 12, 16, 21],
 		"upgrade_cost" = [7, 13, 19, 25],
-		"owned" = false,
+		"owned" = true,
 		"index" = -1,
 		"unlock_cost" = 15
 	},
@@ -67,7 +67,7 @@ var tasks = [
 		"icon" = "res://sprites/icon.svg",
 		"upgrade_value" = [25, 30, 35, 40],
 		"upgrade_cost" = [18, 22, 26, 30],
-		"owned" = false,
+		"owned" = true,
 		"index" = -1,
 		"unlock_cost" = 25
 	}
