@@ -1,8 +1,8 @@
+Label
+TextureRect
 AudioStreamPlayer2D
 ColorRect
-TextureRect
 Timer
-Label
 Node2D
 AudioListener2D
 Camera2D

@@ -8,6 +8,7 @@ var day_ended = false
 var all_tasks_ended = false
 var changing = false
 @onready var sanity_bar = get_node("ProgressLayer/sanityBarUI")
+@onready var date_in_calendar = $calendar/date
 
 func _ready() -> void:
 	GM.sanity_hits_zero_counter = 0
@@ -17,6 +18,7 @@ func _ready() -> void:
 	GM.money_gained_per_scene = 0
 	sanity_bar.mult_decrease = 1
 	sanity_bar.mult_increase = 1
+	date_in_calendar.text = str(GM.day_count+1)
 	
 	
 	# check for items are bought

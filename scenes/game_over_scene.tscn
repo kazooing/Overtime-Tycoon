@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://gxkseqf68xa5" path="res://font/Ot6-Regular.ttf" id="4_5jg82"]
 [ext_resource type="Texture2D" uid="uid://bnddk27itqvoy" path="res://sprites1/start_screen/quit menu button/idle.PNG" id="4_lt2b8"]
 
+
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_jy0sy")
 
