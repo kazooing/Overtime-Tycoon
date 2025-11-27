@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://d1l8mxi4v681c" path="res://sprites1/upgrade_shop/decor/cactus decor no bg.PNG" id="35_tf5yx"]
 [ext_resource type="PackedScene" uid="uid://cqrg7y22i3s7q" path="res://dailogue test/dialogue_generator.tscn" id="35_tt0ds"]
 [ext_resource type="Texture2D" uid="uid://bcyicbdbq736e" path="res://sprites1/upgrade_shop/decor/cat decor no bg.PNG" id="36_0fa0m"]
+[ext_resource type="Texture2D" uid="uid://ci8vrxmm0xxtj" path="res://sprites1/work_scene/webcam put on top of monitor.png" id="36_g1u5m"]
 [ext_resource type="AudioStream" uid="uid://eshj14lh885o" path="res://SFX/fail sounds/Fail1.mp3" id="38_3gmet"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1u5m"]
@@ -315,6 +316,15 @@ theme_override_font_sizes/font_size = 55
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="webcam" type="TextureRect" parent="."]
+visible = false
+offset_left = 221.0
+offset_top = 110.0
+offset_right = 306.0
+offset_bottom = 200.28888
+texture = ExtResource("36_g1u5m")
+expand_mode = 1
 
 [connection signal="disable_all_tasks" from="." to="PcStuff/Screen" method="disable_computer"]
 [connection signal="force_fail" from="." to="PcStuff/Screen" method="call_force_fail"]
