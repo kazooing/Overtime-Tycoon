@@ -64,15 +64,14 @@ $"
 [node name="Task" type="Node2D" parent="InfoLayer"]
 position = Vector2(767, 231)
 
-[node name="label_calls_done" type="Label" parent="InfoLayer/Task"]
-offset_left = -8.0
+[node name="tasks_done" type="Label" parent="InfoLayer/Task"]
+offset_left = -28.0
 offset_top = -27.0
-offset_right = 168.0
-offset_bottom = 11.0
+offset_right = 221.0
+offset_bottom = 114.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_s1wvh")
-theme_override_font_sizes/font_size = 40
-text = "Calls Done: "
+theme_override_font_sizes/font_size = 35
 
 [node name="weekly_target_bar" type="TextureProgressBar" parent="InfoLayer"]
 offset_left = 64.0

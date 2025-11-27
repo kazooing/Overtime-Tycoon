@@ -32,10 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://bga1wnuoyufkp" path="res://sprites2/clock/7.png" id="25_rq3n8"]
 [ext_resource type="Texture2D" uid="uid://yri1g0l6vx8u" path="res://sprites2/clock/8.png" id="26_j1ws0"]
 [ext_resource type="Script" uid="uid://d03mm1vbye1" path="res://scripts/clock.gd" id="27_s0bdn"]
-[ext_resource type="Texture2D" uid="uid://b0utiviwvays7" path="res://sprites1/upgrade_shop/decor/mugmug.PNG" id="30_yjw18"]
-[ext_resource type="Texture2D" uid="uid://vpns23p02yc5" path="res://sprites1/upgrade_shop/decor/plant.PNG" id="31_3gmet"]
+[ext_resource type="Texture2D" uid="uid://o4f8i0pkde6x" path="res://sprites1/work_scene/mugmug.PNG" id="30_yjw18"]
+[ext_resource type="Texture2D" uid="uid://bgch5myqibo0f" path="res://sprites1/work_scene/plant.PNG" id="31_3gmet"]
 [ext_resource type="Script" uid="uid://bhxisiridlirf" path="res://scripts/work_timer.gd" id="31_omevc"]
-[ext_resource type="Texture2D" uid="uid://cvxjiwy1fwrjx" path="res://sprites1/upgrade_shop/decor/yourmom.PNG" id="32_f30yx"]
+[ext_resource type="Texture2D" uid="uid://cr8he0pdr0yqh" path="res://sprites1/work_scene/yourmom.PNG" id="32_f30yx"]
 [ext_resource type="PackedScene" uid="uid://cqrg7y22i3s7q" path="res://dailogue test/dialogue_generator.tscn" id="35_tt0ds"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1u5m"]
@@ -106,8 +106,8 @@ scale = Vector2(0.195, 0.195)
 texture = ExtResource("5_ni28n")
 
 [node name="Screen" parent="PcStuff" instance=ExtResource("9_2pybm")]
-position = Vector2(473.99997, 372.00003)
-scale = Vector2(0.39733332, 0.34799993)
+position = Vector2(460, 367)
+scale = Vector2(0.33948413, 0.29733336)
 
 [node name="TextureRect" type="TextureRect" parent="PcStuff"]
 anchors_preset = 4
@@ -210,7 +210,7 @@ visible = false
 custom_minimum_size = Vector2(100, 100)
 offset_left = 845.0
 offset_top = 7.0
-offset_right = 1005.3214
+offset_right = 1005.32104
 offset_bottom = 141.0
 texture = ExtResource("32_f30yx")
 expand_mode = 2
@@ -262,12 +262,18 @@ autostart = true
 [connection signal="disable_all_tasks" from="." to="PcStuff/Screen" method="disable_computer"]
 [connection signal="decrease_sanity" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
 [connection signal="gain_money" from="PcStuff/Screen" to="ProgressLayer/moneyCounterUI" method="addMoney"]
+[connection signal="meeting_finished" from="PcStuff/Screen" to="Telephone" method="enable"]
+[connection signal="meeting_started" from="PcStuff/Screen" to="Telephone" method="disable"]
+[connection signal="meeting_started" from="PcStuff/Screen" to="Dialogue" method="_on_meeting_dialogue"]
 [connection signal="money_notification" from="PcStuff/Screen" to="." method="play_added_money"]
 [connection signal="new_decreaser" from="PcStuff/Screen" to="ProgressLayer/sanityBarUI" method="new_affecting"]
 [connection signal="is_not_draining" from="ProgressLayer/sanityBarUI" to="." method="confirm_tasks_ended"]
+[connection signal="sanity_bar_zero" from="ProgressLayer/sanityBarUI" to="." method="_on_sanity_bar_ui_sanity_bar_zero"]
 [connection signal="timeout" from="ProgressLayer/sanityBarUI/Timer" to="ProgressLayer/sanityBarUI" method="_on_timer_timeout"]
 [connection signal="call_notif" from="Telephone" to="." method="play_added_money"]
+[connection signal="call_started" from="Telephone" to="PcStuff/Screen" method="call_no_meetings"]
 [connection signal="call_started" from="Telephone" to="Dialogue" method="_on_telephone_call_started"]
+[connection signal="call_stopped" from="Telephone" to="PcStuff/Screen" method="call_allow_meetings"]
 [connection signal="call_stopped" from="Telephone" to="ProgressLayer/moneyCounterUI" method="addMoney"]
 [connection signal="decrease_sanity" from="Telephone" to="ProgressLayer/sanityBarUI" method="decreaseSanity"]
 [connection signal="phone_ringing" from="Telephone" to="ProgressLayer/sanityBarUI" method="new_affecting"]

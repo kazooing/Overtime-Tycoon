@@ -1,7 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://d2bcts6ujb2hd"]
+[gd_scene load_steps=36 format=3 uid="uid://d2bcts6ujb2hd"]
 
+[ext_resource type="Texture2D" uid="uid://wq18qmkxa7oi" path="res://sprites1/work_scene/PC with bg.PNG" id="1_s1t8g"]
 [ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites2/icon.svg" id="1_sad84"]
-[ext_resource type="Texture2D" uid="uid://m1kfxj82jcx8" path="res://sprites1/work_scene/PC asset.png" id="1_t46dj"]
 [ext_resource type="Script" uid="uid://cl44rjj5aq5lg" path="res://scripts/screen_bus.gd" id="2_8m26t"]
 [ext_resource type="Script" uid="uid://783jnncslmoh" path="res://scripts/spreadsheet_opener.gd" id="3_ckgjc"]
 [ext_resource type="Script" uid="uid://cycq1u2a0u8wq" path="res://scripts/spreadsheet.gd" id="4_ckgjc"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://cgioim5nd2863" path="res://scripts/meeting.gd" id="10_xhy5k"]
 [ext_resource type="Texture2D" uid="uid://bfiwvo0f1f3ch" path="res://sprites1/work_scene/screen/zoom cam off & mic on.png" id="12_xhy5k"]
 [ext_resource type="AudioStream" uid="uid://bjn8y720ykkbv" path="res://SFX/Telephone/ringtone.mp3" id="13_s1t8g"]
+[ext_resource type="FontFile" uid="uid://b3gn4x32bw7yy" path="res://font/Ot2-Regular.ttf" id="14_uhx08"]
+[ext_resource type="Texture2D" uid="uid://buldpfc4otyfp" path="res://sprites2/text bubble.png" id="15_v11sh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_phdvl"]
 animations = [{
@@ -63,7 +65,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0.1, 0.4),
 "transitions": PackedFloat32Array(1.9999992, 22.627401),
 "update": 0,
-"values": [Vector2(0.05, 0.04), Vector2(0.252, 0.205)]
+"values": [Vector2(0.05, 0.04), Vector2(0.3, 0.244)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -75,7 +77,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.3333),
 "transitions": PackedFloat32Array(0.26794332, 2.1435473),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(383.515, 172.644)]
+"values": [Vector2(0, 0), Vector2(450, 180)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -164,11 +166,18 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("10_8prci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xhy5k")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 0.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v11sh"]
+font = ExtResource("14_uhx08")
+font_size = 200
 
 [sub_resource type="Animation" id="Animation_s1t8g"]
 resource_name = "Open and close meeting"
@@ -195,7 +204,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.1, 0.4),
 "transitions": PackedFloat32Array(1.9999982, 22.627462),
 "update": 0,
-"values": [Vector2(0.05, 0.04), Vector2(0.283, 0.301)]
+"values": [Vector2(0.05, 0.04), Vector2(0.3, 0.319)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -204,10 +213,10 @@ tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3333),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(0.2679434, 2.1435478),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(376.62, 1.242)]
+"values": [Vector2(0, 0), Vector2(450, 50)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -217,6 +226,82 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1215),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="Animation" id="Animation_ou56q"]
+resource_name = "Open and close meetingless"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2667),
+"transitions": PackedFloat32Array(0.10153171, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.3553136, 0.35531354, 0.35531357, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1.9999982, 22.627462),
+"update": 0,
+"values": [Vector2(0.05, 0.04), Vector2(0.3, 0.319)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.2679434, 2.1435478),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(450, 50)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1215),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -270,13 +355,91 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v11sh"]
 _data = {
 &"Open and close meeting": SubResource("Animation_s1t8g"),
+&"Open and close meetingless": SubResource("Animation_ou56q"),
 &"RESET": SubResource("Animation_uhx08")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_ou56q"]
+font = ExtResource("14_uhx08")
+font_size = 200
+
+[sub_resource type="Animation" id="Animation_6lk3l"]
+resource_name = "Appear notif"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333334, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-320, 270.667), Vector2(-320, 230.66667)]
+}
+
+[sub_resource type="Animation" id="Animation_v11sh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-320, 230.66667)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_86ian"]
+_data = {
+&"Appear notif": SubResource("Animation_6lk3l"),
+&"RESET": SubResource("Animation_v11sh")
 }
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aentv"]
@@ -293,7 +456,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1150, 681.556)]
+"values": [Vector2(4, 2.37)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -321,7 +484,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.03333333, 0.4),
 "transitions": PackedFloat32Array(0.3298769, 1),
 "update": 0,
-"values": [Vector2(0.1, 0.059), Vector2(1144, 678)]
+"values": [Vector2(0.1, 0.059), Vector2(1370, 811.941)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -361,7 +524,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.2102249, 1),
 "update": 0,
-"values": [Vector2(1150, 678.5), Vector2(0.099975586, 0.059020996)]
+"values": [Vector2(1370, 808.3), Vector2(0.099975586, 0.059020996)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xhy5k"]
@@ -373,17 +536,16 @@ _data = {
 
 [node name="Screen" type="Sprite2D"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_t46dj")
+texture = ExtResource("1_s1t8g")
 script = ExtResource("2_8m26t")
 
-[node name="Spreadsheet opener2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-470.116, -330.817)
+[node name="Spreadsheet opener" type="Sprite2D" parent="."]
+position = Vector2(-574, -402)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_sad84")
 script = ExtResource("3_ckgjc")
 
-[node name="Button" type="Button" parent="Spreadsheet opener2"]
+[node name="Button" type="Button" parent="Spreadsheet opener"]
 offset_left = -63.57489
 offset_top = -63.74434
 offset_right = 22.103027
@@ -391,13 +553,13 @@ offset_bottom = 17.330002
 scale = Vector2(1.5, 1.5)
 metadata/_edit_use_anchors_ = true
 
-[node name="Spreadsheet" type="AnimatedSprite2D" parent="Spreadsheet opener2"]
+[node name="Spreadsheet" type="AnimatedSprite2D" parent="Spreadsheet opener"]
 self_modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.013, 0.01)
 sprite_frames = SubResource("SpriteFrames_phdvl")
 script = ExtResource("4_ckgjc")
 
-[node name="Button" type="Button" parent="Spreadsheet opener2/Spreadsheet"]
+[node name="Button" type="Button" parent="Spreadsheet opener/Spreadsheet"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.00014136739
@@ -410,7 +572,7 @@ offset_right = 374.513
 offset_bottom = 239.10728
 scale = Vector2(1.5, 1.5)
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Spreadsheet opener2/Spreadsheet"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Spreadsheet opener/Spreadsheet"]
 offset_left = -1126.0
 offset_top = 708.45844
 offset_right = 1128.748
@@ -418,18 +580,18 @@ offset_bottom = 795.9075
 nine_patch_stretch = true
 texture_under = ExtResource("6_k16cd")
 texture_progress = ExtResource("7_t46dj")
+metadata/_edit_use_anchors_ = true
 
-[node name="Penalty_timer" type="Timer" parent="Spreadsheet opener2/Spreadsheet"]
+[node name="Penalty_timer" type="Timer" parent="Spreadsheet opener/Spreadsheet"]
 wait_time = 1.5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Spreadsheet opener2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spreadsheet opener"]
 libraries = {
 &"": SubResource("AnimationLibrary_phdvl")
 }
 
 [node name="Meeting opener" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-470.11597, -118.816956)
+position = Vector2(-574, -194)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_sad84")
 script = ExtResource("9_8prci")
@@ -446,7 +608,6 @@ metadata/_edit_use_anchors_ = true
 self_modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.05, 0.04)
 sprite_frames = SubResource("SpriteFrames_xhy5k")
-frame_progress = 0.6733194
 script = ExtResource("10_xhy5k")
 
 [node name="MeetingHeld" type="Sprite2D" parent="Meeting opener/Meeting"]
@@ -454,6 +615,7 @@ visible = false
 texture = ExtResource("12_xhy5k")
 
 [node name="Button" type="Button" parent="Meeting opener/Meeting"]
+visible = false
 offset_left = -246.91171
 offset_top = 502.66656
 offset_right = -166.81747
@@ -480,14 +642,24 @@ one_shot = true
 
 [node name="Audio_cue" type="AudioStreamPlayer2D" parent="Meeting opener/Meeting"]
 stream = ExtResource("13_s1t8g")
+pitch_scale = 0.35
 
 [node name="CueTimer" type="Timer" parent="Meeting opener/Meeting"]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 
 [node name="HeldTimer" type="Timer" parent="Meeting opener/Meeting"]
 wait_time = 5.0
 one_shot = true
+
+[node name="Label" type="Label" parent="Meeting opener/Meeting"]
+visible = false
+offset_left = -473.3333
+offset_top = -114.94252
+offset_right = 448.6667
+offset_bottom = 72.05748
+text = "NO MEETING"
+label_settings = SubResource("LabelSettings_v11sh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Meeting opener"]
 root_node = NodePath("../Meeting")
@@ -495,10 +667,58 @@ libraries = {
 &"": SubResource("AnimationLibrary_v11sh")
 }
 
+[node name="ringer_timer" type="Timer" parent="Meeting opener"]
+
+[node name="Notification" type="Node2D" parent="Meeting opener"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-320, 230.66667)
+scale = Vector2(0.2, 0.2)
+
+[node name="MarginContainer" type="MarginContainer" parent="Meeting opener/Notification"]
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1278.6667
+offset_top = -137.33334
+offset_right = 1588.6667
+offset_bottom = 174.66666
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Meeting opener/Notification/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="Meeting opener/Notification/MarginContainer/MarginContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "New Meeting!"
+label_settings = SubResource("LabelSettings_ou56q")
+vertical_alignment = 1
+text_direction = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Meeting opener/Notification/MarginContainer"]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+show_behind_parent = true
+layout_mode = 2
+texture = ExtResource("15_v11sh")
+region_rect = Rect2(0, 0, 480, 376)
+patch_margin_left = 200
+patch_margin_right = 110
+axis_stretch_horizontal = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Meeting opener/Notification"]
+libraries = {
+&"": SubResource("AnimationLibrary_86ian")
+}
+
 [node name="close screen" type="Sprite2D" parent="."]
 modulate = Color(0.058286123, 0.064755, 0.06152056, 1)
-position = Vector2(-4.0000486, -98.555984)
-scale = Vector2(1150, 681.556)
+position = Vector2(-6, -115.556)
+scale = Vector2(4, 2.37)
 texture = SubResource("PlaceholderTexture2D_aentv")
 script = ExtResource("9_dx45h")
 
@@ -507,23 +727,36 @@ libraries = {
 &"": SubResource("AnimationLibrary_xhy5k")
 }
 
+[connection signal="allow_meetings" from="." to="Meeting opener" method="_on_screen_allow_meetings"]
+[connection signal="close_programs" from="." to="Spreadsheet opener" method="force_close"]
+[connection signal="close_programs" from="." to="Meeting opener" method="force_close"]
 [connection signal="disable" from="." to="close screen" method="turn_off"]
-[connection signal="closing_sheet" from="Spreadsheet opener2" to="Spreadsheet opener2/Spreadsheet" method="_on_spreadsheet_opener_closing_sheet"]
-[connection signal="opening_sheet" from="Spreadsheet opener2" to="Spreadsheet opener2/Spreadsheet" method="_on_spreadsheet_opener_opening_sheet"]
-[connection signal="button_down" from="Spreadsheet opener2/Button" to="Spreadsheet opener2" method="_on_button_button_down"]
-[connection signal="decrease" from="Spreadsheet opener2/Spreadsheet" to="." method="call_decrease_sanity"]
-[connection signal="finished" from="Spreadsheet opener2/Spreadsheet" to="." method="call_gain_money"]
-[connection signal="on_penalty" from="Spreadsheet opener2/Spreadsheet" to="." method="call_new_decreaser"]
-[connection signal="button_down" from="Spreadsheet opener2/Spreadsheet/Button" to="Spreadsheet opener2/Spreadsheet" method="_on_button_button_down"]
-[connection signal="timeout" from="Spreadsheet opener2/Spreadsheet/Penalty_timer" to="Spreadsheet opener2/Spreadsheet" method="_on_penalty_timer_timeout"]
+[connection signal="close_programs" from="Spreadsheet opener" to="." method="force_close"]
+[connection signal="closing_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_closing_sheet"]
+[connection signal="opening_sheet" from="Spreadsheet opener" to="Spreadsheet opener/Spreadsheet" method="_on_spreadsheet_opener_opening_sheet"]
+[connection signal="button_down" from="Spreadsheet opener/Button" to="Spreadsheet opener" method="_on_button_button_down"]
+[connection signal="decrease" from="Spreadsheet opener/Spreadsheet" to="." method="call_decrease_sanity"]
+[connection signal="finished" from="Spreadsheet opener/Spreadsheet" to="." method="call_gain_money"]
+[connection signal="on_penalty" from="Spreadsheet opener/Spreadsheet" to="." method="call_new_decreaser"]
+[connection signal="button_down" from="Spreadsheet opener/Spreadsheet/Button" to="Spreadsheet opener/Spreadsheet" method="_on_button_button_down"]
+[connection signal="timeout" from="Spreadsheet opener/Spreadsheet/Penalty_timer" to="Spreadsheet opener/Spreadsheet" method="_on_penalty_timer_timeout"]
+[connection signal="close_programs" from="Meeting opener" to="." method="force_close"]
 [connection signal="closing_meeting" from="Meeting opener" to="Meeting opener/Meeting" method="_on_meeting_opener_closing_meeting"]
+[connection signal="meeting_ready" from="Meeting opener" to="Meeting opener/Meeting" method="has_meeting"]
+[connection signal="no_meeting" from="Meeting opener" to="Meeting opener/Meeting" method="cancel_meeting"]
 [connection signal="opening_meeting" from="Meeting opener" to="Meeting opener/Meeting" method="_on_meeting_opener_opening_meeting"]
 [connection signal="button_down" from="Meeting opener/Button" to="Meeting opener" method="_on_button_button_down"]
 [connection signal="decrease" from="Meeting opener/Meeting" to="." method="call_decrease_sanity"]
 [connection signal="finished" from="Meeting opener/Meeting" to="." method="call_gain_money"]
+[connection signal="meeting_finish" from="Meeting opener/Meeting" to="." method="call_meeting_finished"]
+[connection signal="meeting_finish" from="Meeting opener/Meeting" to="Meeting opener" method="_on_meeting_meeting_finish"]
+[connection signal="meeting_start" from="Meeting opener/Meeting" to="." method="call_meeting_started"]
+[connection signal="meeting_start" from="Meeting opener/Meeting" to="Meeting opener" method="_on_meeting_meeting_start"]
+[connection signal="on_penalty" from="Meeting opener/Meeting" to="." method="call_new_decreaser"]
 [connection signal="button_down" from="Meeting opener/Meeting/Button" to="Meeting opener/Meeting" method="_on_button_button_down"]
 [connection signal="button_up" from="Meeting opener/Meeting/Button" to="Meeting opener/Meeting" method="_on_button_button_up"]
 [connection signal="timeout" from="Meeting opener/Meeting/MeetingDuration" to="Meeting opener/Meeting" method="_on_meeting_duration_timeout"]
 [connection signal="timeout" from="Meeting opener/Meeting/SanityReduction" to="Meeting opener/Meeting" method="_on_sanity_reduction_timeout"]
 [connection signal="timeout" from="Meeting opener/Meeting/CueTimer" to="Meeting opener/Meeting" method="_on_cue_timer_timeout"]
 [connection signal="timeout" from="Meeting opener/Meeting/HeldTimer" to="Meeting opener/Meeting" method="_on_held_timer_timeout"]
+[connection signal="timeout" from="Meeting opener/ringer_timer" to="Meeting opener" method="_on_ringer_timer_timeout"]
