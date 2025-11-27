@@ -127,7 +127,7 @@ func _on_texture_button_pressed() -> void:
 	GM.day_count += 1
 	GM.first_loop = 0
 	print("This is day count ", + GM.day_count)
-	if (GM.day_count%7) == 0:
+	if (GM.day_count%5) == 0:
 		GM.week_count += 1
 		print("This is week count ", + GM.week_count)
 		GM.curMoney -= GM.max_value
