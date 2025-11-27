@@ -84,10 +84,10 @@ func _on_screen_allow_meetings(confirm: bool) -> void:
 	if not confirm:
 		print("MEETINGS DISALLOWED")
 		ringer_timer.stop()
-		if has_meeting:
-			anim_player.play_backwards("Appear notif")
-			no_meeting.emit()
-			has_meeting = false
+		anim_player.play_backwards("Appear notif")
+		no_meeting.emit()
+		has_meeting = false
+		animation = "Open and close meetingless"
 	else:
 		print("MEETINGS ALLOWED")
 		ringer_timer.start(ring_cycle)

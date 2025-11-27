@@ -1,13 +1,13 @@
-[gd_scene load_steps=45 format=3 uid="uid://d2bcts6ujb2hd"]
+[gd_scene load_steps=46 format=3 uid="uid://d2bcts6ujb2hd"]
 
 [ext_resource type="Texture2D" uid="uid://wq18qmkxa7oi" path="res://sprites1/work_scene/PC with bg.PNG" id="1_s1t8g"]
-[ext_resource type="Texture2D" uid="uid://bqhabj0j6kghk" path="res://sprites2/icon.svg" id="1_sad84"]
 [ext_resource type="Script" uid="uid://cl44rjj5aq5lg" path="res://scripts/screen_bus.gd" id="2_8m26t"]
 [ext_resource type="Script" uid="uid://783jnncslmoh" path="res://scripts/spreadsheet_opener.gd" id="3_ckgjc"]
 [ext_resource type="Script" uid="uid://cycq1u2a0u8wq" path="res://scripts/spreadsheet.gd" id="4_ckgjc"]
 [ext_resource type="Texture2D" uid="uid://djiv66sh3m7p5" path="res://sprites1/work_scene/screen/sp1.png" id="5_t46dj"]
 [ext_resource type="Texture2D" uid="uid://ccp3bykpnc34l" path="res://sprites2/SanityBarUnder.png" id="6_k16cd"]
 [ext_resource type="Texture2D" uid="uid://c7xhg66yxv0q7" path="res://sprites2/sanityBar.png" id="7_t46dj"]
+[ext_resource type="Texture2D" uid="uid://dyxkqq5ay33ds" path="res://sprites1/work_scene/screen/sp app.PNG" id="8_86ian"]
 [ext_resource type="Script" uid="uid://ob8vixmdwkrv" path="res://scripts/meeting_opener.gd" id="9_8prci"]
 [ext_resource type="Script" uid="uid://e67074ucma8i" path="res://scripts/close_computer.gd" id="9_dx45h"]
 [ext_resource type="AudioStream" uid="uid://d152un5y1phf" path="res://SFX/click sounds/click 1.mp3" id="9_fhdfd"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://c4wvncdqha688" path="res://SFX/Telephone/empty.mp3" id="15_ou56q"]
 [ext_resource type="Texture2D" uid="uid://buldpfc4otyfp" path="res://sprites2/text bubble.png" id="15_v11sh"]
 [ext_resource type="AudioStream" uid="uid://dfi54fexs6e8m" path="res://SFX/grow by 1 - stem-glued-01.mp3" id="16_6lk3l"]
+[ext_resource type="Texture2D" uid="uid://gp5jiqtkfio7" path="res://sprites1/work_scene/screen/zoom app.PNG" id="18_tck2m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_phdvl"]
 animations = [{
@@ -83,10 +84,10 @@ tracks/2/path = NodePath("Spreadsheet:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.4),
+"times": PackedFloat32Array(0.1, 0.36666667),
 "transitions": PackedFloat32Array(1.9999992, 22.627401),
 "update": 0,
-"values": [Vector2(0.05, 0.04), Vector2(0.3, 0.244)]
+"values": [Vector2(0.05, 0.04), Vector2(0.9, 0.732)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -98,7 +99,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.3333),
 "transitions": PackedFloat32Array(0.26794332, 2.1435473),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(450, 180)]
+"values": [Vector2(0, 0), Vector2(1400, 500)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -225,7 +226,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.1, 0.4),
 "transitions": PackedFloat32Array(1.9999982, 22.627462),
 "update": 0,
-"values": [Vector2(0.05, 0.04), Vector2(0.3, 0.319)]
+"values": [Vector2(0.05, 0.04), Vector2(0.9, 0.957)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -237,7 +238,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(0.2679434, 2.1435478),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(450, 50)]
+"values": [Vector2(0, 0), Vector2(1500, 100)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -561,16 +562,21 @@ texture = ExtResource("1_s1t8g")
 script = ExtResource("2_8m26t")
 
 [node name="Spreadsheet opener" type="Sprite2D" parent="."]
-position = Vector2(-574, -402)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_sad84")
+position = Vector2(-570, -398)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_86ian")
 script = ExtResource("3_ckgjc")
 
 [node name="Button" type="Button" parent="Spreadsheet opener"]
-offset_left = -63.57489
-offset_top = -63.74434
-offset_right = 22.103027
-offset_bottom = 17.330002
+anchors_preset = -1
+anchor_left = 0.038671672
+anchor_top = 0.016619738
+anchor_right = 0.038671672
+anchor_bottom = 0.016619738
+offset_left = -193.9992
+offset_top = -197.9997
+offset_right = 40.66742
+offset_bottom = 52.666992
 scale = Vector2(1.5, 1.5)
 metadata/_edit_use_anchors_ = true
 
@@ -616,15 +622,18 @@ libraries = {
 
 [node name="Meeting opener" type="Sprite2D" parent="."]
 position = Vector2(-574, -194)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_sad84")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_tck2m")
 script = ExtResource("9_8prci")
 
 [node name="Button" type="Button" parent="Meeting opener"]
-offset_left = -63.57489
-offset_top = -63.74434
-offset_right = 22.103027
-offset_bottom = 17.330002
+anchors_preset = -1
+anchor_top = 0.003
+anchor_bottom = 0.003
+offset_left = -183.99997
+offset_top = -169.014
+offset_right = 50.666656
+offset_bottom = 54.986015
 scale = Vector2(1.5, 1.5)
 metadata/_edit_use_anchors_ = true
 

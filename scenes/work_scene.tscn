@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://4w3jdc6d616y"]
+[gd_scene load_steps=48 format=3 uid="uid://4w3jdc6d616y"]
 
 [ext_resource type="Script" uid="uid://do2qx6nm8dnum" path="res://scripts/work_scene_script.gd" id="1_clgo3"]
 [ext_resource type="Script" uid="uid://chb3wjdh8jfij" path="res://scripts/moneyCounterScript.gd" id="1_eoja1"]
@@ -260,7 +260,7 @@ position = Vector2(1065, 160)
 position = Vector2(-25, 385)
 
 [node name="work_timer" type="Timer" parent="."]
-wait_time = 128.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 script = ExtResource("31_omevc")
