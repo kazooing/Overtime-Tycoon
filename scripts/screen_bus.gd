@@ -9,7 +9,6 @@ signal close_programs(exception: Node)
 signal allow_meetings(confirm: bool)
 signal meeting_finished
 signal meeting_started
-signal force_fail
 
 func _ready() -> void:
 	if(GM.tasks[1]["owned"]):
@@ -28,7 +27,6 @@ func call_new_decreaser(confirm:bool, object: Node):
 
 func call_gain_money(amount: float, spawn_pos: Vector2):
 	gain_money.emit(amount)
-	if amount <= 0: return
 	money_notification.emit(amount, spawn_pos)
 
 func disable_computer():
@@ -49,5 +47,7 @@ func call_meeting_started():
 func call_meeting_finished():
 	meeting_finished.emit()
 
-func call_force_fail():
-	force_fail.emit()
+
+func _on_work_scene_reset_spreadsheet() -> void:
+	var spreadsheet = $"Spreadsheet opener/Spreadsheet"
+	spreadsheet.spreadsheet_completion = 0
