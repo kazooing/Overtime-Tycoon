@@ -40,7 +40,6 @@ animations = [{
 size = Vector2(162, 88)
 
 [node name="Telephone" type="Node2D"]
-position = Vector2(-1, 42)
 script = ExtResource("1_6cvow")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -50,7 +49,7 @@ collision_mask = 2
 script = ExtResource("1_54hca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -114)
+position = Vector2(-5, -90)
 shape = SubResource("RectangleShape2D_54hca")
 
 [node name="Telephone" type="Node2D" parent="Area2D"]
@@ -61,8 +60,7 @@ script = ExtResource("2_wjgco")
 position = Vector2(2.5000153, -7.75)
 scale = Vector2(0.14599998, 0.12041668)
 sprite_frames = SubResource("SpriteFrames_54hca")
-animation = &"Ringing"
-frame_progress = 0.8659261
+animation = &"Static"
 
 [node name="Area2D" type="Area2D" parent="Area2D/Telephone"]
 collision_layer = 2
@@ -79,7 +77,7 @@ visible = false
 shape = SubResource("RectangleShape2D_wjgco")
 
 [node name="Button" type="Button" parent="Area2D/Telephone/Area2D"]
-visible = false
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 5.0
 offset_top = -60.0
 offset_right = 65.0
@@ -107,8 +105,8 @@ wait_time = 2.0
 [node name="pickup_marker" type="Sprite2D" parent="Area2D"]
 visible = false
 modulate = Color(0, 0, 0, 1)
-self_modulate = Color(1, 1, 1, 0.17254902)
-position = Vector2(60, 16)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-3.999998, 21)
 scale = Vector2(1.921875, 0.671875)
 texture = ExtResource("1_u4wsl")
 
@@ -121,8 +119,8 @@ position = Vector2(-176, 439.00003)
 scale = Vector2(0.18933335, 0.20166668)
 texture = ExtResource("10_xcxmd")
 
-[connection signal="disable_telephone" from="." to="Area2D/Telephone" method="_on_button_button_down"]
 [connection signal="disable_telephone" from="." to="Area2D/Telephone" method="disable"]
+[connection signal="disable_telephone" from="." to="Area2D/Telephone" method="_on_button_button_down"]
 [connection signal="disable_telephone" from="." to="Area2D/Telephone/Area2D" method="disable"]
 [connection signal="enable_telephone" from="." to="Area2D/Telephone" method="hang_up"]
 [connection signal="enable_telephone" from="." to="Area2D/Telephone/Area2D" method="enable"]

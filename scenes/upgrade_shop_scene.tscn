@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bwnonalhjn77c" path="res://sprites1/upgrade_shop/buy when click.png" id="18_ydsnx"]
 [ext_resource type="Texture2D" uid="uid://d1l8mxi4v681c" path="res://sprites1/upgrade_shop/decor/cactus decor no bg.PNG" id="20_5qur1"]
 [ext_resource type="Texture2D" uid="uid://bcyicbdbq736e" path="res://sprites1/upgrade_shop/decor/cat decor no bg.PNG" id="21_3rw7c"]
-[ext_resource type="AudioStream" uid="uid://bruhucbpx1gp1" path="res://SFX/kaching/KACHING.mp3" id="31_weul5"]
+[ext_resource type="AudioStream" uid="uid://dtqdrje2iyl4x" path="res://SFX/KACHING.mp3" id="31_weul5"]
 
 [node name="UpgradeShop" type="Node2D"]
 

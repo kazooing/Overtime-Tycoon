@@ -47,3 +47,7 @@ func _on_timer_timeout() -> void:
 	var recovery_after_mult = recovery*mult_increase
 	value += recovery_after_mult
 	GM.curSanity = value
+
+
+func _on_work_scene_fail_all_tasks() -> void:
+	affecting_list.clear()

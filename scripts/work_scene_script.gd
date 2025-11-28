@@ -1,6 +1,7 @@
 extends Node2D
 
 signal disable_all_tasks
+signal fail_all_tasks
 
 var money_added_animation := preload("res://scenes/money_added.tscn")
 var day_ended = false
@@ -57,14 +58,21 @@ func _ready() -> void:
 
 
 func play_added_money(amount_added: float, spawn_pos: Vector2) -> void:
+	if amount_added <= 0:
+		return
+	
 	spawn_add_money(spawn_pos, amount_added) 
 
+func play_lost_money(amount_lost: float, spawn_pos: Vector2):
+	spawn_add_money(spawn_pos, amount_lost, "- $ ")
 
-func spawn_add_money(pos: Vector2 , added):
+func spawn_add_money(pos: Vector2 , added: float, header = "+ $ "):
 	var moneyAdded = money_added_animation.instantiate()
 	moneyAdded.position = pos
-	moneyAdded.text = "+ $ " + str(added)
+	moneyAdded.text = header + str(added)
 	
+	if header == "- $ ":
+		moneyAdded.modulate = Color.DARK_RED
 	add_child(moneyAdded)
 
 
@@ -86,11 +94,9 @@ func confirm_tasks_ended(confirm : bool) -> void:
 		get_tree().change_scene_to_file("res://scenes/day_recap_scene.tscn")
 	print("all tasks finished", confirm)
 
-signal reset_phonecall
-signal reset_spreadsheet
-signal reset_meeting
 
 func _on_sanity_bar_ui_sanity_bar_zero() -> void:
+	$sanity_zeroed.play()
 	GM.sanity_hits_zero_counter +=1
 	# pass time for 1 hour, fill up the sanity bar by 50, any task that are currently running gets canceled
 	
@@ -107,7 +113,4 @@ func _on_sanity_bar_ui_sanity_bar_zero() -> void:
 	sanity_bar.value = 50
 	
 	#cancel all tasks
-	reset_phonecall.emit()
-	reset_spreadsheet.emit()
-	reset_meeting.emit()
-	
+	fail_all_tasks.emit()

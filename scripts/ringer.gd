@@ -3,7 +3,7 @@ extends Node2D
 signal is_ringing(confirm:bool)
 
 @onready var b_cancel = get_node("Cancel Button")
-@onready var sprite = get_node("Area2D/Telephone Sprite")
+@onready var sprite = get_node("Telephone Sprite")
 @onready var timer = get_node("ring_timer")
 @onready var rng = RandomNumberGenerator.new()
 
@@ -27,7 +27,6 @@ func _process(_delta):
 			timer.start()
 	if ringing:
 		sprite.play("Ringing")
-		sprite.rotation = deg_to_rad(90)
 	else:
 		sprite.play("Static")
 

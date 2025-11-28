@@ -29,8 +29,6 @@ func open_inspector(title:String, desc:String, price:int, id:String):
 	#show dimmer 
 	var tween = get_tree().create_tween()
 	tween.tween_property(inspector, "position:x", 880, 0.3).set_trans(Tween.TRANS_SINE)
-	
-	
 
 func _on_tween_dimmer_fade_in() -> void:
 	var tween = get_tree().create_tween()
@@ -68,25 +66,27 @@ signal give_to_unlock_button_task(price: int, id: int)
 signal give_to_upgrade_button_task(price: int, id: int)
 #signal change_buy_button_based_on_unlock_upgrade(status:int)
 
-func open_inspector_task(title:String, desc:String, id:int, status:int):
+func open_inspector_task(title:String, desc:String, id:int, status:int, orgin: Node):
 	var current_price = 0
 	#change_buy_button_based_on_unlock_upgrade.emit(id)
-
+	var orgin_parent = orgin.get_parent()
+	
 	if status==-1:	#if haven't unlocked
 		upgrade_button.disabled = true
 		upgrade_button.visible = false
 		unlock_button.disabled = false
 		unlock_button.visible = true
 		current_price = GM.tasks[id]["unlock_cost"]
-		give_to_unlock_button_task.emit(current_price, id)
+		give_to_unlock_button_task.emit(current_price, id, orgin_parent)
 		note_price.text = "Price to\nunlock:"
+		close_inspector_task()
 	else:	#if unlocked
 		upgrade_button.disabled = false
 		upgrade_button.visible = true
 		unlock_button.disabled = true
 		unlock_button.visible = false
 		current_price = GM.tasks[id]["upgrade_cost"][status]
-		give_to_upgrade_button_task.emit(current_price, id)
+		give_to_upgrade_button_task.emit(current_price, id, orgin_parent)
 		note_price.text = "Price to\nupgrade:"
 	dimmer_task.visible = true
 	tween_dimmer_task_fade_in.emit()
@@ -139,6 +139,8 @@ func _on_texture_button_pressed() -> void:
 				get_tree().change_scene_to_file("res://scenes/game_over_scene.tscn")
 			else:
 				get_tree().change_scene_to_file("res://scenes/game.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 	
@@ -156,7 +158,7 @@ func _on_unlock_button_change_to_upgrade(id: int, status: int) -> void:
 		task_price.text = "$" + str(current_price)
 	else:
 		print("Bad ending")
-		get_tree().change_scene_to_file("res://scenes/ending_scene_sad.tscn")
+		#get_tree().change_scene_to_file("res://scenes/ending_scene_sad.tscn")
 
 
 func _on_upgrade_button_is_max_upgrade(id: int) -> void:

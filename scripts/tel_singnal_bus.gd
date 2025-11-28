@@ -57,3 +57,8 @@ func disable():
 
 func enable():
 	enable_telephone.emit()
+
+func _on_work_scene_fail_all_tasks() -> void:
+	disable_telephone.emit()
+	await get_tree().create_timer(0.1).timeout
+	enable_telephone.emit()

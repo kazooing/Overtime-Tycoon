@@ -7,29 +7,37 @@ var ease_vector: Vector2
 var is_ringing: bool = false
 @onready var empty_ring = get_node("empty_ring")
 @onready var ring = get_node("ringing")
-
+@onready var sprite = get_node("Telephone Hand")
 
 func _ready() -> void:
 	var button = $Button
 	button.button_down.connect(on_press)
 	button.button_up.connect(on_release)
 
+var sprite_alpha:float = 0 
 func _process(delta: float) -> void:
 	mouse_pos = get_global_mouse_position()
 	if pressed:
 		ease_vector = square_ease(global_position, mouse_pos, 0.05)
 		global_position.x = move_toward(global_position.x, mouse_pos.x, ease_vector.x * delta)
 		global_position.y = move_toward(global_position.y, mouse_pos.y, ease_vector.y * delta)
-		$"Telephone Sprite".rotation = deg_to_rad(10)
+		sprite.modulate = Color(1,1,1,1)
+		sprite_alpha = 1
 		if not is_ringing:
 			play_audio(empty_ring)
 	else:
 		ease_vector = 0.3 * square_ease(global_position, start_pos, 10)
 		global_position.x = move_toward(global_position.x, start_pos.x, ease_vector.x * delta)
 		global_position.y = move_toward(global_position.y, start_pos.y, ease_vector.y * delta)
-		$"Telephone Sprite".rotation = 0
+		
 		if empty_ring.playing:
 			empty_ring.stop()
+	
+	if global_position.distance_to(start_pos) < 100:
+		sprite_alpha = move_toward(sprite_alpha, 0, 1.1*delta)
+		sprite.modulate = Color(1,1,1,sprite_alpha)
+	else:
+		sprite.modulate = Color(1,1,1,1)
 	
 	if has_overlapping_areas():
 		pressed = false

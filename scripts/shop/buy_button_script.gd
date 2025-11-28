@@ -14,4 +14,4 @@ func _on_pressed() -> void:
 		GM.pajangan[int_cur_id]["owned"] = true
 		GM.curMoney -= cur_price
 		give_to_decor_button.emit()
-	$"../../../AudioStreamPlayer".play()
+		$"../../../AudioStreamPlayer".play()

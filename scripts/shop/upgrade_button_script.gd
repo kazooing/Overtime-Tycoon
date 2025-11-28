@@ -2,15 +2,19 @@ extends TextureButton
 
 var task_price
 var task_id
+var target
 @onready var price_label = get_parent().get_node("price")
 @onready var above_price_label = get_parent().get_node("above_price")
 signal is_max_upgrade(id: int)
 
-func _on_ui_layer_give_to_upgrade_button_task(price: int, id: int) -> void:
+func _on_ui_layer_give_to_upgrade_button_task(price: int, id: int, origin_parent) -> void:
+	print(price, id, origin_parent)
 	task_price = price
 	task_id = id
+	target = origin_parent
 
 func _on_pressed() -> void:
+	print(task_id)
 	if GM.curMoney >= GM.tasks[task_id]["upgrade_cost"][GM.tasks[task_id]["index"]]:
 		GM.curMoney -= GM.tasks[task_id]["upgrade_cost"][GM.tasks[task_id]["index"]]
 		GM.tasks[task_id]["index"] += 1
