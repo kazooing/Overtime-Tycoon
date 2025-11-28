@@ -1,0 +1,18 @@
+res://dailogue test/dialogue_generator.tscn::0df7973cb5eb1bd413bc0d8d9e550196::1764254572::res://.godot/exported/133200997/export-495401b8c133523fe4e95cc2d885e36f-dialogue_generator.scn
+res://dailogue test/textbox.tscn::88d6e5d6fcad499f86b3778275d11ac1::1764254572::res://.godot/exported/133200997/export-1404a1cd2cb7f5084f5216928aa37ee6-textbox.scn
+res://scenes/day_recap_scene.tscn::c3bbf8ae8d3f2af5d124548fcfc058e3::1764274755::res://.godot/exported/133200997/export-93abe6769cbb7c0e12408a48455fccb1-day_recap_scene.scn
+res://scenes/ending_scene.tscn::1d86b981f4d27b03a0ee87f25bb0d491::1763888716::res://.godot/exported/133200997/export-fbbeec6cee997e8e8271fea77c52d2da-ending_scene.scn
+res://scenes/ending_scene_good.tscn::c5e490c1ee94298734152fc7c8ed35dc::1764274755::res://.godot/exported/133200997/export-3794894f3182ae32dfbe72ca43501bdb-ending_scene_good.scn
+res://scenes/ending_scene_sad.tscn::be242e5e86cae3dee8b674f66616e067::1764274755::res://.godot/exported/133200997/export-8bba78347a931f240a41c6ba0a6988e1-ending_scene_sad.scn
+res://scenes/game.tscn::949fd0d2465bb85cebd5feeac49168d9::1764254572::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
+res://scenes/game_over_scene.tscn::fa8b362e9ee672b40039573c02363fe2::1764266240::res://.godot/exported/133200997/export-b7769958e18429d4fbc5e7a80eb60611-game_over_scene.scn
+res://scenes/money_added.tscn::723630a99bdaae0c4f1908fcae582d6d::1764266240::res://.godot/exported/133200997/export-2c9b489d128d5346be7afa9aff834d55-money_added.scn
+res://scenes/pajangan.tscn::14e38e28867354d1e6351ed4283bf235::1764254572::res://.godot/exported/133200997/export-3ce96d35da3fa62153c9744edf83ac88-pajangan.scn
+res://scenes/pause_day_recap.tscn::61adaa949b5e4489a82845555d0d2191::1763888716::res://.godot/exported/133200997/export-ce954a7dbe2943d04080b35841c26c3a-pause_day_recap.scn
+res://scenes/pause_menu_in_game.tscn::e98665828c02ba28cf58167bb32973af::1763888716::res://.godot/exported/133200997/export-e73f57d6a607f0f534e9e1b713519001-pause_menu_in_game.scn
+res://scenes/pause_menu_upgrade_shop.tscn::d2ce9c7629dfdb1ee42798c7eab68bc0::1763888716::res://.godot/exported/133200997/export-cd625c1c4a8acc0a9eb370431fb6877f-pause_menu_upgrade_shop.scn
+res://scenes/Screen.tscn::74d46f1704bbd10dd1883932ab692be8::1764312796::res://.godot/exported/133200997/export-aaa8acbf862b0f11d644a8cbb0770a0c-Screen.scn
+res://scenes/start_screen.tscn::32dce18a6c0f8e2dc286a91f3dde5a67::1764274755::res://.godot/exported/133200997/export-0667f4c7c212ccfd14534425cdebbe06-start_screen.scn
+res://scenes/Telephone.tscn::920b364dc9ca13136e5507c61018d2d2::1764311644::res://.godot/exported/133200997/export-b4ed2129bcc8b2a290328119e6e8b81b-Telephone.scn
+res://scenes/upgrade_shop_scene.tscn::6db86aa259d996707410bbddd14e3ef0::1764323421::res://.godot/exported/133200997/export-3980228fd274b5d99da4d08e42b03f41-upgrade_shop_scene.scn
+res://scenes/work_scene.tscn::9dec5dd4e164864434e19da292ef81df::1764321820::res://.godot/exported/133200997/export-2964c184b9262f45788a9d3797a9f63b-work_scene.scn
